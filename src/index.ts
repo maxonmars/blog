@@ -1,3 +1,3 @@
 import {foo} from './test';
 
-foo('TypeScript');
+foo('TypeScript and decompose adn options');
