@@ -10,11 +10,13 @@ const buildPath: BuildPath = {
 
 const mode = 'development';
 const isDev = mode === 'development';
+const PORT = 3000;
 
 const config = buildWebpackConfig({
     mode,
     path: buildPath,
     isDev,
+    port: PORT,
 });
 
 export default config;
