@@ -1,0 +1,15 @@
+@import "src/app/styles/normalize";
+@import "src/app/styles/variables/global";
+@import "src/app/styles/themes/dark";
+@import "src/app/styles/themes/light";
+
+.app {
+  font: var(--font-m);
+
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+
+  height: 100vh;
+
+  padding: 40px;
+}
