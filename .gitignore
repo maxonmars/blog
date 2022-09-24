@@ -1,3 +1,9 @@
+# Project
 node_modules
 /build
+
+# WebStorm
 .idea
+
+# MacOs
+.DS_Store
