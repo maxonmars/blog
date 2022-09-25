@@ -1,13 +1,13 @@
 import './styles/index.scss'
 import React, {Suspense} from "react";
-import {NavLink, Route, Routes} from "react-router-dom";
+import {NavLink, useRoutes} from "react-router-dom";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "app/providers/theme";
-import {MainPage} from "pages/MainPage";
-import {AboutPage} from "pages/AboutPage";
+import {routes} from "shared/config/route/routeConfig";
 
 export const App = () => {
     const {theme, toggleTheme} = useTheme();
+    const appRoutes = useRoutes(routes);
     const activeStyle = ({isActive}: { isActive: boolean }): React.CSSProperties =>
         isActive
             ? {color: 'var(--secondary-color)'}
@@ -19,10 +19,7 @@ export const App = () => {
             <NavLink style={activeStyle} to='/' end>Главная страница</NavLink>
             <NavLink style={activeStyle} to='/about'>О сайте</NavLink>
             <Suspense fallback={<div>...Loading</div>}>
-                <Routes>
-                    <Route path='/' element={<MainPage/>}/>
-                    <Route path='/about' element={<AboutPage/>}/>
-                </Routes>
+                {appRoutes}
             </Suspense>
         </div>
     );
