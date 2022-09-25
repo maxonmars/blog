@@ -1,7 +1,7 @@
 import {RouteObject} from "react-router-dom";
 import {MainPage} from "pages/MainPage";
 import {AboutPage} from "pages/AboutPage";
-import React from "react";
+import {createElement} from "react";
 
 const ROUTE_PATH = {
     MAIN: '/',
@@ -16,15 +16,15 @@ interface PathValue extends RouteObject{
     path: ValueOf<typeof ROUTE_PATH>
 }
 
-const routeConfig: Record<PathKey, PathValue> = {
+const routeConfig: Record<PathKey, PathValue> = ({
     MAIN: {
         path: ROUTE_PATH.MAIN,
-        element: <MainPage/>,
+        element: createElement(MainPage),
     },
     ABOUT: {
         path: ROUTE_PATH.ABOUT,
-        element: <AboutPage/>,
+        element: createElement(AboutPage),
     }
-}
+})
 
 export const routes = Object.values(routeConfig);
