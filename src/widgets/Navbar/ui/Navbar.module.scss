@@ -1,11 +1,11 @@
 .navbar {
+  grid-column: span 2;
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   width: 100%;
   padding: 1em;
-  //height: var(--navbar-height);
   background-color: var(--bg-color-inverted);
 }
 

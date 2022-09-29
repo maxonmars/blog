@@ -1,0 +1,9 @@
+.sidebar {
+  background-color: var(--bg-color-inverted);
+  width: var(--sidebare-width);
+  transition: width 300ms;
+}
+
+.collapsed {
+  width: var(--sidebare-width-collapsed);
+}
