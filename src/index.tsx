@@ -11,3 +11,4 @@ render(
     </BrowserRouter>,
     document.getElementById('root')
 );
+export {Theme} from "shared/lib/theme/ThemeContext";

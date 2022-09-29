@@ -12,7 +12,8 @@
             "*": ["./src/*"]
         },
         "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "sourceMap": true
     },
     "ts-node": {
         "compilerOptions": {
