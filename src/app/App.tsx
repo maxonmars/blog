@@ -1,5 +1,5 @@
 import './styles/index.scss'
-import React from "react";
+import React, {Suspense} from "react";
 import {classNames} from "shared/lib/classNames/classNames";
 
 import {Navbar} from "widgets/Navbar";
@@ -12,9 +12,11 @@ export const App = () => {
 
     return (
         <div className={classNames(['app', 'app-layout', theme])}>
-            <Navbar/>
-            <Sidebar/>
-            <AppRouter/>
+            <Suspense fallback={<div>TEXT...</div>}>
+                <Navbar/>
+                <Sidebar/>
+                <AppRouter/>
+            </Suspense>
         </div>
     );
 };
