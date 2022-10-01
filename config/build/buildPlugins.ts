@@ -17,6 +17,6 @@ export function buildPlugins({path, isDev, isHotRefresh}: BuildOptions): webpack
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
         }),
-        ...[isDev && isHotRefresh && new ReactRefreshPlugin()].filter(Boolean)
-    ]
+        isDev && isHotRefresh && new ReactRefreshPlugin()
+    ].filter(Boolean)
 }
