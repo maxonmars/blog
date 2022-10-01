@@ -1,4 +1,4 @@
-import webpack from "webpack";
+import webpack, {RuleSetRule} from "webpack";
 import {BuildOptions} from "./types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
@@ -18,6 +18,14 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'],
     };
+
+    const babelLoader = {
+        test: /\.([jt])sx?$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader"
+        }
+    }
 
     const typescriptLoader = {
         test: /\.tsx?$/,
@@ -47,6 +55,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
     ]
