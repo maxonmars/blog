@@ -14,7 +14,7 @@ interface NavbarProps {
 }
 
 export const Navbar = ({className}: NavbarProps) => {
-    const {t} = useTranslation();
+    const {t} = useTranslation('translation');
 
     return (
         <div className={classNames([module.navbar, className])}>

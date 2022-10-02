@@ -13,9 +13,7 @@ i18n
         debug: __IS_DEV__,
         interpolation: {
             escapeValue: false,
-        },
-        ns: ['translation','aboutPage'],
-        defaultNS: 'translation'
+        }
     });
 
 
