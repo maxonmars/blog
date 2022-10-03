@@ -1,5 +1,5 @@
 import type {FC} from 'react';
-import module from './AppLink.module.scss';
+import module from './AppLink.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {LinkProps} from 'react-router-dom';
 import {Link} from 'react-router-dom';

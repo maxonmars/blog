@@ -33,9 +33,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 	};
 
 	const cssLoader = {
-		test: /\.s[ac]ss$/i,
+		test: /\.css$/i,
 		use: [
-			options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+			options.isDev
+				? 'style-loader'
+				: MiniCssExtractPlugin.loader,
 			{
 				loader: 'css-loader',
 				options: {
@@ -47,7 +49,6 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 					},
 				},
 			},
-			'sass-loader',
 		],
 	};
 

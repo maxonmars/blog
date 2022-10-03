@@ -1,7 +1,7 @@
 @import "./normalize";
-@import "./variables/global";
-@import "./themes/dark";
-@import "./themes/light";
+@import "variables/global.css";
+@import "themes/dark.css";
+@import "themes/light.css";
 
 .app {
   font: var(--font-m);

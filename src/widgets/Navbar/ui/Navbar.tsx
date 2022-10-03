@@ -1,5 +1,5 @@
 import type React from 'react';
-import module from './Navbar.module.scss';
+import module from './Navbar.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {AppLinkTheme, AppLink} from 'shared/ui/AppLink/AppLink';
 import {useTranslation} from 'react-i18next';

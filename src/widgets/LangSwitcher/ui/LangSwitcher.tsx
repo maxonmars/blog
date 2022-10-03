@@ -1,4 +1,4 @@
-import module from './LangSwitcher.module.scss';
+import module from './LangSwitcher.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {Button, ButtonTheme} from 'shared/ui/Button/Button';
 import {useTranslation} from 'react-i18next';

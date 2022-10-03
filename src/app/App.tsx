@@ -1,4 +1,4 @@
-import './styles/index.scss';
+import './styles/index.css';
 import React, {Suspense} from 'react';
 import {classNames} from 'shared/lib/classNames/classNames';
 
