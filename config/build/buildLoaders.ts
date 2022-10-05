@@ -49,6 +49,18 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 					},
 				},
 			},
+			{
+				loader: 'postcss-loader',
+				options: {
+					postcssOptions: {
+						plugins: [
+							[
+								'postcss-preset-env',
+							],
+						],
+					},
+				},
+			},
 		],
 	};
 
