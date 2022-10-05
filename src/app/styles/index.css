@@ -4,16 +4,14 @@
 @import "./themes/light.css";
 
 .app {
-  font: var(--font-m);
-
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-
-  height: 100vh;
+	font: var(--font-m);
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+	height: 100vh;
 }
 
 .app-layout {
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-template-rows: var(--navbar-height);
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-template-rows: var(--navbar-height);
 }

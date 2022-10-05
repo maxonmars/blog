@@ -1,21 +1,21 @@
 .navbar {
-  grid-column: span 2;
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  width: 100%;
-  padding: 1em;
-  background-color: var(--bg-color-inverted);
+	grid-column: span 2;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: repeat(2, 1fr);
+	align-items: center;
+	width: 100%;
+	padding: 1em;
+	background-color: var(--bg-color-inverted);
 }
 
 .logo {
-  font: var(--font-l);
-  color: var(--primary-color-inverted);
+	font: var(--font-l);
+	color: var(--primary-color-inverted);
 }
 
 .links {
-  display: flex;
-  grid-gap: 16px;
-  justify-content: flex-end;
+	display: flex;
+	grid-gap: 16px;
+	justify-content: flex-end;
 }

@@ -1,11 +1,11 @@
 .appLink {
- cursor: pointer;
+	cursor: pointer;
 }
 
 .main {
-  color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .inverted {
-  color: var(--primary-color-inverted);
+	color: var(--primary-color-inverted);
 }
