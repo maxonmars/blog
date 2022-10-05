@@ -49,6 +49,7 @@ module.exports = {
 		'react',
 	],
 	rules: {
+		'capitalized-comments': 'off',
 	},
 	globals: {
 		__IS_DEV__: true,
