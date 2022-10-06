@@ -1,0 +1,6 @@
+.notFoundPage {
+	display: flex;
+	font: var(--font-l);
+	justify-content: center;
+	align-items: center;
+}

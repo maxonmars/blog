@@ -15,3 +15,8 @@
 	grid-template-columns: max-content 1fr;
 	grid-template-rows: var(--navbar-height);
 }
+
+.app-suspense-loader {
+	grid-column: span 2;
+	grid-row: 2;
+}

@@ -50,6 +50,8 @@ module.exports = {
 	],
 	rules: {
 		'capitalized-comments': 'off',
+		'arrow-body-style': 'off',
+		'jsx-quotes': ['error', 'prefer-double'],
 	},
 	globals: {
 		__IS_DEV__: true,
