@@ -12,6 +12,4 @@ interface ThemeContextProps {
 
 export const ThemeContext = createContext<ThemeContextProps>({});
 
-const isGamma = true;
-
 export const LOCAL_STORAGE_THEME_KEY = 'theme';

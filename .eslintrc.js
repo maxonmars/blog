@@ -26,7 +26,7 @@ module.exports = {
 						selector: 'variable',
 						format: ['camelCase', 'UPPER_CASE', 'PascalCase'],
 						types: ['boolean'],
-						prefix: ['is'],
+						prefix: ['is', 'has'],
 					},
 					{
 						selector: ['interface', 'enum'],
@@ -47,8 +47,10 @@ module.exports = {
 	},
 	plugins: [
 		'react',
+		'i18next',
 	],
 	rules: {
+		'i18next/no-literal-string': 1,
 		'capitalized-comments': 'off',
 		'arrow-body-style': 'off',
 		'jsx-quotes': ['error', 'prefer-double'],

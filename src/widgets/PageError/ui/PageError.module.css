@@ -1,0 +1,8 @@
+.pageError {
+	display: grid;
+	grid-gap: 1em;
+	align-content: center;
+	justify-items: center;
+	height: 100vh;
+	font: var(--font-l);
+}
