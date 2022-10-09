@@ -4,6 +4,7 @@ import {buildLoaders} from './buildLoaders';
 import {buildResolve} from './buildResolve';
 import type {BuildOptions} from './types';
 import {buildDevServer} from './buildDevServer';
+import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
 	const {mode, path, isDev} = options;
@@ -15,6 +16,11 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			filename: '[name].[contenthash].js',
 			path: path.build,
 			clean: true,
+		},
+		optimization: {
+			minimizer: [
+				new CssMinimizerPlugin(),
+			],
 		},
 		plugins: buildPlugins(options),
 		module: {

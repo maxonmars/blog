@@ -55,7 +55,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 					postcssOptions: {
 						plugins: [
 							[
-								'postcss-preset-env',
+								'autoprefixer',
 							],
 						],
 					},
