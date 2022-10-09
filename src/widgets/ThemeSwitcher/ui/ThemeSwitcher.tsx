@@ -1,4 +1,4 @@
-// Import module from './ThemeSwitcher.module.scss';
+import module from './ThemeSwitcher.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import IconSun from 'shared/assets/icons/icon-sun.svg';
 import IconMoon from 'shared/assets/icons/icon-moon.svg';
@@ -17,7 +17,7 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 			className={classNames([className])}
 			theme={ButtonTheme.CLEAR}
 			onClick={toggleTheme}>
-			{theme === Theme.DARK ? <IconMoon fill='green'/> : <IconSun fill='yellow'/>}
+			{theme === Theme.DARK ? <IconMoon className={module.iconMoon}/> : <IconSun className={module.iconSun}/>}
 		</Button>
 	);
 };
