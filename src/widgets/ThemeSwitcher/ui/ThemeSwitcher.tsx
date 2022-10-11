@@ -4,7 +4,7 @@ import IconSun from 'shared/assets/icons/icon-sun.svg';
 import IconMoon from 'shared/assets/icons/icon-moon.svg';
 import {Theme} from 'shared/lib/theme/ThemeContext';
 import {useTheme} from 'shared/lib/theme';
-import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {Button, ButtonVariant} from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
 	className?: string;
@@ -15,7 +15,7 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 	return (
 		<Button
 			className={classNames([className])}
-			theme={ButtonTheme.CLEAR}
+			variant={ButtonVariant.SUBTLE}
 			onClick={toggleTheme}>
 			{theme === Theme.DARK ? <IconMoon className={module.iconMoon}/> : <IconSun className={module.iconSun}/>}
 		</Button>

@@ -1,8 +1,21 @@
 .button {
 	color: var(--primary-color-inverted);
+	border-radius: 3em;
 }
 
-.clear {
+.default {
+	padding: 1em;
+	border: 1px solid gray;
+}
+
+.subtle {
 	border: none;
 	background: none;
+}
+
+.outline {
+	padding: 1em;
+	border: 1px solid var(--primary-color);
+	background: none;
+	color: var(--primary-color);
 }

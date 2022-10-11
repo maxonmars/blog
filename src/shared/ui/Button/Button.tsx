@@ -2,17 +2,24 @@ import module from './Button.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {ButtonHTMLAttributes, FC} from 'react';
 
-export enum ButtonTheme {
-	CLEAR = 'clear',
+export enum ButtonVariant {
+	SUBTLE = 'subtle',
+	OUTLINE = 'outline',
+	DEFAULT = 'default',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	className?: string;
-	theme?: ButtonTheme;
+	variant?: ButtonVariant;
 }
 
-export const Button: FC<ButtonProps> = ({className, theme, children, ...restProps}) => (
-	<button {...restProps} className={classNames([module.button, className, module[theme]])}>
+export const Button: FC<ButtonProps> = ({
+	className,
+	variant = ButtonVariant.DEFAULT,
+	children,
+	...restProps
+}) => (
+	<button {...restProps} className={classNames([module.button, className, module[variant]])}>
 		{children}
 	</button>
 );

@@ -2,8 +2,9 @@ import module from './Sidebar.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useState} from 'react';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
-import {LangSwitcher} from 'widgets/LangSwitcher/ui/LangSwitcher';
+import {LangSwitcher} from 'widgets/LangSwitcher';
 import {useTranslation} from 'react-i18next';
+import {Button} from 'shared/ui/Button/Button';
 
 interface SidebarProps {
 	className?: string;
@@ -21,9 +22,9 @@ export const Sidebar = ({className}: SidebarProps) => {
 		<div
 			data-testid="sidebar"
 			className={classNames([module.sidebar, className], {[module.collapsed]: isCollapsed})}>
-			<button
+			<Button
 				data-testid="sidebar-toggle"
-				onClick={onToggle}>{t('Свернуть')}</button>
+				onClick={onToggle}>{t('Свернуть')}</Button>
 			<ThemeSwitcher/>
 			<LangSwitcher/>
 		</div>

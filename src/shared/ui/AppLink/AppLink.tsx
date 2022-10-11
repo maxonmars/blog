@@ -4,21 +4,21 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import type {LinkProps} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 
-export enum AppLinkTheme {
+export enum AppLinkVariant {
 	MAIN = 'main',
 	INVERTED = 'inverted',
 }
 
 interface AppLinkProps extends LinkProps {
 	className?: string;
-	theme?: AppLinkTheme;
+	variant?: AppLinkVariant;
 }
 
 export const AppLink: FC<AppLinkProps> = (
-	{className, theme = AppLinkTheme.MAIN, children, ...restProp}) => (
+	{className, variant = AppLinkVariant.MAIN, children, ...restProp}) => (
 	<Link
 		{...restProp}
-		className={classNames([module.appLink, className, module[theme]])}>
+		className={classNames([module.appLink, className, module[variant]])}>
 		{children}
 	</Link>
 );
