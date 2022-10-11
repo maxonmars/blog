@@ -9,7 +9,7 @@ describe('Button', () => {
 
 	test('clear theme', () => {
 		render(<Button variant={ButtonVariant.SUBTLE}>TEST</Button>);
-		expect(screen.getByText('TEST')).toHaveClass('clear');
-		screen.debug();
+		expect(screen.getByText('TEST')).toHaveClass('subtle');
+		// screen.debug();
 	});
 });
