@@ -14,7 +14,7 @@ export function buildPlugins({path, isDev, isHotRefresh}: BuildOptions): webpack
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 		}),
-		isDev && new MiniCssExtractPlugin({
+		!isDev && new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
 		}),
