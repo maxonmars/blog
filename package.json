@@ -93,7 +93,6 @@
     "last 3 version"
   ],
   "loki": {
-    "diffingEngine": "gm",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.app",
