@@ -11,16 +11,16 @@ export function buildPlugins({path, isDev, isHotRefresh}: BuildOptions): webpack
 			template: path.html,
 		}),
 		new webpack.ProgressPlugin(),
-		new MiniCssExtractPlugin({
-			filename: 'css/[name].[contenthash:8].css',
-			chunkFilename: 'css/[name].[contenthash:8].css',
-		}),
 		new webpack.DefinePlugin({
 			__IS_DEV__: JSON.stringify(isDev),
 		}),
-		isDev && isHotRefresh && new ReactRefreshPlugin(),
-		new BundleAnalyzerPlugin({
+		isDev && new MiniCssExtractPlugin({
+			filename: 'css/[name].[contenthash:8].css',
+			chunkFilename: 'css/[name].[contenthash:8].css',
+		}),
+		isDev && new BundleAnalyzerPlugin({
 			openAnalyzer: false,
 		}),
+		isDev && isHotRefresh && new ReactRefreshPlugin(),
 	].filter(Boolean);
 }
