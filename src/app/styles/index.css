@@ -3,6 +3,10 @@
 @import "./themes/dark.css";
 @import "./themes/light.css";
 
+@font-face {
+	src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+}
+
 .app {
 	font: var(--font-m);
 	background-color: var(--bg-color);
