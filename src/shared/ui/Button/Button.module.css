@@ -1,6 +1,6 @@
 .button {
 	color: var(--primary-color-inverted);
-	border-radius: 3px;
+	border-radius: 3em;
 }
 
 .default {

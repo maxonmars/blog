@@ -17,6 +17,7 @@
     "test:unit": "jest --config config/jest/jest.config.ts",
     "test:ui": "npx loki test --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:ok": "npx loki approve",
+    "test:ui:up": "npx loki update --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [],
