@@ -15,9 +15,9 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook --no-open",
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:unit": "jest --config config/jest/jest.config.ts",
-    "test:ui": "npx loki test --chromeDockerImage=yukinying/chrome-headless-browser-stable:latest",
+    "test:ui": "npx loki test --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static"
+    "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static"
   },
   "keywords": [],
   "author": "",
