@@ -18,6 +18,7 @@ export const LangSwitcher = ({className}: LangSwitcherProps) => {
 			onClick={onToggle}
 			variant={ButtonVariant.SUBTLE}
 			className={classNames([className])}
+			inverted
 		>
 			{t('Язык')}
 		</Button>

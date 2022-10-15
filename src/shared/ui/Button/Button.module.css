@@ -1,11 +1,31 @@
 .button {
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+	background-color: var(--primary-color);
+	padding: 0.5em 1.33em;
+	border: 1px solid;
+	cursor: pointer;
+}
+
+.inverted {
 	color: var(--primary-color-inverted);
-	border-radius: 3em;
+	border-color: var(--primary-color-inverted);
+	background-color: var(--primary-color-inverted);
 }
 
 .default {
-	padding: 1em;
-	border: 1px solid gray;
+	border-color: #ced4da;
+	color: #000;
+	background: none;
+}
+
+.default.inverted {
+	color: #fff;
+}
+
+.filled {
+	color: #fff;
+	border: none;
 }
 
 .subtle {
@@ -14,8 +34,49 @@
 }
 
 .outline {
-	padding: 1em;
-	border: 1px solid var(--primary-color);
 	background: none;
-	color: var(--primary-color);
+}
+
+.compact {
+	padding: 0.25em 0.665em;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.lg {
+	font: var(--font-l);
+}
+
+.md {
+	font: var(--font-m);
+}
+
+.sm {
+	font: var(--font-s);
+}
+
+.radiusSm {
+	border-radius: var(--radius-s);
+}
+
+.radiusMd {
+	border-radius: var(--radius-m);
+}
+
+.radiusLg {
+	border-radius: var(--radius-l);
+}
+
+.square {
+	border-radius: 0;
+	padding: 0;
+	width: 3em;
+	height: 3em;
+	background-color: var(--bg-color);
+}
+
+.square.inverted {
+	background-color: var(--bg-color-inverted);
 }

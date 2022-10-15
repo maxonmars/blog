@@ -4,7 +4,7 @@ import {useState} from 'react';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {LangSwitcher} from 'widgets/LangSwitcher';
 import {useTranslation} from 'react-i18next';
-import {Button} from 'shared/ui/Button/Button';
+import {Button, ButtonVariant} from 'shared/ui/Button/Button';
 
 interface SidebarProps {
 	className?: string;
@@ -24,7 +24,10 @@ export const Sidebar = ({className}: SidebarProps) => {
 			className={classNames([module.sidebar, className], {[module.collapsed]: isCollapsed})}>
 			<Button
 				data-testid="sidebar-toggle"
-				onClick={onToggle}>{t('Свернуть')}</Button>
+				square
+				inverted
+				variant={ButtonVariant.SUBTLE}
+				onClick={onToggle}>{'>'}</Button>
 			<ThemeSwitcher/>
 			<LangSwitcher/>
 		</div>

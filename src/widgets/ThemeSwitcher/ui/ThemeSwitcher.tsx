@@ -16,6 +16,8 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 		<Button
 			className={classNames([className])}
 			variant={ButtonVariant.SUBTLE}
+			square
+			inverted
 			onClick={toggleTheme}>
 			{theme === Theme.DARK ? <IconMoon className={module.iconMoon}/> : <IconSun className={module.iconSun}/>}
 		</Button>
