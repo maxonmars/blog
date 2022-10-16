@@ -1,4 +1,3 @@
-import module from './ThemeSwitcher.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {IcoThinMoonStars, IcoThinSunBright} from 'shared/assets/icons';
 import {Theme} from 'shared/lib/theme/ThemeContext';
