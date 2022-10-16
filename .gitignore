@@ -1,11 +1,21 @@
-# Project
-node_modules
-/build
-/coverage
-/storybook-static
+# MacOs
+.DS_Store
 
 # WebStorm
 .idea
 
-# MacOs
-.DS_Store
+# Project
+node_modules
+/build
+
+# Jest
+/coverage
+
+# Storybook
+/storybook-static
+
+# Loki
+.loki/current
+.loki/difference
+.loki/report.json
+.loki/report.html

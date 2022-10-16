@@ -10,7 +10,7 @@
 	--line-height-s: 1.2;
 	--font-s: var(--font-size-s) / var(--line-height-s) var(--font-family-main);
 	--navbar-height: 3rem;
-	--sidebare-width: 18rem;
+	--sidebare-width: 14rem;
 	--sidebare-width-collapsed: 5rem;
 	--radius-s: 4px;
 	--radius-m: 8px;

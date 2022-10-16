@@ -4,9 +4,10 @@ import {useTranslation} from 'react-i18next';
 
 interface LangSwitcherProps {
 	className?: string;
+	isShort: boolean;
 }
 
-export const LangSwitcher = ({className}: LangSwitcherProps) => {
+export const LangSwitcher = ({className, isShort}: LangSwitcherProps) => {
 	const {t, i18n} = useTranslation('translation');
 
 	const onToggle = () => {
@@ -19,8 +20,9 @@ export const LangSwitcher = ({className}: LangSwitcherProps) => {
 			variant={ButtonVariant.SUBTLE}
 			className={classNames([className])}
 			inverted
+			square={isShort}
 		>
-			{t('Язык')}
+			{isShort ? t('Язык короткая запись') : t('Язык')}
 		</Button>
 	);
 };

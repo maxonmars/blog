@@ -1,9 +1,54 @@
 .sidebar {
 	background-color: var(--bg-color-inverted);
 	width: var(--sidebare-width);
-	transition: width 300ms;
+	transition: width 200ms;
+	position: relative;
+	display: grid;
+	padding: 1em;
 }
 
 .collapsed {
 	width: var(--sidebare-width-collapsed);
+}
+
+.navigateLinks {
+	display: grid;
+	grid-auto-rows: max-content;
+	grid-row-gap: 0.8em;
+}
+
+.navLinkContent {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1.5em;
+	grid-auto-columns: max-content;
+	grid-column-gap: 1em;
+	align-items: center;
+}
+
+.collapsed .navigateLinks {
+	justify-content: center;
+}
+
+.collapsed .navLinkContent span {
+	display: none;
+}
+
+.collapseBtn {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	transform: translate(100%, -100%);
+}
+
+.switchers {
+	margin-top: auto;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: max-content;
+	justify-items: center;
+}
+
+.collapsed .switchers {
+	grid-auto-flow: row;
 }

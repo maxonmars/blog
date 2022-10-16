@@ -4,7 +4,7 @@ import {AboutPage} from 'pages/AboutPage';
 import {createElement} from 'react';
 import {NotFoundPage} from 'pages/NotFoundPage';
 
-const ROUTE_PATH = {
+export const ROUTE_PATH = {
 	MAIN: '/',
 	ABOUT: '/about',
 	NOT_FOUND: '*',

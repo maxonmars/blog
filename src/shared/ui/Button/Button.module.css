@@ -75,6 +75,9 @@
 	width: 3em;
 	height: 3em;
 	background-color: var(--bg-color);
+	display: grid;
+	justify-content: center;
+	align-content: center;
 }
 
 .square.inverted {
