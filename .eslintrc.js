@@ -35,13 +35,19 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react', 'i18next'],
+	plugins: [
+		'react',
+		'i18next',
+		'react-hooks',
+	],
 	rules: {
 		'i18next/no-literal-string': 1,
 		'capitalized-comments': 'off',
 		'arrow-body-style': 'off',
 		'spaced-comment': 'off',
 		'jsx-quotes': ['error', 'prefer-double'],
+		'react-hooks/rules-of-hooks': 'error',
+		'react-hooks/exhaustive-deps': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,
