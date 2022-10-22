@@ -21,3 +21,4 @@ node_modules
 .loki/report.html
 
 # Canceled GH Actions
+.github
