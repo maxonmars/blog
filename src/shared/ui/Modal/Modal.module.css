@@ -33,34 +33,34 @@
 
 /* Animation */
 
-.contentAppear {
+._contentAppear {
 	opacity: 0;
 	transform: scale(0.1);
 }
 
-.contentAppearActive {
+._contentAppearActive {
 	opacity: 1;
 	transform: scale(1);
 	transition: opacity 300ms, transform 300ms;
 	transition-delay: 500ms;
 }
 
-.contentExit {
+._contentExit {
 	opacity: 1;
 	transform: scale(1);
 }
 
-.contentExitActive {
+._contentExitActive {
 	opacity: 0;
 	transform: scale(0.1);
 	transition: opacity 300ms, transform 300ms;
 }
 
-.overlayAppearActive {
+._overlayAppearActive {
 	animation: unfold-in 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 
-.overlayExitActive {
+._overlayExitActive {
 	animation: unfold-out 1s 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
 }
 

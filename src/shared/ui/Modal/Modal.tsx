@@ -26,7 +26,7 @@ const contentAnimation = {
 	exitActive: module.contentExitActive,
 };
 
-const ANIMATION_TIME = 1000;
+const ANIMATION_TIME = 0;
 
 export const Modal = ({isOpened, children, onClose, title}: ModalProps) => {
 	const [isClose, setIsClose] = useState(false);
