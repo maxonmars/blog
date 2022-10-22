@@ -9,7 +9,7 @@ const MainPage = ({className}: MainPageProps) => {
 
 	return (
 		<div>
-			{t('Главная')}
+			{t('mainPage:Главная')}
 		</div>
 	);
 };

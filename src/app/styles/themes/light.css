@@ -1,4 +1,4 @@
-.app.light {
+body[data-theme="light"] {
 	--bg-color: #e9e9ef;
 	--bg-color-inverted: #002564;
 	--primary-color: #0e40c5;

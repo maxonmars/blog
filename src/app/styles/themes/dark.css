@@ -1,4 +1,4 @@
-.app.dark {
+body[data-theme="dark"] {
 	--bg-color: #002564;
 	--bg-color-inverted: #e9e9ef;
 	--primary-color: #09bd09;

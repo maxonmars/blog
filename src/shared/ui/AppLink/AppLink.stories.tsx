@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {AppLink} from './AppLink';
-import {themDecorator} from 'shared/lib/storybook/ThemDecorator';
+import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 
 type StoryType = ComponentStory<typeof AppLink>;
@@ -26,4 +26,4 @@ Main.args = {
 export const Inverted = Template.bind({}) as StoryType;
 Inverted.args = {
 };
-Inverted.decorators = [themDecorator(Theme.DARK)];
+Inverted.decorators = [themeDecorator(Theme.DARK)];

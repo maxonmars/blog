@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Button, ButtonRadius, ButtonSize, ButtonVariant} from './Button';
-import {themDecorator} from 'shared/lib/storybook/ThemDecorator';
+import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 
 type StoryType = ComponentStory<typeof Button>;
@@ -95,7 +95,7 @@ OutlineWithDarkTheme.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 };
-OutlineWithDarkTheme.decorators = [themDecorator(Theme.DARK)];
+OutlineWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
 export const OutlineInvertedWithDarkTheme = Template.bind({}) as StoryType;
 OutlineInvertedWithDarkTheme.args = {
@@ -103,7 +103,7 @@ OutlineInvertedWithDarkTheme.args = {
 	children: 'click me',
 	inverted: true,
 };
-OutlineInvertedWithDarkTheme.decorators = [themDecorator(Theme.DARK)];
+OutlineInvertedWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
 export const Subtle = Template.bind({}) as StoryType;
 Subtle.args = {
@@ -136,7 +136,7 @@ FilledWithDarkTheme.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',
 };
-FilledWithDarkTheme.decorators = [themDecorator(Theme.DARK)];
+FilledWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
 export const FilledUppercaseCompactInvertedWithDarkTheme = Template.bind({}) as StoryType;
 FilledUppercaseCompactInvertedWithDarkTheme.args = {
@@ -146,4 +146,4 @@ FilledUppercaseCompactInvertedWithDarkTheme.args = {
 	compact: true,
 	inverted: true,
 };
-FilledUppercaseCompactInvertedWithDarkTheme.decorators = [themDecorator(Theme.DARK)];
+FilledUppercaseCompactInvertedWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];

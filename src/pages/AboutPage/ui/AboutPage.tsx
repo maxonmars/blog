@@ -9,7 +9,7 @@ const AboutPage = ({className}: AboutPageProps) => {
 
 	return (
 		<div className={className}>
-			{t('О сайте')}
+			{t('aboutPage:О_сайте')}
 		</div>
 	);
 };

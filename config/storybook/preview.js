@@ -1,6 +1,5 @@
-import {addDecorator} from '@storybook/react';
 import {StyleDecorator} from 'shared/lib/storybook/StyleDecorator';
-import {themDecorator} from 'shared/lib/storybook/ThemDecorator';
+import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {RouterDecorator} from 'shared/lib/storybook/RouterDecorator';
 
@@ -14,6 +13,8 @@ export const parameters = {
 	},
 };
 
-addDecorator(StyleDecorator);
-addDecorator(themDecorator(Theme.LIGHT));
-addDecorator(RouterDecorator);
+export const decorators = [
+	StyleDecorator,
+	themeDecorator(Theme.LIGHT),
+	RouterDecorator,
+];

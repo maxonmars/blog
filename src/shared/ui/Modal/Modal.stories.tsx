@@ -1,19 +1,27 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import MainPage from './MainPage';
+import {Modal} from './Modal';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 
-type StoryType = ComponentStory<typeof MainPage>;
+type StoryType = ComponentStory<typeof Modal>;
 
 export default {
-	title: 'pages/MainPage',
-	component: MainPage,
+	title: 'shared/Modal',
+	component: Modal,
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
-} as ComponentMeta<typeof MainPage>;
+	args: {
+		isOpened: true,
+		children: 'Lorem10',
+		title: 'MODAL HEADER',
+		onClose() {
+			console.log('on close');
+		},
+	},
+} as ComponentMeta<typeof Modal>;
 
-const Template: StoryType = args => <MainPage {...args}/>;
+const Template: StoryType = args => <Modal {...args}/>;
 
 export const Light = Template.bind({}) as StoryType;
 Light.args = {
