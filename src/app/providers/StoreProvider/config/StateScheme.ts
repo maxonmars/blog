@@ -1,3 +1,5 @@
+import type {UserScheme} from 'entities/User';
+
 export interface StateScheme {
-	value?: number;
+	user: UserScheme;
 }
