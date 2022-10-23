@@ -23,7 +23,8 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:ui:up": "npx loki update --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127",
-    "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static"
+    "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -87,7 +88,8 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.6.1",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.0"
+    "webpack-dev-server": "^4.11.0",
+    "husky": "^8.0.0"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
