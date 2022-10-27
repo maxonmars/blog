@@ -1,17 +1,20 @@
 import module from './Modal.module.css';
 import type {ReactNode} from 'react';
-import {useCallback, useEffect, useState} from 'react';
+import {useEffect, useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {Portal} from 'shared/ui/Portal/Portal';
 import {Overlay} from 'shared/ui/Overlay/Overlay';
 import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 import {IcoThinXmark} from 'shared/assets/icons';
+import type {TitleOrder} from 'shared/ui/Title/Title';
+import {Title} from 'shared/ui/Title/Title';
 
 interface ModalProps {
 	children: ReactNode;
 	isOpened: boolean;
 	onClose: () => void;
 	title: string | ReactNode;
+	titleOrder?: TitleOrder;
 }
 
 const overlayAnimation = {
@@ -28,7 +31,7 @@ const contentAnimation = {
 
 const ANIMATION_TIME = 1000;
 
-export const Modal = ({isOpened, children, onClose, title}: ModalProps) => {
+export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalProps) => {
 	const [isClose, setIsClose] = useState(false);
 
 	useEffect(() => {
@@ -76,7 +79,7 @@ export const Modal = ({isOpened, children, onClose, title}: ModalProps) => {
 				>
 					<div className={module.modal}>
 						<div className={module.header}>
-							<div>{title}</div>
+							<Title order={titleOrder}>{title}</Title>
 							<Button
 								onClick={handleClose}
 								variant={ButtonVariant.SUBTLE}

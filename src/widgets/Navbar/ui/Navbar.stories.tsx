@@ -2,6 +2,7 @@ import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Navbar} from './Navbar';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
+import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
 
 type StoryType = ComponentStory<typeof Navbar>;
 
@@ -18,8 +19,9 @@ const Template: StoryType = args => <Navbar {...args}/>;
 export const Light = Template.bind({}) as StoryType;
 Light.args = {
 };
+Light.decorators = [storeDecorator({login: {username: 'ds', password: 'dw1d'}})];
 
 export const Dark = Template.bind({}) as StoryType;
 Dark.args = {
 };
-Dark.decorators = [themeDecorator(Theme.DARK)];
+Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({login: {username: 'ds', password: 'dw1d'}})];

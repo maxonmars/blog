@@ -7,6 +7,10 @@
 	cursor: pointer;
 }
 
+.button:disabled {
+	opacity: 0.5;
+}
+
 .inverted {
 	color: var(--primary-color-inverted);
 	border-color: var(--primary-color-inverted);

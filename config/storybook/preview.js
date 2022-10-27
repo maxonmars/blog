@@ -2,6 +2,7 @@ import {StyleDecorator} from 'shared/lib/storybook/StyleDecorator';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {RouterDecorator} from 'shared/lib/storybook/RouterDecorator';
+import {translationDecorator} from 'shared/lib/storybook/TranslationDecorator';
 
 export const parameters = {
 	actions: {argTypesRegex: '^on[A-Z].*'},
@@ -17,4 +18,5 @@ export const decorators = [
 	StyleDecorator,
 	themeDecorator(Theme.LIGHT),
 	RouterDecorator,
+	translationDecorator,
 ];

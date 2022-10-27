@@ -1,0 +1,23 @@
+.text {
+	text-decoration: none;
+}
+
+.default {
+	color: var(--secondary-color);
+}
+
+.red {
+	color: crimson;
+}
+
+.sm {
+	font-size: 0.8rem;
+}
+
+.md {
+	font-size: 1rem;
+}
+
+.lg {
+	font-size: 1.2rem;
+}
