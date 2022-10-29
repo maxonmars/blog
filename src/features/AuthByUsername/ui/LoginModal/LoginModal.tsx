@@ -1,6 +1,8 @@
 import {Modal} from 'shared/ui/Modal/Modal';
-import {LoginForm} from '../LoginForm/LoginForm';
+import {LoginFormAsync} from '../LoginForm/LoginForm.async';
 import {useTranslation} from 'react-i18next';
+import {Suspense} from 'react';
+import {Loader} from 'shared/ui/Loader/Loader';
 
 interface LoginModalProps {
 	isOpen: boolean;
@@ -15,7 +17,9 @@ export const LoginModal = ({isOpen, onClose}: LoginModalProps) => {
 			onClose={onClose}
 			titleOrder={3}
 			title={t('Пожалуйста авторизируйтесь')}>
-			<LoginForm/>
+			<Suspense fallback={<Loader/>}>
+				<LoginFormAsync/>
+			</Suspense>
 		</Modal>
 	);
 };

@@ -3,20 +3,33 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {Button, ButtonVariant} from 'shared/ui/Button/Button';
 import {Input} from 'shared/ui/Input/Input';
-import {loginActions} from '../../model/slice/LoginSlice';
-import {selectLoginState} from '../../model/selectors/selectLoginState';
+import {loginActions, loginReducer} from '../../model/slice/LoginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername';
-import {useAppDispatch, useAppSelector} from 'shared/hooks';
+import {useAppDispatch} from 'shared/hooks';
 import {Text, TextSize, TextVariant} from 'shared/ui/Text/Text';
+import {useSelector} from 'react-redux';
+import {selectLoginUsername} from '../../model/selectors/selectLoginUsername';
+import {selectLoginPassword} from '../../model/selectors/selectLoginPassword';
+import {selectLoginIsLoading} from '../../model/selectors/selectLoginIsLoading';
+import {selectLoginError} from '../../model/selectors/selectLoginError';
+import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
-interface LoginFormProps {
+export interface LoginFormProps {
 	className?: string;
 }
 
-export const LoginForm = ({className}: LoginFormProps) => {
+const initialReducers: ReducersList = {
+	login: loginReducer,
+};
+
+const LoginForm = ({className}: LoginFormProps) => {
 	const {t} = useTranslation();
 	const dispatch = useAppDispatch();
-	const {username, password, isLoading, error} = useAppSelector(selectLoginState);
+	const username = useSelector(selectLoginUsername);
+	const password = useSelector(selectLoginPassword);
+	const isLoading = useSelector(selectLoginIsLoading);
+	const error = useSelector(selectLoginError);
 
 	const handleUsernameChange = (username: string) => {
 		dispatch(loginActions.setUsername(username));
@@ -31,25 +44,29 @@ export const LoginForm = ({className}: LoginFormProps) => {
 	};
 
 	return (
-		<div className={classNames([module.loginForm, className])}>
-			{error && <Text size={TextSize.SM} variant={TextVariant.RED}>{error}</Text>}
-			<Input
-				onChange={handleUsernameChange}
-				autoFocus
-				type="text"
-				value={username}
-				placeholder={t('введите имя пользователя')}/>
-			<Input
-				onChange={handlePasswordChange}
-				type="text"
-				value={password}
-				placeholder={t('введите пароль')}/>
-			<Button
-				disabled={isLoading}
-				onClick={handleLogin}
-				variant={ButtonVariant.OUTLINE}>
-				{t('Войти')}
-			</Button>
-		</div>
+		<DynamicModuleLoader reducers={initialReducers}>
+			<div className={classNames([module.loginForm, className])}>
+				{error && <Text size={TextSize.SM} variant={TextVariant.RED}>{error}</Text>}
+				<Input
+					onChange={handleUsernameChange}
+					autoFocus
+					type="text"
+					value={username}
+					placeholder={t('введите имя пользователя')}/>
+				<Input
+					onChange={handlePasswordChange}
+					type="text"
+					value={password}
+					placeholder={t('введите пароль')}/>
+				<Button
+					disabled={isLoading}
+					onClick={handleLogin}
+					variant={ButtonVariant.OUTLINE}>
+					{t('Войти')}
+				</Button>
+			</div>
+		</DynamicModuleLoader>
 	);
 };
+
+export default LoginForm;

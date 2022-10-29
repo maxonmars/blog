@@ -1,5 +1,5 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import {LoginForm} from './LoginForm';
+import LoginForm from './LoginForm';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
