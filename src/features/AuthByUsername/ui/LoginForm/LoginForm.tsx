@@ -8,10 +8,10 @@ import {loginByUsername} from '../../model/services/loginByUsername';
 import {useAppDispatch} from 'shared/hooks';
 import {Text, TextSize, TextVariant} from 'shared/ui/Text/Text';
 import {useSelector} from 'react-redux';
-import {selectLoginUsername} from '../../model/selectors/selectLoginUsername';
-import {selectLoginPassword} from '../../model/selectors/selectLoginPassword';
-import {selectLoginIsLoading} from '../../model/selectors/selectLoginIsLoading';
-import {selectLoginError} from '../../model/selectors/selectLoginError';
+import {selectLoginUsername} from '../../model/selectors/selectLoginUsername/selectLoginUsername';
+import {selectLoginPassword} from '../../model/selectors/selectLoginPassword/selectLoginPassword';
+import {selectLoginIsLoading} from '../../model/selectors/selectLoginIsLoading/selectLoginIsLoading';
+import {selectLoginError} from '../../model/selectors/selectLoginError/selectLoginError';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
@@ -46,7 +46,9 @@ const LoginForm = ({className}: LoginFormProps) => {
 	return (
 		<DynamicModuleLoader reducers={initialReducers}>
 			<div className={classNames([module.loginForm, className])}>
-				{error && <Text size={TextSize.SM} variant={TextVariant.RED}>{error}</Text>}
+				{error && <Text size={TextSize.SM} variant={TextVariant.RED}>
+					{t('неверный пароль или имя пользователя')}
+				</Text>}
 				<Input
 					onChange={handleUsernameChange}
 					autoFocus

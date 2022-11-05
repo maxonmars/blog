@@ -26,7 +26,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
 			thunkAPI.dispatch(userActions.setAuthData(response.data));
 			return response.data;
 		} catch (e: unknown) {
-			return thunkAPI.rejectWithValue('неверный логин или пароль');
+			return thunkAPI.rejectWithValue('error');
 		}
 	},
 );

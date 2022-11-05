@@ -67,6 +67,7 @@ const jestConfig: JestConfigWithTsJest = {
 	moduleNameMapper: {
 		'\\.css$': 'identity-obj-proxy',
 		'\\.svg$': '<rootDir>config/jest/__mocks__/svg.tsx',
+		'entities/(.*)': '<rootDir>src/entities/$1',
 	},
 
 	// A map from regular expressions to paths to transformers
