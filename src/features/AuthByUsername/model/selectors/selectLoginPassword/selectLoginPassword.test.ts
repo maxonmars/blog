@@ -1,6 +1,6 @@
 import type {DeepPartial} from '@reduxjs/toolkit';
 import type {StateScheme} from 'app/providers/StoreProvider';
-import {selectLoginPassword} from 'features/AuthByUsername/model/selectors/selectLoginPassword/selectLoginPassword';
+import {selectLoginPassword} from './selectLoginPassword';
 
 describe('selectLoginPassword', () => {
 	test('should be password string', () => {

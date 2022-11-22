@@ -1,6 +1,6 @@
 import type {DeepPartial} from '@reduxjs/toolkit';
 import type {StateScheme} from 'app/providers/StoreProvider';
-import {selectLoginUsername} from 'features/AuthByUsername/model/selectors/selectLoginUsername/selectLoginUsername';
+import {selectLoginUsername} from './selectLoginUsername';
 
 describe('selectLoginUsername', () => {
 	test('should be username string', () => {

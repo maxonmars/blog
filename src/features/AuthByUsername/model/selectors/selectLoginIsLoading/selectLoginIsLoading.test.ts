@@ -1,6 +1,6 @@
 import type {DeepPartial} from '@reduxjs/toolkit';
 import type {StateScheme} from 'app/providers/StoreProvider';
-import {selectLoginIsLoading} from 'features/AuthByUsername/model/selectors/selectLoginIsLoading/selectLoginIsLoading';
+import {selectLoginIsLoading} from './selectLoginIsLoading';
 
 describe('selectLoginIsLoading', () => {
 	test('should be true', () => {

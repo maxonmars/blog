@@ -1,7 +1,7 @@
 import type {DeepPartial} from '@reduxjs/toolkit';
-import type {LoginScheme} from 'features/AuthByUsername';
-import {loginActions, loginReducer} from 'features/AuthByUsername/model/slice/LoginSlice';
-import {loginByUsername} from 'features/AuthByUsername/model/services/loginByUsername';
+import type {LoginScheme} from '../types/LoginScheme';
+import {loginActions, loginReducer} from './LoginSlice';
+import {loginByUsername} from '../services/loginByUsername';
 
 describe('LoginSlice', () => {
 	test('should be changed username', () => {
@@ -30,6 +30,13 @@ describe('LoginSlice', () => {
 			isLoading: true,
 		};
 		expect(loginReducer(state as LoginScheme, loginByUsername.fulfilled))
+			.toEqual({isLoading: false});
+	});
+	test('should be changed isLoading if asyncThunk rejected', () => {
+		const state: DeepPartial<LoginScheme> = {
+			isLoading: true,
+		};
+		expect(loginReducer(state as LoginScheme, loginByUsername.rejected))
 			.toEqual({isLoading: false});
 	});
 });

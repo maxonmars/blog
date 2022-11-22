@@ -1,6 +1,6 @@
 import type {DeepPartial} from '@reduxjs/toolkit';
 import type {StateScheme} from 'app/providers/StoreProvider';
-import {selectLoginError} from 'features/AuthByUsername/model/selectors/selectLoginError/selectLoginError';
+import {selectLoginError} from './selectLoginError';
 
 describe('selectLoginError', () => {
 	test('should be string error', () => {
