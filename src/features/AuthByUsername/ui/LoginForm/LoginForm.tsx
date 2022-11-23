@@ -40,13 +40,11 @@ const LoginForm = ({className, onCloseModal}: LoginFormProps) => {
 		dispatch(loginActions.setPassword(password));
 	};
 
-	const handleLogin = () => {
-		void dispatch(loginByUsername({username, password}))
-			.then(res => {
-				if (res.meta.requestStatus === 'fulfilled') {
-					onCloseModal();
-				}
-			});
+	const handleLogin = async () => {
+		const result = await dispatch(loginByUsername({username, password}));
+		if (result.meta.requestStatus === 'fulfilled') {
+			onCloseModal();
+		}
 	};
 
 	return (
