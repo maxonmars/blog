@@ -35,27 +35,24 @@ export const Navbar = ({className}: NavbarProps) => {
 		dispatch(userActions.logout());
 	};
 
-	if (authData) {
-		return (
-			<div className={classNames([module.navbar, className])}>
-				<div className={module.logo}>LOGO</div>
-				<div className={module.links}>
-					<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleLogout}>
-						{t('Выйти')}
-					</Button>
-					<LoginModal onClose={handleCloseAuthModal} isOpen={isOpenAuthModal}/>
-				</div>
-			</div>
-		);
-	}
+	const isAuth = Boolean(authData);
 
 	return (
 		<div className={classNames([module.navbar, className])}>
 			<div className={module.logo}>LOGO</div>
 			<div className={module.links}>
-				<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleOpenAuthModal}>
-					{t('Войти')}
-				</Button>
+				{isAuth
+					? (
+						<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleLogout}>
+							{t('Выйти')}
+						</Button>
+					)
+					: (
+						<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleOpenAuthModal}>
+							{t('Войти')}
+						</Button>
+					)
+				}
 				<LoginModal onClose={handleCloseAuthModal} isOpen={isOpenAuthModal}/>
 			</div>
 		</div>

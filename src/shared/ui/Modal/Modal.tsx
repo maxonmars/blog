@@ -9,8 +9,12 @@ import {IcoThinXmark} from 'shared/assets/icons';
 import type {TitleOrder} from 'shared/ui/Title/Title';
 import {Title} from 'shared/ui/Title/Title';
 
+type ModalChildren =
+	| ReactNode
+	| ((onClose: () => void) => ReactNode);
+
 interface ModalProps {
-	children: ReactNode;
+	children: ModalChildren;
 	isOpened: boolean;
 	onClose: () => void;
 	title: string | ReactNode;
@@ -56,6 +60,11 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 		setIsClose(true);
 	};
 
+	const handleExited = () => {
+		onClose();
+		setIsClose(false);
+	};
+
 	return (
 		<Portal>
 			<div className={module.portalLayer}>
@@ -72,10 +81,7 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 					in={!isClose}
 					timeout={ANIMATION_TIME}
 					classNames={contentAnimation}
-					onExited={() => {
-						onClose();
-						setIsClose(false);
-					}}
+					onExited={handleExited}
 				>
 					<div className={module.modal}>
 						<div className={module.header}>
@@ -88,7 +94,10 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 								<IcoThinXmark/>
 							</Button>
 						</div>
-						{children}
+						{typeof children === 'function'
+							? children(handleClose)
+							: children
+						}
 					</div>
 				</CSSTransition>
 			</div>

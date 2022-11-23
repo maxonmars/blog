@@ -17,13 +17,14 @@ import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/Dyn
 
 export interface LoginFormProps {
 	className?: string;
+	onCloseModal: () => void;
 }
 
 const initialReducers: ReducersList = {
 	login: loginReducer,
 };
 
-const LoginForm = ({className}: LoginFormProps) => {
+const LoginForm = ({className, onCloseModal}: LoginFormProps) => {
 	const {t} = useTranslation();
 	const dispatch = useAppDispatch();
 	const username = useSelector(selectLoginUsername);
@@ -40,7 +41,12 @@ const LoginForm = ({className}: LoginFormProps) => {
 	};
 
 	const handleLogin = () => {
-		void dispatch(loginByUsername({username, password}));
+		void dispatch(loginByUsername({username, password}))
+			.then(res => {
+				if (res.meta.requestStatus === 'fulfilled') {
+					onCloseModal();
+				}
+			});
 	};
 
 	return (
