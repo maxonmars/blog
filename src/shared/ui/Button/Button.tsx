@@ -1,6 +1,7 @@
 import module from './Button.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {ButtonHTMLAttributes, FC} from 'react';
+import type {ButtonHTMLAttributes} from 'react';
+import {memo} from 'react';
 
 export enum ButtonVariant {
 	SUBTLE = 'subtle',
@@ -32,7 +33,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	inverted?: boolean;
 }
 
-export const Button: FC<ButtonProps> = ({
+export const Button = memo(({
 	className,
 	variant = ButtonVariant.DEFAULT,
 	square,
@@ -43,7 +44,7 @@ export const Button: FC<ButtonProps> = ({
 	uppercase,
 	children,
 	...restProps
-}) => {
+}: ButtonProps) => {
 	const buttonClass = classNames(
 		[
 			module.button,
@@ -68,4 +69,6 @@ export const Button: FC<ButtonProps> = ({
 			{children}
 		</button>
 	);
-};
+});
+
+Button.displayName = 'Button';
