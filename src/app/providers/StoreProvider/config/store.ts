@@ -33,8 +33,5 @@ export const createReduxStore = (
 		}),
 	});
 
-	// @ts-expect-error
-	store.reducerManager = reducerManager;
-
-	return store;
+	return Object.assign(store, {reducerManager});
 };

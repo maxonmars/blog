@@ -14,7 +14,7 @@ export default {
 	},
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: StoryType = args => <ProfilePage {...args}/>;
+const Template: StoryType = () => <ProfilePage/>;
 
 export const Light = Template.bind({});
 Light.args = {

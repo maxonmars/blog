@@ -11,11 +11,7 @@ const reducers: ReducersList = {
 	profile: profileReducer,
 };
 
-interface ProfilePageProps {
-	className?: string;
-}
-
-const ProfilePage = ({className}: ProfilePageProps) => {
+const ProfilePage = () => {
 	const {t} = useTranslation();
 	const dispatch = useAppDispatch();
 
@@ -25,7 +21,7 @@ const ProfilePage = ({className}: ProfilePageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
-			<div className={classNames([module.profilePage, className])}>
+			<div className={classNames([module.profilePage])}>
 				<ProfileCard/>
 			</div>
 		</DynamicModuleLoader>
