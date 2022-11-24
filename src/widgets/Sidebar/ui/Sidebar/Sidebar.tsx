@@ -3,23 +3,16 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import React, {useState} from 'react';
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {LangSwitcher} from 'widgets/LangSwitcher';
-import {useTranslation} from 'react-i18next';
 import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
-import {AppLink, AppLinkVariant} from 'shared/ui/AppLink/AppLink';
-import {ROUTE_PATH} from 'app/providers/router';
-import {
-	IcoThinChevronLeft,
-	IcoThinChevronRight,
-	IcoThinHouse,
-	IcoThinSquareList,
-} from 'shared/assets/icons';
+import {IcoThinChevronLeft, IcoThinChevronRight} from 'shared/assets/icons';
+import {SidebarItemList} from '../../model/items';
+import {SidebarItem} from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
 	className?: string;
 }
 
 export const Sidebar = ({className}: SidebarProps) => {
-	const {t} = useTranslation();
 	const [isCollapsed, setIsCollapsed] = useState(false);
 
 	const onToggle = () => {
@@ -31,22 +24,9 @@ export const Sidebar = ({className}: SidebarProps) => {
 			data-testid="sidebar"
 			className={classNames([module.sidebar, className], {[module.collapsed]: isCollapsed})}>
 			<div className={module.navigateLinks}>
-				<AppLink
-					to={ROUTE_PATH.MAIN}
-					variant={AppLinkVariant.INVERTED}>
-					<div className={module.navLinkContent}>
-						<IcoThinHouse className={module.appLinkIcon}/>
-						<span>{t('Главная страница')}</span>
-					</div>
-				</AppLink>
-				<AppLink
-					to={ROUTE_PATH.ABOUT}
-					variant={AppLinkVariant.INVERTED}>
-					<div className={module.navLinkContent}>
-						<IcoThinSquareList className={module.appLinkIcon}/>
-						<span>{t('О сайте')}</span>
-					</div>
-				</AppLink>
+				{SidebarItemList.map(item => {
+					return <SidebarItem key={item.path} isCollapsed={isCollapsed} item={item}/>;
+				})}
 			</div>
 			<Button
 				data-testid="sidebar-toggle"

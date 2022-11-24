@@ -1,0 +1,12 @@
+.navLinkContent {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1.5em;
+	grid-auto-columns: max-content;
+	grid-column-gap: 1em;
+	align-items: center;
+}
+
+.navLinkContent.collapsed span {
+	display: none;
+}

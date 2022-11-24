@@ -14,6 +14,7 @@ import {selectLoginIsLoading} from '../../model/selectors/selectLoginIsLoading/s
 import {selectLoginError} from '../../model/selectors/selectLoginError/selectLoginError';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {useCallback} from 'react';
 
 export interface LoginFormProps {
 	className?: string;
@@ -32,13 +33,13 @@ const LoginForm = ({className, onCloseModal}: LoginFormProps) => {
 	const isLoading = useSelector(selectLoginIsLoading);
 	const error = useSelector(selectLoginError);
 
-	const handleUsernameChange = (username: string) => {
+	const handleUsernameChange = useCallback((username: string) => {
 		dispatch(loginActions.setUsername(username));
-	};
+	}, [dispatch]);
 
-	const handlePasswordChange = (password: string) => {
+	const handlePasswordChange = useCallback((password: string) => {
 		dispatch(loginActions.setPassword(password));
-	};
+	}, [dispatch]);
 
 	const handleLogin = async () => {
 		const result = await dispatch(loginByUsername({username, password}));

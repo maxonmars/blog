@@ -1,6 +1,6 @@
 import module from './Button.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {ButtonHTMLAttributes} from 'react';
+import type {ButtonHTMLAttributes, ReactNode} from 'react';
 import {memo} from 'react';
 
 export enum ButtonVariant {
@@ -31,6 +31,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	uppercase?: boolean;
 	compact?: boolean;
 	inverted?: boolean;
+	children: ReactNode;
 }
 
 export const Button = memo(({

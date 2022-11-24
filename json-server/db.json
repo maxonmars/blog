@@ -7,7 +7,16 @@
   "comments": [
     { "id": "1", "body": "some comment", "postId": "1" }
   ],
-  "profile": { "name": "typicode" },
+  "profile": {
+    "firstName": "Max",
+    "lastName": "Mars",
+    "age": 34,
+    "currency": "RUB",
+    "country": "Russia",
+    "city": "Novosibirsk",
+    "username": "MaxOnMars",
+    "avatar": "https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg"
+  },
   "users": [
     {
       "id": "1",

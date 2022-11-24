@@ -3,10 +3,13 @@ import {MainPage} from 'pages/MainPage';
 import {AboutPage} from 'pages/AboutPage';
 import {createElement} from 'react';
 import {NotFoundPage} from 'pages/NotFoundPage';
+import {ProfilePage} from 'pages/ProfilePage';
 
 export const ROUTE_PATH = {
 	MAIN: '/',
 	ABOUT: '/about',
+	PROFILE: '/profile',
+	// last
 	NOT_FOUND: '*',
 } as const;
 
@@ -27,6 +30,11 @@ const routeConfig: Record<PathKey, PathValue> = ({
 		path: ROUTE_PATH.ABOUT,
 		element: createElement(AboutPage),
 	},
+	PROFILE: {
+		path: ROUTE_PATH.PROFILE,
+		element: createElement(ProfilePage),
+	},
+	//last
 	NOT_FOUND: {
 		path: '*',
 		element: createElement(NotFoundPage),
