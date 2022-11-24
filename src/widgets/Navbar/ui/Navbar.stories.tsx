@@ -16,12 +16,12 @@ export default {
 
 const Template: StoryType = args => <Navbar {...args}/>;
 
-export const Light = Template.bind({}) as StoryType;
+export const Light = Template.bind({});
 Light.args = {
 };
 Light.decorators = [storeDecorator({login: {username: 'ds', password: 'dw1d'}})];
 
-export const Dark = Template.bind({}) as StoryType;
+export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({login: {username: 'ds', password: 'dw1d'}})];

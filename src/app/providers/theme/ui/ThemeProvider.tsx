@@ -9,7 +9,7 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: FC<ThemeProviderProps> = ({children, initialTheme}) => {
-	const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+	const [theme, setTheme] = useState<Theme>(initialTheme ?? defaultTheme);
 
 	document.body.setAttribute(`data-${LOCAL_STORAGE_THEME_KEY}`, theme);
 	// useEffect(() => {

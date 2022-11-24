@@ -19,20 +19,20 @@ const Template: StoryType = args => (
 	</div>
 );
 
-export const Default = Template.bind({}) as StoryType;
+export const Default = Template.bind({});
 Default.args = {
 	variant: ButtonVariant.DEFAULT,
 	children: 'click me',
 };
 
-export const DefaultSquare = Template.bind({}) as StoryType;
+export const DefaultSquare = Template.bind({});
 DefaultSquare.args = {
 	variant: ButtonVariant.DEFAULT,
 	children: '>',
 	square: true,
 };
 
-export const DefaultSquareLarge = Template.bind({}) as StoryType;
+export const DefaultSquareLarge = Template.bind({});
 DefaultSquareLarge.args = {
 	variant: ButtonVariant.DEFAULT,
 	children: '>',
@@ -40,7 +40,7 @@ DefaultSquareLarge.args = {
 	size: ButtonSize.LG,
 };
 
-export const DefaultSquareSmall = Template.bind({}) as StoryType;
+export const DefaultSquareSmall = Template.bind({});
 DefaultSquareSmall.args = {
 	variant: ButtonVariant.DEFAULT,
 	children: '>',
@@ -48,41 +48,41 @@ DefaultSquareSmall.args = {
 	size: ButtonSize.SM,
 };
 
-export const Outline = Template.bind({}) as StoryType;
+export const Outline = Template.bind({});
 Outline.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 };
 
-export const OutlineSmall = Template.bind({}) as StoryType;
+export const OutlineSmall = Template.bind({});
 OutlineSmall.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 	size: ButtonSize.SM,
 };
 
-export const OutlineLarge = Template.bind({}) as StoryType;
+export const OutlineLarge = Template.bind({});
 OutlineLarge.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 	size: ButtonSize.LG,
 };
 
-export const OutlineRadiusS = Template.bind({}) as StoryType;
+export const OutlineRadiusS = Template.bind({});
 OutlineRadiusS.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 	radius: ButtonRadius.SM,
 };
 
-export const OutlineRadiusL = Template.bind({}) as StoryType;
+export const OutlineRadiusL = Template.bind({});
 OutlineRadiusL.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 	radius: ButtonRadius.LG,
 };
 
-export const OutlineInvertedRadiusL = Template.bind({}) as StoryType;
+export const OutlineInvertedRadiusL = Template.bind({});
 OutlineInvertedRadiusL.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
@@ -90,14 +90,14 @@ OutlineInvertedRadiusL.args = {
 	inverted: true,
 };
 
-export const OutlineWithDarkTheme = Template.bind({}) as StoryType;
+export const OutlineWithDarkTheme = Template.bind({});
 OutlineWithDarkTheme.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 };
 OutlineWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
-export const OutlineInvertedWithDarkTheme = Template.bind({}) as StoryType;
+export const OutlineInvertedWithDarkTheme = Template.bind({});
 OutlineInvertedWithDarkTheme.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
@@ -105,40 +105,40 @@ OutlineInvertedWithDarkTheme.args = {
 };
 OutlineInvertedWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
-export const Subtle = Template.bind({}) as StoryType;
+export const Subtle = Template.bind({});
 Subtle.args = {
 	variant: ButtonVariant.SUBTLE,
 	children: 'click me',
 };
 
-export const Filled = Template.bind({}) as StoryType;
+export const Filled = Template.bind({});
 Filled.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',
 };
 
-export const FilledCompact = Template.bind({}) as StoryType;
+export const FilledCompact = Template.bind({});
 FilledCompact.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',
 	compact: true,
 };
 
-export const FilledUppercase = Template.bind({}) as StoryType;
+export const FilledUppercase = Template.bind({});
 FilledUppercase.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',
 	uppercase: true,
 };
 
-export const FilledWithDarkTheme = Template.bind({}) as StoryType;
+export const FilledWithDarkTheme = Template.bind({});
 FilledWithDarkTheme.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',
 };
 FilledWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
-export const FilledUppercaseCompactInvertedWithDarkTheme = Template.bind({}) as StoryType;
+export const FilledUppercaseCompactInvertedWithDarkTheme = Template.bind({});
 FilledUppercaseCompactInvertedWithDarkTheme.args = {
 	variant: ButtonVariant.FILLED,
 	children: 'click me',

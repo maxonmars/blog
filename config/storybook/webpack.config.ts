@@ -1,6 +1,6 @@
 import path from 'path';
 import type {BuildPath} from '../build/types';
-import type {RuleSetRule, Configuration} from 'webpack';
+import type {RuleSetRule, Configuration, WebpackPluginInstance} from 'webpack';
 import {DefinePlugin} from 'webpack';
 
 const buildPath: BuildPath = {
@@ -10,7 +10,22 @@ const buildPath: BuildPath = {
 	src: path.resolve(__dirname, '..', '..', 'src'),
 };
 
-export default ({config}: {config: Configuration}) => {
+interface Resolve {
+	modules: string[];
+	extensions: string[];
+}
+
+interface Module {
+	rules: RuleSetRule[];
+}
+
+interface Config extends Configuration {
+	plugins: WebpackPluginInstance[];
+	resolve: Resolve;
+	module: Module;
+}
+
+export default ({config}: {config: Config}) => {
 	// disable whatever is already set to load SVGs
 	// add SVGR instead
 	// resolve absolute path

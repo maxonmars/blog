@@ -16,21 +16,21 @@ export default {
 
 const Template: StoryType = args => <Text {...args}/>;
 
-export const Default = Template.bind({}) as StoryType;
+export const Default = Template.bind({});
 Default.args = {
 };
 
-export const Red = Template.bind({}) as StoryType;
+export const Red = Template.bind({});
 Red.args = {
 	variant: TextVariant.RED,
 };
 
-export const Small = Template.bind({}) as StoryType;
+export const Small = Template.bind({});
 Small.args = {
 	size: TextSize.SM,
 };
 
-export const Large = Template.bind({}) as StoryType;
+export const Large = Template.bind({});
 Large.args = {
 	size: TextSize.LG,
 };

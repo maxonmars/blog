@@ -13,13 +13,13 @@ export default {
 	},
 } as ComponentMeta<typeof MainPage>;
 
-const Template: StoryType = args => <MainPage {...args}/>;
+const Template: StoryType = () => <MainPage/>;
 
-export const Light = Template.bind({}) as StoryType;
+export const Light = Template.bind({});
 Light.args = {
 };
 
-export const Dark = Template.bind({}) as StoryType;
+export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];

@@ -1,5 +1,5 @@
-import type {ReducersMapObject} from '@reduxjs/toolkit';
-import {configureStore, DeepPartial} from '@reduxjs/toolkit';
+import type {CombinedState, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import type {StateScheme} from './StateScheme';
 import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
@@ -20,7 +20,7 @@ export const createReduxStore = (
 	const reducerManager = createReducerManager(rootReducers);
 
 	const store = configureStore({
-		reducer: reducerManager.reduce,
+		reducer: reducerManager.reduce as Reducer<CombinedState<StateScheme>>,
 		devTools: __IS_DEV__,
 		preloadedState: initialState,
 		middleware: getDefaultMiddleware => getDefaultMiddleware({

@@ -1,0 +1,17 @@
+.profileCard {
+	display: grid;
+	grid-row-gap: 2em;
+	padding: 1em;
+	border: 2px solid var(--bg-color-inverted);
+}
+
+.header {
+	display: flex;
+	grid-column-gap: 1em;
+	align-items: center;
+}
+
+.content {
+	display: grid;
+	grid-row-gap: 1em;
+}

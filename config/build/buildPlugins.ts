@@ -23,5 +23,5 @@ export function buildPlugins({path, isDev, isHotRefresh, apiUrl}: BuildOptions):
 			openAnalyzer: false,
 		}),
 		isDev && isHotRefresh && new ReactRefreshPlugin(),
-	].filter(Boolean);
+	].filter(Boolean) as webpack.WebpackPluginInstance[];
 }

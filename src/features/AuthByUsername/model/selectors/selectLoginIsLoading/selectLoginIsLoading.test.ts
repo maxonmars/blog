@@ -1,4 +1,3 @@
-import type {DeepPartial} from '@reduxjs/toolkit';
 import type {StateScheme} from 'app/providers/StoreProvider';
 import {selectLoginIsLoading} from './selectLoginIsLoading';
 

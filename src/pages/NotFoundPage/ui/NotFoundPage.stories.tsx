@@ -15,11 +15,11 @@ export default {
 
 const Template: StoryType = args => <NotFoundPage {...args}/>;
 
-export const Light = Template.bind({}) as StoryType;
+export const Light = Template.bind({});
 Light.args = {
 };
 
-export const Dark = Template.bind({}) as StoryType;
+export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];

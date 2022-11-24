@@ -19,11 +19,11 @@ export default {
 
 const Template: StoryType = args => <AppLink {...args}/>;
 
-export const Main = Template.bind({}) as StoryType;
+export const Main = Template.bind({});
 Main.args = {
 };
 
-export const Inverted = Template.bind({}) as StoryType;
+export const Inverted = Template.bind({});
 Inverted.args = {
 };
 Inverted.decorators = [themeDecorator(Theme.DARK)];
