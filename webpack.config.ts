@@ -18,11 +18,14 @@ export default (env: BuildEnv) => {
 	const refresh = env.refresh || 'cold';
 	const isHotRefresh = refresh === 'hot';
 
+	const apiUrl = env.apiUrl || 'http://localhost:8000';
+
 	return buildWebpackConfig({
 		mode,
 		path: buildPath,
 		isDev,
 		isHotRefresh,
 		port: PORT,
+		apiUrl,
 	});
 };

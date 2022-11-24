@@ -15,10 +15,12 @@ export interface BuildOptions {
 	isDev: boolean;
 	isHotRefresh: boolean;
 	port: number;
+	apiUrl: string;
 }
 
 export interface BuildEnv {
 	mode: BuildMode;
 	port: number;
 	refresh: RefreshMode;
+	apiUrl: string;
 }
