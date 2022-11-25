@@ -14,3 +14,7 @@
 .input::placeholder {
 	color: #bdc2c9;
 }
+
+.input:read-only {
+	border: none;
+}

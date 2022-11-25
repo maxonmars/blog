@@ -1,3 +1,3 @@
-export {selectProfileData} from './selectProfileData/selectProfileData';
+export {selectEditableProfileData} from './selectEditableProfileData/selectEditableProfileData';
 export {selectProfileError} from './selectProfileError/selectProfileError';
 export {selectProfileIsLoading} from './selectProfileIsLoading/selectProfileIsLoading';

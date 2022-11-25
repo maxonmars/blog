@@ -1,6 +1,7 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import type {ThunkConfig} from 'app/providers/StoreProvider';
 import type {Profile} from '../../types/profile';
+import {selectEditableProfileData} from 'entities/Profile/model/selectors';
 
 const checkData = (data: Profile) => {
 	if (!data) {
@@ -8,11 +9,12 @@ const checkData = (data: Profile) => {
 	}
 };
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
-	'profile/fetchProfileData',
+export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+	'profile/updateProfileData',
 	async (_, thunkAPI) => {
 		try {
-			const response = await thunkAPI.extra.api.get<Profile>('/profile');
+			const profileData = selectEditableProfileData(thunkAPI.getState());
+			const response = await thunkAPI.extra.api.post<Profile>('/profile', profileData);
 			checkData(response.data);
 
 			return response.data;
