@@ -1,31 +1,26 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Avatar, AvatarSize} from './Avatar';
+import {Select} from './Select';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
-import AvatarImg from './avatar-stories.jpeg';
 
-type StoryType = ComponentStory<typeof Avatar>;
+type StoryType = ComponentStory<typeof Select>;
 
 export default {
-	title: 'shared/Avatar',
-	component: Avatar,
+	title: 'shared/Select',
+	component: Select,
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
-	args: {
-		src: AvatarImg as string,
-	},
-} as ComponentMeta<typeof Avatar>;
+	args: {},
+} as ComponentMeta<typeof Select>;
 
-const Template: StoryType = args => <Avatar {...args}/>;
+const Template: StoryType = args => <Select {...args}/>;
 
 export const Light = Template.bind({});
 Light.args = {
-	size: AvatarSize.LG,
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-	size: AvatarSize.MD,
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];

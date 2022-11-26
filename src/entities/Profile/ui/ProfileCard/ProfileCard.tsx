@@ -14,6 +14,7 @@ import {useCallback} from 'react';
 import {ProfileField} from '../../model/types/profile';
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData';
 import {useAppDispatch} from 'shared/hooks';
+import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 
 interface ProfileCardProps {
 	className?: string;
@@ -88,6 +89,7 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 				}
 			</div>
 			<div className={module.content}>
+				<Avatar src={profileData?.avatar} size={AvatarSize.MD}/>
 				<Input
 					placeholder={t('Имя')}
 					value={profileData?.firstName}
