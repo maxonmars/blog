@@ -1,13 +1,18 @@
 import module from './ProfileCard.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectEditableProfileData, selectProfileError, selectProfileIsLoading} from '../../model/selectors';
+import {
+	selectEditableProfileData,
+	selectProfileError,
+	selectProfileIsLoading,
+	selectProfileValidateErrors,
+} from '../../model/selectors';
 import {useTranslation} from 'react-i18next';
 import {Button, ButtonVariant} from 'shared/ui/Button/Button';
 import {Input} from 'shared/ui/Input/Input';
 import {Title} from 'shared/ui/Title/Title';
 import {Loader} from 'shared/ui/Loader/Loader';
-import {Text, TextVariant} from 'shared/ui/Text/Text';
+import {Text, TextSize, TextVariant} from 'shared/ui/Text/Text';
 import {selectProfileIsReadonly} from '../../model/selectors/selectProfileIsReadonly/selectProfileIsReadonly';
 import {profileActions} from '../../model/slice/profileSlice';
 import {useCallback} from 'react';
@@ -30,6 +35,7 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 	const isLoading = useSelector(selectProfileIsLoading);
 	const error = useSelector(selectProfileError);
 	const isReadonly = useSelector(selectProfileIsReadonly);
+	const validateErrors = useSelector(selectProfileValidateErrors);
 
 	const handleProfileEditable = useCallback(() => {
 		dispatch(profileActions.editableProfileForm());
@@ -89,6 +95,14 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 							</Button>
 						</>)
 				}
+			</div>
+			<div>
+				{validateErrors?.length
+				&& validateErrors.map(error => {
+					return (
+						<Text variant={TextVariant.RED} size={TextSize.SM} key={error}>{error}</Text>
+					);
+				})}
 			</div>
 			<div className={module.content}>
 				<Avatar src={profileData?.avatar} size={AvatarSize.MD}/>
