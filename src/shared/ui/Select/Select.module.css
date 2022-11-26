@@ -1,3 +1,20 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: max-content 1fr;
+	grid-column-gap: 1em;
+	align-items: center;
+}
+
 .select {
-	background-color: #0e40c5;
+	width: 100%;
+	font-size: 1rem;
+	border: 1px solid var(--bg-color-inverted);
+	border-radius: var(--radius-m);
+	color: inherit;
+}
+
+.select:disabled {
+	border: none;
+	background-color: var(--bg-color);
+	opacity: 0.5;
 }

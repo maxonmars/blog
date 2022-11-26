@@ -1,6 +1,7 @@
 import module from './Avatar.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {ImgHTMLAttributes} from 'react';
+import {memo} from 'react';
 
 export enum AvatarSize {
 	SM = '50px',
@@ -13,6 +14,9 @@ interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
 	size?: AvatarSize;
 }
 
-export const Avatar = ({className, size = AvatarSize.SM, ...restProps}: AvatarProps) => {
+export const Avatar = memo(({className, size = AvatarSize.SM, ...restProps}: AvatarProps) => {
 	return <img {...restProps} width={size} alt="avatar" className={classNames([module.avatar, className])}/>;
-};
+});
+
+Avatar.displayName = 'Avatar';
+

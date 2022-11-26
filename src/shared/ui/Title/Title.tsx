@@ -1,6 +1,7 @@
 import module from './Title.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {ReactNode} from 'react';
+import {memo} from 'react';
 
 export type TitleOrder = 1 | 2 | 3;
 
@@ -10,7 +11,7 @@ interface TitleProps {
 	order?: TitleOrder;
 }
 
-export const Title = ({className, children, order}: TitleProps) => {
+export const Title = memo(({className, children, order}: TitleProps) => {
 	const titleClass = classNames([module.title, className]);
 
 	switch (order) {
@@ -30,4 +31,6 @@ export const Title = ({className, children, order}: TitleProps) => {
 			return <h1 className={titleClass}>{children}</h1>;
 		}
 	}
-};
+});
+
+Title.displayName = 'Title';

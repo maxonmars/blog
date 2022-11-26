@@ -11,7 +11,14 @@ export default {
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
-	args: {},
+	args: {
+		options: [
+			{label: 'label1', value: 'value1'},
+			{label: 'label2', value: 'value2'},
+			{label: 'label3', value: 'value3'},
+		],
+		label: 'my select',
+	},
 } as ComponentMeta<typeof Select>;
 
 const Template: StoryType = args => <Select {...args}/>;

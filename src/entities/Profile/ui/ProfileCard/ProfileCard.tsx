@@ -15,6 +15,8 @@ import {ProfileField} from '../../model/types/profile';
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData';
 import {useAppDispatch} from 'shared/hooks';
 import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
+import {CurrencySelect} from 'entities/Currency';
+import {CountrySelect} from 'entities/Country';
 
 interface ProfileCardProps {
 	className?: string;
@@ -37,13 +39,13 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 		dispatch(profileActions.cancelEditProfile());
 	}, [dispatch]);
 
-	const handleProfileDataEdit = (value: string | number, name: string) => {
+	const handleProfileDataEdit = useCallback((value: string | number, name: string) => {
 		dispatch(profileActions.editProfile({[name]: value}));
-	};
+	}, [dispatch]);
 
-	const handleProfileSubmit = () => {
+	const handleProfileSubmit = useCallback(() => {
 		void appDispatch(updateProfileData());
-	};
+	}, [appDispatch]);
 
 	if (isLoading) {
 		return (
@@ -91,47 +93,55 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 			<div className={module.content}>
 				<Avatar src={profileData?.avatar} size={AvatarSize.MD}/>
 				<Input
-					placeholder={t('Имя')}
+					label={t('Имя')}
 					value={profileData?.firstName}
 					readOnly={isReadonly}
 					name={ProfileField.FIRST_NAME}
 					onChange={handleProfileDataEdit}
 				/>
 				<Input
-					placeholder={t('Фамилия')}
+					label={t('Фамилия')}
 					value={profileData?.lastName}
 					readOnly={isReadonly}
 					name={ProfileField.LAST_NAME}
 					onChange={handleProfileDataEdit}
 				/>
 				<Input
-					placeholder={t('Возраст')}
+					label={t('Возраст')}
 					value={profileData?.age}
 					readOnly={isReadonly}
 					name={ProfileField.AGE}
 					onChange={handleProfileDataEdit}
 				/>
 				<Input
-					placeholder={t('Город')}
+					label={t('Город')}
 					value={profileData?.city}
 					readOnly={isReadonly}
 					name={ProfileField.CITY}
 					onChange={handleProfileDataEdit}
 				/>
 				<Input
-					placeholder={t('Юзернейм')}
 					value={profileData?.username}
 					readOnly={isReadonly}
 					name={ProfileField.USERNAME}
 					onChange={handleProfileDataEdit}
+					label={t('Юзернейм')}
 				/>
 				<Input
-					placeholder={t('Фото')}
 					value={profileData?.avatar}
 					readOnly={isReadonly}
 					name={ProfileField.AVATAR}
 					onChange={handleProfileDataEdit}
+					label={t('Фото')}
 				/>
+				<CurrencySelect
+					selectedValue={profileData?.currency}
+					disabled={isReadonly}
+					onChange={handleProfileDataEdit}/>
+				<CountrySelect
+					onChange={handleProfileDataEdit}
+					selectedValue={profileData?.country}
+					disabled={isReadonly}/>
 			</div>
 		</div>
 	);

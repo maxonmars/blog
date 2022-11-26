@@ -3,6 +3,7 @@
 	grid-row-gap: 2em;
 	padding: 1em;
 	border: 2px solid var(--bg-color-inverted);
+	justify-items: start;
 }
 
 .header {
