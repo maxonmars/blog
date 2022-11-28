@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {Button, ButtonVariant} from 'shared/ui/Button/Button';
 import {Input} from 'shared/ui/Input/Input';
-import {loginActions, loginReducer} from '../../model/slice/LoginSlice';
+import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername';
 import {useAppDispatch} from 'shared/hooks';
 import {Text, TextSize, TextVariant} from 'shared/ui/Text/Text';

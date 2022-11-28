@@ -1,8 +1,8 @@
 import type {LoginScheme} from '../types/LoginScheme';
-import {loginActions, loginReducer} from './LoginSlice';
+import {loginActions, loginReducer} from './loginSlice';
 import {loginByUsername} from '../services/loginByUsername';
 
-describe('LoginSlice', () => {
+describe('loginSlice', () => {
 	test('should be changed username', () => {
 		const state: DeepPartial<LoginScheme> = {
 			username: 'Adam',

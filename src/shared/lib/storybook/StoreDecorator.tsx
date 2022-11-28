@@ -1,7 +1,7 @@
 import type {Story} from '@storybook/react';
 import type {StateScheme} from 'app/providers/StoreProvider/config/StateScheme';
 import {StoreProvider} from 'app/providers/StoreProvider';
-import {loginReducer} from 'features/AuthByUsername/model/slice/LoginSlice';
+import {loginReducer} from 'features/AuthByUsername/model/slice/loginSlice';
 import {profileReducer} from 'entities/Profile';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
