@@ -3,10 +3,21 @@ import {createSlice} from '@reduxjs/toolkit';
 import type {Profile, ProfileScheme} from '../types/profile';
 import {fetchProfileData} from '../services/fetchProfileData/fetchProfileData';
 import {updateProfileData} from '../services/updateProfileData/updateProfileData';
+import {Country} from 'entities/Country/model/types/country';
+import {Currency} from 'entities/Currency/model/types/currency';
 
 const initialState: ProfileScheme = {
 	isLoading: false,
-	readonlyProfileData: undefined,
+	readonlyProfileData: {
+		age: 0,
+		firstName: '',
+		lastName: '',
+		country: Country.Russia,
+		currency: Currency.RUB,
+		avatar: '',
+		city: '',
+		username: '',
+	},
 	error: undefined,
 	isReadonly: true,
 	editableProfileData: undefined,

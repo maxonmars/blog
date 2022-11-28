@@ -5,6 +5,7 @@ const jestConfig: JestConfigWithTsJest = {
 	globals: {
 		__IS_DEV__: true,
 		__API__: '',
+		__PROJECT__: 'jest',
 	},
 
 	// Automatically clear mock calls, instances, contexts and results before every test
@@ -73,6 +74,7 @@ const jestConfig: JestConfigWithTsJest = {
 	moduleNameMapper: {
 		'\\.css$': 'identity-obj-proxy',
 		'\\.svg$': '<rootDir>config/jest/__mocks__/svg.tsx',
+		'\\.jpeg$': '<rootDir>config/jest/__mocks__/jpeg.ts',
 		'entities/(.*)': '<rootDir>src/entities/$1',
 	},
 

@@ -16,6 +16,7 @@ export interface BuildOptions {
 	isHotRefresh: boolean;
 	port: number;
 	apiUrl: string;
+	project: string;
 }
 
 export interface BuildEnv {

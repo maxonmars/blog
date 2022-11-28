@@ -8,10 +8,10 @@ describe('selectLoginIsLoading', () => {
 				isLoading: true,
 			},
 		};
-		expect(selectLoginIsLoading(state as StateScheme)).toEqual(true);
+		expect(selectLoginIsLoading(state as StateScheme)).toBe(true);
 	});
 	test('should be false if empty state', () => {
 		const state: DeepPartial<StateScheme> = {};
-		expect(selectLoginIsLoading(state as StateScheme)).toEqual(false);
+		expect(selectLoginIsLoading(state as StateScheme)).toBe(false);
 	});
 });

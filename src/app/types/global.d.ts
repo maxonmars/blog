@@ -17,6 +17,7 @@ declare module '*.jpeg';
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __IS_DEV__: boolean;
 declare const __API__: string;
+declare const __PROJECT__: 'frontend' | 'jest' | 'storybook';
 
 // eslint-disable-next-line @typescript-eslint/ban-types
 type DeepPartial<T> = T extends object ? {

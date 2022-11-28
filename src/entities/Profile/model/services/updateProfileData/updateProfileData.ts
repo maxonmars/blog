@@ -22,7 +22,7 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
 		}
 
 		try {
-			const response = await thunkAPI.extra.api.post<Profile>('/profile', profileData);
+			const response = await thunkAPI.extra.api.put<Profile>('/profile', profileData);
 			checkData(response.data);
 
 			return response.data;

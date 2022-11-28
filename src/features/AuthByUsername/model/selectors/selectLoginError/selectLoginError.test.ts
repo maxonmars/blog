@@ -8,10 +8,10 @@ describe('selectLoginError', () => {
 				error: 'error',
 			},
 		};
-		expect(selectLoginError(state as StateScheme)).toEqual('error');
+		expect(selectLoginError(state as StateScheme)).toBe('error');
 	});
 	test('should be undefined if empty state', () => {
 		const state: DeepPartial<StateScheme> = {};
-		expect(selectLoginError(state as StateScheme)).toEqual(undefined);
+		expect(selectLoginError(state as StateScheme)).toBe(undefined);
 	});
 });

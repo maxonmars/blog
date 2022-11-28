@@ -8,10 +8,10 @@ describe('selectLoginPassword', () => {
 				password: '123',
 			},
 		};
-		expect(selectLoginPassword(state as StateScheme)).toEqual('123');
+		expect(selectLoginPassword(state as StateScheme)).toBe('123');
 	});
 	test('should be empty string if empty state', () => {
 		const state: DeepPartial<StateScheme> = {};
-		expect(selectLoginPassword(state as StateScheme)).toEqual('');
+		expect(selectLoginPassword(state as StateScheme)).toBe('');
 	});
 });

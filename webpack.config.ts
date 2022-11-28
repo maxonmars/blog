@@ -20,6 +20,8 @@ export default (env: BuildEnv) => {
 
 	const apiUrl = env.apiUrl || 'http://localhost:8000';
 
+	const project = 'frontend';
+
 	return buildWebpackConfig({
 		mode,
 		path: buildPath,
@@ -27,5 +29,6 @@ export default (env: BuildEnv) => {
 		isHotRefresh,
 		port: PORT,
 		apiUrl,
+		project,
 	});
 };

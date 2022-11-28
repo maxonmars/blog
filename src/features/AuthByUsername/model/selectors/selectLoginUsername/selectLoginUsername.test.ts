@@ -8,10 +8,10 @@ describe('selectLoginUsername', () => {
 				username: 'Adam',
 			},
 		};
-		expect(selectLoginUsername(state as StateScheme)).toEqual('Adam');
+		expect(selectLoginUsername(state as StateScheme)).toBe('Adam');
 	});
 	test('should be empty string if empty state', () => {
 		const state: DeepPartial<StateScheme> = {};
-		expect(selectLoginUsername(state as StateScheme)).toEqual('');
+		expect(selectLoginUsername(state as StateScheme)).toBe('');
 	});
 });

@@ -23,3 +23,6 @@ export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [themeDecorator(Theme.DARK)];
+
+//TODO: NoAuth добавить сайдбар для неавторизованного юзера
+// storeDecorator для авторизованного {userData: {}} и без юзердаты для неавторизованного
