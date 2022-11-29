@@ -68,7 +68,7 @@ const LoginForm = ({className, onCloseModal}: LoginFormProps) => {
 				<Button
 					disabled={isLoading}
 					onClick={handleLogin}
-					variant={ButtonVariant.OUTLINE}>
+					variant={ButtonVariant.FILLED}>
 					{t('Войти')}
 				</Button>
 			</div>

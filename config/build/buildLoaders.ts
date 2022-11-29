@@ -1,6 +1,7 @@
 import type webpack from 'webpack';
 import type {BuildOptions} from './types';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import {buildBabelLoader} from './loaders/buildBabelLoader';
+import {buildCssLoader} from './loaders/buildCssLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 	const fileLoader = {
@@ -18,13 +19,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 		use: ['@svgr/webpack'],
 	};
 
-	const babelLoader = {
-		test: /\.([jt])sx?$/,
-		exclude: /node_modules/,
-		use: {
-			loader: 'babel-loader',
-		},
-	};
+	const babelLoader = buildBabelLoader(options);
 
 	const typescriptLoader = {
 		test: /\.tsx?$/,
@@ -32,37 +27,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 		exclude: /node_modules/,
 	};
 
-	const cssLoader = {
-		test: /\.css$/i,
-		use: [
-			options.isDev
-				? 'style-loader'
-				: MiniCssExtractPlugin.loader,
-			{
-				loader: 'css-loader',
-				options: {
-					modules: {
-						auto: /\.module.?/,
-						localIdentName: options.isDev
-							? '[path][name]__[local]--[hash:base64:5]'
-							: '[hash:base64:8]',
-					},
-				},
-			},
-			{
-				loader: 'postcss-loader',
-				options: {
-					postcssOptions: {
-						plugins: [
-							[
-								'autoprefixer',
-							],
-						],
-					},
-				},
-			},
-		],
-	};
+	const cssLoader = buildCssLoader(options);
 
 	return [
 		fileLoader,
