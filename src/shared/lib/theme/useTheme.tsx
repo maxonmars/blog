@@ -6,11 +6,19 @@ interface UseThemeResult {
 	toggleTheme: () => void;
 }
 
+const themSwitchChain = {
+	dark: Theme.LIGHT,
+	light: Theme.BACTERIUM,
+	bacterium: Theme.DARK,
+};
+
 export const useTheme = (): UseThemeResult => {
 	const {theme, setTheme} = useContext(ThemeContext);
 
 	const toggleTheme = () => {
-		const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+		const newTheme = themSwitchChain[theme ?? Theme.LIGHT];
+		// const newTheme = theme === Theme.DARK ? Theme.LIGHT : Theme.DARK;
+
 		setTheme?.(newTheme);
 	};
 

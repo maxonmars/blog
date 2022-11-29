@@ -1,4 +1,5 @@
 export {default as IcoThinAlien} from './svg/thin-alien.svg';
+export {default as IcoThinBacterium} from './svg/thin-bacterium.svg';
 export {default as IcoThinChevronLeft} from './svg/thin-chevron-left.svg';
 export {default as IcoThinChevronRight} from './svg/thin-chevron-right.svg';
 export {default as IcoThinHouse} from './svg/thin-house.svg';

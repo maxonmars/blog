@@ -1,8 +1,8 @@
 body[data-theme="dark"] {
-	--bg-color: #002564;
-	--bg-color-inverted: #e9e9ef;
-	--primary-color: #09bd09;
-	--secondary-color: #00e500;
-	--primary-color-inverted: #0e40c5;
-	--secondary-color-inverted: #37f;
+	--bg-color: #5e69ee;
+	--bg-color-inverted: #f4f4fb;
+	--primary-color: #f4f4fb;
+	--secondary-color: #39afea;
+	--primary-color-inverted: #5e69ee;
+	--secondary-color-inverted: #39afea;
 }

@@ -1,0 +1,8 @@
+body[data-theme="bacterium"] {
+	--bg-color: #ccda57;
+	--bg-color-inverted: #fafbf4;
+	--primary-color: #fafbf4;
+	--secondary-color: #d38736;
+	--primary-color-inverted: #ccda57;
+	--secondary-color-inverted: #d38736;
+}

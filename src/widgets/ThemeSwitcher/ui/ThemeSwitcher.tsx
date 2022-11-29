@@ -1,12 +1,17 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import {IcoThinMoonStars, IcoThinSunBright} from 'shared/assets/icons';
-import {Theme} from 'shared/lib/theme/ThemeContext';
+import {IcoThinBacterium, IcoThinMoonStars, IcoThinSunBright} from 'shared/assets/icons';
 import {useTheme} from 'shared/lib/theme';
 import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
 	className?: string;
 }
+
+const icon = {
+	dark: <IcoThinMoonStars/>,
+	light: <IcoThinSunBright/>,
+	bacterium: <IcoThinBacterium/>,
+};
 
 export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 	const {toggleTheme, theme} = useTheme();
@@ -18,9 +23,7 @@ export const ThemeSwitcher = ({className}: ThemeSwitcherProps) => {
 			inverted
 			size={ButtonSize.MD}
 			onClick={toggleTheme}>
-			{theme === Theme.DARK
-				? <IcoThinMoonStars/>
-				: <IcoThinSunBright/>}
+			{icon[theme]}
 		</Button>
 	);
 };
