@@ -4,6 +4,7 @@ import {
 	IcoThinHouse,
 	IcoThinSquareList,
 	IcoThinAlien,
+	IcoThinFileContract,
 } from 'shared/assets/icons';
 
 export interface SidebarItemType {
@@ -27,5 +28,10 @@ export const SidebarItemList: SidebarItemType[] = [
 		path: ROUTE_PATH.PROFILE,
 		Icon: IcoThinAlien,
 		text: 'Профиль',
+	},
+	{
+		path: ROUTE_PATH.ARTICLES,
+		Icon: IcoThinFileContract,
+		text: 'Статьи',
 	},
 ];

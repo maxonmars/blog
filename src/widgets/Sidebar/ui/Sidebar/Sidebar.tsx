@@ -19,6 +19,7 @@ export const Sidebar = ({className}: SidebarProps) => {
 		setIsCollapsed(prevState => !prevState);
 	};
 
+	// TODO: убрать айтемы для не авторизованных пользователей
 	return (
 		<div
 			data-testid="sidebar"
