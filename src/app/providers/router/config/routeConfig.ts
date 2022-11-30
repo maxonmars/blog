@@ -1,9 +1,9 @@
 import type {RouteObject} from 'react-router-dom';
 import {MainPage} from 'pages/MainPage';
 import {AboutPage} from 'pages/AboutPage';
-import {createElement} from 'react';
 import {NotFoundPage} from 'pages/NotFoundPage';
 import {ProfilePage} from 'pages/ProfilePage';
+import {createElement} from 'react';
 
 export const ROUTE_PATH = {
 	MAIN: '/',
@@ -19,6 +19,8 @@ type ValueOf<T> = T[keyof T];
 
 interface PathValue extends RouteObject {
 	path: ValueOf<typeof ROUTE_PATH>;
+	element: JSX.Element;
+	authOnly?: boolean;
 }
 
 const routeConfig: Record<PathKey, PathValue> = ({
@@ -33,6 +35,7 @@ const routeConfig: Record<PathKey, PathValue> = ({
 	PROFILE: {
 		path: ROUTE_PATH.PROFILE,
 		element: createElement(ProfilePage),
+		authOnly: true,
 	},
 	//last
 	NOT_FOUND: {

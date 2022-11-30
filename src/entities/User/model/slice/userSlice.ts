@@ -4,6 +4,7 @@ import type {User, UserScheme} from '../types/User';
 import {USER_LOCAL_STORAGE_KEY} from 'shared/const/localStorage';
 
 const initialState: UserScheme = {
+	isInit: false,
 };
 
 const userSlice = createSlice({
@@ -13,11 +14,19 @@ const userSlice = createSlice({
 		setAuthData(state, action: PayloadAction<User>) {
 			state.authData = action.payload;
 		},
-		initAuthData(state) {
-			const user = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
-			if (user) {
-				state.authData = JSON.parse(user) as User;
-			}
+		initAuthData: {
+			reducer(state, action: PayloadAction<User | undefined>) {
+				state.isInit = true;
+				state.authData = action.payload;
+			},
+			prepare() {
+				const user = localStorage.getItem(USER_LOCAL_STORAGE_KEY);
+				if (user) {
+					return {payload: JSON.parse(user) as User};
+				}
+
+				return {payload: undefined};
+			},
 		},
 		logout(state) {
 			state.authData = undefined;
