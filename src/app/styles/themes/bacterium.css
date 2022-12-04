@@ -5,4 +5,11 @@ body[data-theme="bacterium"] {
 	--secondary-color: #d38736;
 	--primary-color-inverted: #ccda57;
 	--secondary-color-inverted: #d38736;
+
+	/* skeleton */
+	--skeleton-color: #d5dc9a;
+	--skeleton-shadow: #d38736;
+
+	/* code */
+	--code-bg: #d5dc9a;
 }

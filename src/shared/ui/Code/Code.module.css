@@ -1,0 +1,20 @@
+.codeWrapper {
+	background-color: var(--code-bg);
+	border: 1px solid var(--primary-color);
+	padding: 1em;
+	display: grid;
+	grid-template-columns: 1fr min-content;
+}
+
+.codeBlock {
+	overflow: auto;
+	padding-bottom: 0.5em;
+}
+
+.copyBtn {
+	background-color: var(--code-bg);
+}
+
+.copyIcon {
+	width: 2rem;
+}

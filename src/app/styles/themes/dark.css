@@ -5,4 +5,11 @@ body[data-theme="dark"] {
 	--secondary-color: #39afea;
 	--primary-color-inverted: #5e69ee;
 	--secondary-color-inverted: #39afea;
+
+	/* skeleton */
+	--skeleton-color: #747dea;
+	--skeleton-shadow: #39afea;
+
+	/* code */
+	--code-bg: #747dea;
 }

@@ -1,0 +1,11 @@
+.articleImageBlockComponent {
+	font-size: 0.8rem;
+}
+
+.image {
+	max-width: 100%;
+}
+
+.caption {
+	text-align: center;
+}

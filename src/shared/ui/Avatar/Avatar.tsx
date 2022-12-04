@@ -6,7 +6,7 @@ import {memo} from 'react';
 export enum AvatarSize {
 	SM = '50px',
 	MD = '100px',
-	LG = '150px',
+	LG = '200px',
 }
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
