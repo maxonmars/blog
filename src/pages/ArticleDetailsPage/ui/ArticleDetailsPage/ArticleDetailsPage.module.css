@@ -1,3 +1,4 @@
 .articleDetailsPage {
-	font-size: inherit;
+	display: grid;
+	grid-row-gap: 2em;
 }

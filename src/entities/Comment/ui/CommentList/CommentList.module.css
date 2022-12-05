@@ -1,0 +1,4 @@
+.commentList {
+	display: grid;
+	grid-row-gap: 1em;
+}

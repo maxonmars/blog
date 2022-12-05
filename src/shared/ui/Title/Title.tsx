@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import type {ReactNode} from 'react';
 import {memo} from 'react';
 
-export type TitleOrder = 1 | 2 | 3;
+export type TitleOrder = 1 | 2 | 3 | 4;
 
 interface TitleProps {
 	className?: string;
@@ -25,6 +25,10 @@ export const Title = memo(({className, children, order}: TitleProps) => {
 
 		case 3: {
 			return <h3 className={titleClass}>{children}</h3>;
+		}
+
+		case 4: {
+			return <h4 className={titleClass}>{children}</h4>;
 		}
 
 		default: {
