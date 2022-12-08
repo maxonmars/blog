@@ -22,6 +22,7 @@ import {useAppDispatch} from 'shared/hooks';
 import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 import {CurrencySelect} from 'entities/Currency';
 import {CountrySelect} from 'entities/Country';
+import {selectUserAuthData} from 'entities/User';
 
 interface ProfileCardProps {
 	className?: string;
@@ -29,12 +30,15 @@ interface ProfileCardProps {
 
 export const ProfileCard = ({className}: ProfileCardProps) => {
 	const {t} = useTranslation('profile');
-	const dispatch = useDispatch();
-	const appDispatch = useAppDispatch();
+	const dispatch = useAppDispatch();
 	const profileData = useSelector(selectEditableProfileData);
+	const authData = useSelector(selectUserAuthData);
 	const isLoading = useSelector(selectProfileIsLoading);
 	const error = useSelector(selectProfileError);
 	const isReadonly = useSelector(selectProfileIsReadonly);
+
+	const isEdit = authData?.id === profileData?.id;
+
 	const validateErrors = useSelector(selectProfileValidateErrors);
 
 	const handleProfileEditable = useCallback(() => {
@@ -50,8 +54,8 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 	}, [dispatch]);
 
 	const handleProfileSubmit = useCallback(() => {
-		void appDispatch(updateProfileData());
-	}, [appDispatch]);
+		void dispatch(updateProfileData());
+	}, [dispatch]);
 
 	if (isLoading) {
 		return (
@@ -74,26 +78,27 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 		<div className={classNames([module.profileCard, className])}>
 			<div className={module.header}>
 				<Title>{t('Профиль')}</Title>
-				{isReadonly
-					? (
-						<Button
-							variant={ButtonVariant.OUTLINE}
-							onClick={handleProfileEditable}>
-							{t('редактировать')}
-						</Button>)
-					: (
-						<>
+				{isEdit
+					&& (isReadonly
+						? (
 							<Button
 								variant={ButtonVariant.OUTLINE}
-								onClick={handleProfileDataEditCancel}>
-								{t('отменить')}
-							</Button>
-							<Button
-								variant={ButtonVariant.FILLED}
-								onClick={handleProfileSubmit}>
-								{t('сохранить')}
-							</Button>
-						</>)
+								onClick={handleProfileEditable}>
+								{t('редактировать')}
+							</Button>)
+						: (
+							<>
+								<Button
+									variant={ButtonVariant.OUTLINE}
+									onClick={handleProfileDataEditCancel}>
+									{t('отменить')}
+								</Button>
+								<Button
+									variant={ButtonVariant.FILLED}
+									onClick={handleProfileSubmit}>
+									{t('сохранить')}
+								</Button>
+							</>))
 				}
 			</div>
 			<div>

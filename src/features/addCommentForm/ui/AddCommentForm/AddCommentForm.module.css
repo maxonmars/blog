@@ -1,0 +1,7 @@
+.addCommentForm {
+	display: grid;
+	grid-template-columns: 1fr min-content;
+	grid-column-gap: 1em;
+	border: 1px solid var(--primary-color);
+	padding: 1em;
+}

@@ -1,0 +1,21 @@
+import { StyleDecorator } from 'shared/lib/storybook/StyleDecorator';
+import { themeDecorator } from 'shared/lib/storybook/ThemeDecorator';
+import { Theme } from 'shared/lib/theme';
+import { RouterDecorator } from 'shared/lib/storybook/RouterDecorator';
+import { translationDecorator } from 'shared/lib/storybook/TranslationDecorator';
+export var parameters = {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+        matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/,
+        },
+    },
+};
+export var decorators = [
+    StyleDecorator,
+    themeDecorator(Theme.LIGHT),
+    RouterDecorator,
+    translationDecorator,
+];
+//# sourceMappingURL=preview.js.map

@@ -8,11 +8,15 @@ const checkData = (data: Profile) => {
 	}
 };
 
-export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<string>>(
+export const fetchProfileData = createAsyncThunk<Profile, string | undefined, ThunkConfig<string>>(
 	'profile/fetchProfileData',
-	async (_, thunkAPI) => {
+	async (profileId, thunkAPI) => {
+		if (!profileId) {
+			return thunkAPI.rejectWithValue('error');
+		}
+
 		try {
-			const response = await thunkAPI.extra.api.get<Profile>('/profile');
+			const response = await thunkAPI.extra.api.get<Profile>(`/profiles/${profileId}`);
 			checkData(response.data);
 
 			return response.data;

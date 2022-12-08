@@ -1,0 +1,1 @@
+{"version":3,"file":"Portal.js","sourceRoot":"","sources":["../../../../../src/shared/ui/Portal/Portal.tsx"],"names":[],"mappings":"AACA,OAAO,QAAQ,MAAM,WAAW,CAAC;AAMjC,MAAM,CAAC,IAAM,MAAM,GAAG,UAAC,KAAkB;IACjC,IAAA,QAAQ,GAAI,KAAK,SAAT,CAAU;IACzB,IAAM,SAAS,GAAG,QAAQ,CAAC,IAAI,CAAC;IAEhC,OAAO,QAAQ,CAAC,YAAY,CAAC,QAAQ,EAAE,SAAS,CAAC,CAAC;AACnD,CAAC,CAAC"}

@@ -10,19 +10,17 @@ import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
 export const ROUTE_PATH = {
 	MAIN: '/',
 	ABOUT: '/about',
-	PROFILE: '/profile',
+	PROFILE: '/profile/',
 	ARTICLES: '/articles',
-	ARTICLE_DETAILS_PAGE: '/articles/:id',
+	ARTICLE_DETAILS_PAGE: '/articles/',
 	// last
 	NOT_FOUND: '*',
 } as const;
 
 type PathKey = keyof typeof ROUTE_PATH;
 
-type ValueOf<T> = T[keyof T];
-
 interface PathValue extends RouteObject {
-	path: ValueOf<typeof ROUTE_PATH>;
+	path: string;
 	element: JSX.Element;
 	authOnly?: boolean;
 }
@@ -37,7 +35,7 @@ const routeConfig: Record<PathKey, PathValue> = ({
 		element: createElement(AboutPage),
 	},
 	PROFILE: {
-		path: ROUTE_PATH.PROFILE,
+		path: ROUTE_PATH.PROFILE + ':id',
 		element: createElement(ProfilePage),
 		authOnly: true,
 	},
@@ -47,7 +45,7 @@ const routeConfig: Record<PathKey, PathValue> = ({
 		authOnly: true,
 	},
 	ARTICLE_DETAILS_PAGE: {
-		path: ROUTE_PATH.ARTICLE_DETAILS_PAGE,
+		path: ROUTE_PATH.ARTICLE_DETAILS_PAGE + ':id',
 		element: createElement(ArticleDetailsPage),
 		authOnly: true,
 	},

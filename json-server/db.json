@@ -97,16 +97,22 @@
       "userId": "1"
     },
     {
-      "id": "2",
-      "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "text": "fds",
+      "id": "fA04Vub"
     },
     {
-      "id": "3",
-      "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2",
+      "text": "new comm",
+      "id": "lWICo6M"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "rap",
+      "id": "Dt45RPj"
     }
   ],
   "users": [
@@ -115,7 +121,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://store.playstation.com/store/api/chihiro/00_09_000/container/RU/ru/99/EP2402-CUSA05624_00-AV00000000000240/0/image?_version=00_09_000&platform=chihiro&bg_color=000000&opacity=100&w=720&h=720"
+      "avatar": "https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg"
     },
     {
       "id": "2",
@@ -125,14 +131,28 @@
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
-  "profile": {
-    "firstName": "Max",
-    "lastName": "Mars",
-    "age": "34",
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Novosibirsk",
-    "username": "MaxOnMars",
-    "avatar": "https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg"
-  }
+  "profiles": [
+    {
+      "id": "1",
+      "firstName": "Max",
+      "lastName": "Mars",
+      "age": "34",
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Novosibirsk",
+      "username": "MaxOnMars",
+      "avatar": "https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg"
+    },
+    {
+      "id": "2",
+      "firstName": "Boris",
+      "lastName": "Blaze",
+      "age": "28",
+      "currency": "USD",
+      "country": "Belarus",
+      "city": "Minsk",
+      "username": "B_Blaze",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ]
 }

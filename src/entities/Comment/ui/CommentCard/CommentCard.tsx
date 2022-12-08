@@ -5,10 +5,12 @@ import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 import {Title} from 'shared/ui/Title/Title';
 import {Text} from 'shared/ui/Text/Text';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
+import {ROUTE_PATH} from 'app/providers/router';
 
 interface CommentCardProps {
 	className?: string;
-	comment: Comment;
+	comment?: Comment;
 	isLoading?: boolean;
 }
 
@@ -23,10 +25,20 @@ export const CommentCard = ({className, comment, isLoading}: CommentCardProps) =
 		);
 	}
 
+	if (!comment) {
+		return null;
+	}
+
+	const profileLink = `${ROUTE_PATH.PROFILE}${comment.user.id}`;
+
 	return (
 		<div className={classNames([module.commentCard, className])}>
-			<Avatar src={comment.user.avatar} size={AvatarSize.SM}/>
-			<Title order={4}>{comment.user.username}</Title>
+			<AppLink to={profileLink}>
+				<Avatar src={comment.user.avatar} size={AvatarSize.SM}/>
+			</AppLink>
+			<AppLink to={profileLink}>
+				<Title order={4}>{comment.user.username}</Title>
+			</AppLink>
 			<Text className={module.commentText}>{comment.text}</Text>
 		</div>
 	);

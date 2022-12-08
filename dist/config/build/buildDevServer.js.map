@@ -1,0 +1,1 @@
+{"version":3,"file":"buildDevServer.js","sourceRoot":"","sources":["../../../config/build/buildDevServer.ts"],"names":[],"mappings":"AAGA,MAAM,UAAU,cAAc,CAAC,OAAqB;IACnD,OAAO;QACN,IAAI,EAAE,OAAO,CAAC,IAAI;QAClB,cAAc;QACd,kBAAkB,EAAE,IAAI;KACxB,CAAC;AACH,CAAC"}

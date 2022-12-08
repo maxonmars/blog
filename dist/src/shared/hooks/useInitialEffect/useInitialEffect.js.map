@@ -1,0 +1,1 @@
+{"version":3,"file":"useInitialEffect.js","sourceRoot":"","sources":["../../../../../src/shared/hooks/useInitialEffect/useInitialEffect.ts"],"names":[],"mappings":"AAAA,OAAO,EAAC,SAAS,EAAC,MAAM,OAAO,CAAC;AAEhC,MAAM,CAAC,IAAM,gBAAgB,GAAG,UAAC,QAAoB;IACpD,SAAS,CAAC;QACT,IAAI,WAAW,KAAK,WAAW,EAAE;YAChC,QAAQ,EAAE,CAAC;SACX;IACF,CAAC,EAAE,CAAC,QAAQ,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC"}

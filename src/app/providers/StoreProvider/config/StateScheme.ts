@@ -6,7 +6,8 @@ import type {AxiosInstance} from 'axios';
 import type {To} from '@remix-run/router';
 import type {NavigateOptions} from 'react-router/dist/lib/context';
 import type {ArticleDetailsScheme} from 'entities/Article';
-import type {ArticleDetailsCommentsSchema} from 'pages/ArticleDetailsPage';
+import type {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
+import type {AddCommentFormScheme} from 'features/AddCommentForm';
 
 export interface StateScheme {
 	user: UserScheme;
@@ -15,7 +16,8 @@ export interface StateScheme {
 	login?: LoginScheme;
 	profile?: ProfileScheme;
 	articleDetails?: ArticleDetailsScheme;
-	articleDetailsComments?: ArticleDetailsCommentsSchema;
+	articleDetailsComments?: ArticleDetailsCommentsScheme;
+	addCommentForm?: AddCommentFormScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;

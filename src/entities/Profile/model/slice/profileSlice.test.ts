@@ -55,7 +55,7 @@ describe('profileSlice', () => {
 		const state: DeepPartial<ProfileScheme> = {
 			isLoading: true,
 		};
-		expect(profileReducer(state as ProfileScheme, fetchProfileData.fulfilled(profileData, '')))
+		expect(profileReducer(state as ProfileScheme, fetchProfileData.fulfilled(profileData, '', '1')))
 			.toEqual({
 				isLoading: false,
 				editableProfileData: profileData,

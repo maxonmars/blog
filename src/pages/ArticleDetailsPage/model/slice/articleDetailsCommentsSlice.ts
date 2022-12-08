@@ -1,10 +1,11 @@
 import {createEntityAdapter, createSlice} from '@reduxjs/toolkit';
-import type {ArticleDetailsCommentsSchema} from '../types/ArticleDetailsCommentsSchema';
+import type {ArticleDetailsCommentsScheme} from '../types/ArticleDetailsCommentsScheme';
 import type {Comment} from 'entities/Comment';
 import type {StateScheme} from 'app/providers/StoreProvider';
 import {
 	fetchCommentsByArticleId,
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {sendComment} from 'pages/ArticleDetailsPage/model/services/sendComment/sendComment';
 
 const commentsAdapter = createEntityAdapter<Comment>({
 	selectId: comment => comment.id,
@@ -15,7 +16,7 @@ export const selectArticleComments = commentsAdapter.getSelectors<StateScheme>(
 	state => state.articleDetailsComments ?? commentsAdapter.getInitialState(),
 );
 
-const initialState = commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
+const initialState = commentsAdapter.getInitialState<ArticleDetailsCommentsScheme>({
 	isLoading: false,
 	error: undefined,
 	ids: [],

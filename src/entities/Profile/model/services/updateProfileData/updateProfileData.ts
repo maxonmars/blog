@@ -1,9 +1,9 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import type {ThunkConfig} from 'app/providers/StoreProvider';
 import type {Profile} from '../../types/profile';
+import {ValidateProfileError} from '../../types/profile';
 import {selectEditableProfileData} from '../../selectors';
 import {validateProfileData} from '../validateProfileData/validateProfileData';
-import {ValidateProfileError} from '../../types/profile';
 
 const checkData = (data: Profile) => {
 	if (!data) {
@@ -22,7 +22,9 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<Val
 		}
 
 		try {
-			const response = await thunkAPI.extra.api.put<Profile>('/profile', profileData);
+			const response = await thunkAPI.extra.api.put<Profile>(
+				`/profiles/${profileData?.id ?? ''}`,
+				profileData);
 			checkData(response.data);
 
 			return response.data;
