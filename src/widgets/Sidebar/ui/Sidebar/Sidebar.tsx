@@ -5,27 +5,28 @@ import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
 import {LangSwitcher} from 'widgets/LangSwitcher';
 import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 import {IcoThinChevronLeft, IcoThinChevronRight} from 'shared/assets/icons';
-import {SidebarItemList} from '../../model/items';
 import {SidebarItem} from '../SidebarItem/SidebarItem';
+import {useSelector} from 'react-redux';
+import {selectSidebarItems} from 'widgets/Sidebar/model/selectSidebarItems/selectSidebarItems';
 
 interface SidebarProps {
 	className?: string;
 }
 
 export const Sidebar = ({className}: SidebarProps) => {
+	const sidebarItemList = useSelector(selectSidebarItems);
 	const [isCollapsed, setIsCollapsed] = useState(false);
 
 	const onToggle = () => {
 		setIsCollapsed(prevState => !prevState);
 	};
 
-	// TODO: убрать айтемы для не авторизованных пользователей
 	return (
 		<div
 			data-testid="sidebar"
 			className={classNames([module.sidebar, className], {[module.collapsed]: isCollapsed})}>
 			<div className={module.navigateLinks}>
-				{SidebarItemList.map(item => {
+				{sidebarItemList.map(item => {
 					return <SidebarItem key={item.path} isCollapsed={isCollapsed} item={item}/>;
 				})}
 			</div>
