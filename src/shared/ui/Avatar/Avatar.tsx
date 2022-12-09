@@ -13,9 +13,15 @@ interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
 	className?: string;
 	size?: AvatarSize;
 }
-// TODO: добавить аватар заглушку
-export const Avatar = memo(({className, size = AvatarSize.SM, ...restProps}: AvatarProps) => {
-	return <img {...restProps} width={size} alt="avatar" className={classNames([module.avatar, className])}/>;
+
+export const Avatar = memo(({className, size = AvatarSize.SM, alt = 'аватар', ...restProps}: AvatarProps) => {
+	return (
+		<img
+			{...restProps}
+			alt={alt}
+			width={size}
+			height={size}
+			className={classNames([module.avatar, className])}/>);
 });
 
 Avatar.displayName = 'Avatar';

@@ -34,7 +34,12 @@ export const CommentCard = ({className, comment, isLoading}: CommentCardProps) =
 	return (
 		<div className={classNames([module.commentCard, className])}>
 			<AppLink to={profileLink}>
-				<Avatar src={comment.user.avatar} size={AvatarSize.SM}/>
+				<Avatar
+					alt="аватар пользователя"
+					loading="lazy"
+					decoding="async"
+					src={comment.user.avatar}
+					size={AvatarSize.SM}/>
 			</AppLink>
 			<AppLink to={profileLink}>
 				<Title order={4}>{comment.user.username}</Title>

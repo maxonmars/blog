@@ -101,16 +101,17 @@ export const ProfileCard = ({className}: ProfileCardProps) => {
 							</>))
 				}
 			</div>
-			<div>
-				{validateErrors?.length
-				&& validateErrors.map(error => {
-					return (
-						<Text variant={TextVariant.RED} size={TextSize.SM} key={error}>{error}</Text>
-					);
-				})}
-			</div>
+			{validateErrors?.length
+				&& (
+					<div>
+						{validateErrors.map(error => {
+							return (
+								<Text variant={TextVariant.RED} size={TextSize.SM} key={error}>{error}</Text>
+							);
+						})}
+					</div>)}
 			<div className={module.content}>
-				<Avatar src={profileData?.avatar} size={AvatarSize.MD}/>
+				<Avatar src={profileData?.avatar} size={AvatarSize.MD} alt="аватар пользователя"/>
 				<Input
 					label={t('Имя')}
 					value={profileData?.firstName}
