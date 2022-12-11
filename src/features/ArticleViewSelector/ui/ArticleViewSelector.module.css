@@ -1,0 +1,9 @@
+.articleViewSelector {
+	display: grid;
+	grid-auto-flow: column;
+	justify-content: end;
+}
+
+.selected {
+	color: var(--secondary-color);
+}

@@ -9,7 +9,7 @@ interface ArticleListProps {
 	className?: string;
 	articles: Article[];
 	isLoading?: boolean;
-	view?: ArticleView;
+	view: ArticleView;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -18,7 +18,7 @@ const getSkeletons = (view: ArticleView) => {
 	});
 };
 
-export const ArticleList = ({className, articles, isLoading, view = ArticleView.LIST}: ArticleListProps) => {
+export const ArticleList = ({className, articles, isLoading, view}: ArticleListProps) => {
 	const renderArticle = (article: Article) => {
 		return <ArticleListItem key={article.id} article={article} view={view}/>;
 	};

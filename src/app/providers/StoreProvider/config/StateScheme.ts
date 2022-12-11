@@ -8,6 +8,7 @@ import type {NavigateOptions} from 'react-router/dist/lib/context';
 import type {ArticleDetailsScheme} from 'entities/Article';
 import type {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
 import type {AddCommentFormScheme} from 'features/AddCommentForm';
+import type {ArticlesPageScheme} from 'pages/ArticlesPage';
 
 export interface StateScheme {
 	user: UserScheme;
@@ -18,6 +19,7 @@ export interface StateScheme {
 	articleDetails?: ArticleDetailsScheme;
 	articleDetailsComments?: ArticleDetailsCommentsScheme;
 	addCommentForm?: AddCommentFormScheme;
+	articlesPage?: ArticlesPageScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;
