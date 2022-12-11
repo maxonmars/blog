@@ -11,6 +11,11 @@ describe('fetchArticleById', () => {
 			subtitle: 'Что нового в JS за 2022 год?',
 			img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 			views: 1022,
+			user: {
+				id: '1',
+				avatar: 'https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg',
+				username: 'Max',
+			},
 			createdAt: '26.02.2022',
 			type: [
 				ArticleType.IT,

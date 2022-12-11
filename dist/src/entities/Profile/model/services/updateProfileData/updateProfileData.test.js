@@ -58,7 +58,7 @@ describe('updateProfileData', function () {
                 case 0:
                     thunk = new TestAsyncThunk(updateProfileData, { profile: { editableProfileData: profileData } });
                     thunk.api.put.mockReturnValue(Promise.resolve({ data: profileData }));
-                    return [4 /*yield*/, thunk.callThunk('1')];
+                    return [4 /*yield*/, thunk.callThunk()];
                 case 1:
                     result = _a.sent();
                     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
@@ -77,7 +77,7 @@ describe('updateProfileData', function () {
                 case 0:
                     thunk = new TestAsyncThunk(updateProfileData, { profile: { editableProfileData: profileData } });
                     thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
-                    return [4 /*yield*/, thunk.callThunk('1')];
+                    return [4 /*yield*/, thunk.callThunk()];
                 case 1:
                     result = _a.sent();
                     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
@@ -94,7 +94,7 @@ describe('updateProfileData', function () {
             switch (_a.label) {
                 case 0:
                     thunk = new TestAsyncThunk(updateProfileData, { profile: { editableProfileData: undefined } });
-                    return [4 /*yield*/, thunk.callThunk('1')];
+                    return [4 /*yield*/, thunk.callThunk()];
                 case 1:
                     result = _a.sent();
                     expect(result.meta.requestStatus).toBe('rejected');

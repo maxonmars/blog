@@ -9,7 +9,7 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-import { jsx as _jsx } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import module from './CommentList.module.css';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text/Text';
@@ -18,6 +18,9 @@ import { CommentCard } from '../CommentCard/CommentCard';
 export var CommentList = function (_a) {
     var className = _a.className, comments = _a.comments, isLoading = _a.isLoading;
     var t = useTranslation().t;
+    if (isLoading) {
+        return (_jsxs("div", __assign({ className: classNames([module.commentList, className]) }, { children: [_jsx(CommentCard, { isLoading: true }), _jsx(CommentCard, { isLoading: true }), _jsx(CommentCard, { isLoading: true })] })));
+    }
     return (_jsx("div", __assign({ className: classNames([module.commentList, className]) }, { children: (comments === null || comments === void 0 ? void 0 : comments.length)
             ? comments.map(function (comment) {
                 return _jsx(CommentCard, { isLoading: isLoading, comment: comment }, comment.id);

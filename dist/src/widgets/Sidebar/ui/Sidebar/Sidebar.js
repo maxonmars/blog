@@ -17,17 +17,18 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
 import { IcoThinChevronLeft, IcoThinChevronRight } from 'shared/assets/icons';
-import { SidebarItemList } from '../../model/items';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { useSelector } from 'react-redux';
+import { selectSidebarItems } from 'widgets/Sidebar/model/selectSidebarItems/selectSidebarItems';
 export var Sidebar = function (_a) {
     var _b;
     var className = _a.className;
+    var sidebarItemList = useSelector(selectSidebarItems);
     var _c = useState(false), isCollapsed = _c[0], setIsCollapsed = _c[1];
     var onToggle = function () {
         setIsCollapsed(function (prevState) { return !prevState; });
     };
-    // TODO: убрать айтемы для не авторизованных пользователей
-    return (_jsxs("div", __assign({ "data-testid": "sidebar", className: classNames([module.sidebar, className], (_b = {}, _b[module.collapsed] = isCollapsed, _b)) }, { children: [_jsx("div", __assign({ className: module.navigateLinks }, { children: SidebarItemList.map(function (item) {
+    return (_jsxs("div", __assign({ "data-testid": "sidebar", className: classNames([module.sidebar, className], (_b = {}, _b[module.collapsed] = isCollapsed, _b)) }, { children: [_jsx("div", __assign({ className: module.navigateLinks }, { children: sidebarItemList.map(function (item) {
                     return _jsx(SidebarItem, { isCollapsed: isCollapsed, item: item }, item.path);
                 }) })), _jsx(Button, __assign({ "data-testid": "sidebar-toggle", className: module.collapseBtn, square: true, inverted: true, variant: ButtonVariant.SUBTLE, size: ButtonSize.SM, onClick: onToggle }, { children: isCollapsed
                     ? _jsx(IcoThinChevronRight, {})

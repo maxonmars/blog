@@ -11,16 +11,31 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import { CommentCard } from './CommentCard';
+import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 export default {
-    title: '!/CommentCard',
+    title: 'entities/CommentCard',
     component: CommentCard,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    args: {},
+    args: {
+        comment: {
+            text: 'story comment',
+            id: '1',
+            user: {
+                id: '1',
+                username: 'StoryMan',
+                avatar: AvatarImg,
+            },
+        },
+    },
 };
 var Template = function (args) { return _jsx(CommentCard, __assign({}, args)); };
 export var Default = Template.bind({});
 Default.args = {};
 Default.decorators = [];
+export var Loading = Template.bind({});
+Loading.args = {
+    isLoading: true,
+};
 //# sourceMappingURL=CommentCard.stories.js.map

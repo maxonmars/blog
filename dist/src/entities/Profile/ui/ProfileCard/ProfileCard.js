@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
 import module from './ProfileCard.module.css';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { selectEditableProfileData, selectProfileError, selectProfileIsLoading, selectProfileValidateErrors, } from '../../model/selectors';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
@@ -33,8 +33,7 @@ import { selectUserAuthData } from 'entities/User';
 export var ProfileCard = function (_a) {
     var className = _a.className;
     var t = useTranslation('profile').t;
-    var dispatch = useDispatch();
-    var appDispatch = useAppDispatch();
+    var dispatch = useAppDispatch();
     var profileData = useSelector(selectEditableProfileData);
     var authData = useSelector(selectUserAuthData);
     var isLoading = useSelector(selectProfileIsLoading);
@@ -53,8 +52,8 @@ export var ProfileCard = function (_a) {
         dispatch(profileActions.editProfile((_a = {}, _a[name] = value, _a)));
     }, [dispatch]);
     var handleProfileSubmit = useCallback(function () {
-        void appDispatch(updateProfileData(profileData === null || profileData === void 0 ? void 0 : profileData.id));
-    }, [appDispatch, profileData === null || profileData === void 0 ? void 0 : profileData.id]);
+        void dispatch(updateProfileData());
+    }, [dispatch]);
     if (isLoading) {
         return (_jsx("div", __assign({ className: classNames([module.profileCard, className]) }, { children: _jsx(Loader, {}) })));
     }
@@ -64,9 +63,9 @@ export var ProfileCard = function (_a) {
     return (_jsxs("div", __assign({ className: classNames([module.profileCard, className]) }, { children: [_jsxs("div", __assign({ className: module.header }, { children: [_jsx(Title, { children: t('Профиль') }), isEdit
                         && (isReadonly
                             ? (_jsx(Button, __assign({ variant: ButtonVariant.OUTLINE, onClick: handleProfileEditable }, { children: t('редактировать') })))
-                            : (_jsxs(_Fragment, { children: [_jsx(Button, __assign({ variant: ButtonVariant.OUTLINE, onClick: handleProfileDataEditCancel }, { children: t('отменить') })), _jsx(Button, __assign({ variant: ButtonVariant.FILLED, onClick: handleProfileSubmit }, { children: t('сохранить') }))] })))] })), _jsx("div", { children: (validateErrors === null || validateErrors === void 0 ? void 0 : validateErrors.length)
-                    && validateErrors.map(function (error) {
+                            : (_jsxs(_Fragment, { children: [_jsx(Button, __assign({ variant: ButtonVariant.OUTLINE, onClick: handleProfileDataEditCancel }, { children: t('отменить') })), _jsx(Button, __assign({ variant: ButtonVariant.FILLED, onClick: handleProfileSubmit }, { children: t('сохранить') }))] })))] })), (validateErrors === null || validateErrors === void 0 ? void 0 : validateErrors.length)
+                && (_jsx("div", { children: validateErrors.map(function (error) {
                         return (_jsx(Text, __assign({ variant: TextVariant.RED, size: TextSize.SM }, { children: error }), error));
-                    }) }), _jsxs("div", __assign({ className: module.content }, { children: [_jsx(Avatar, { src: profileData === null || profileData === void 0 ? void 0 : profileData.avatar, size: AvatarSize.MD }), _jsx(Input, { label: t('Имя'), value: profileData === null || profileData === void 0 ? void 0 : profileData.firstName, readOnly: isReadonly, name: ProfileField.FIRST_NAME, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Фамилия'), value: profileData === null || profileData === void 0 ? void 0 : profileData.lastName, readOnly: isReadonly, name: ProfileField.LAST_NAME, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Возраст'), value: profileData === null || profileData === void 0 ? void 0 : profileData.age, readOnly: isReadonly, name: ProfileField.AGE, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Город'), value: profileData === null || profileData === void 0 ? void 0 : profileData.city, readOnly: isReadonly, name: ProfileField.CITY, onChange: handleProfileDataEdit }), _jsx(Input, { value: profileData === null || profileData === void 0 ? void 0 : profileData.username, readOnly: isReadonly, name: ProfileField.USERNAME, onChange: handleProfileDataEdit, label: t('Юзернейм') }), _jsx(Input, { value: profileData === null || profileData === void 0 ? void 0 : profileData.avatar, readOnly: isReadonly, name: ProfileField.AVATAR, onChange: handleProfileDataEdit, label: t('Фото') }), _jsx(CurrencySelect, { selectedValue: profileData === null || profileData === void 0 ? void 0 : profileData.currency, disabled: isReadonly, onChange: handleProfileDataEdit }), _jsx(CountrySelect, { onChange: handleProfileDataEdit, selectedValue: profileData === null || profileData === void 0 ? void 0 : profileData.country, disabled: isReadonly })] }))] })));
+                    }) })), _jsxs("div", __assign({ className: module.content }, { children: [_jsx(Avatar, { src: profileData === null || profileData === void 0 ? void 0 : profileData.avatar, size: AvatarSize.MD, alt: "\u0430\u0432\u0430\u0442\u0430\u0440 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F" }), _jsx(Input, { label: t('Имя'), value: profileData === null || profileData === void 0 ? void 0 : profileData.firstName, readOnly: isReadonly, name: ProfileField.FIRST_NAME, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Фамилия'), value: profileData === null || profileData === void 0 ? void 0 : profileData.lastName, readOnly: isReadonly, name: ProfileField.LAST_NAME, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Возраст'), value: profileData === null || profileData === void 0 ? void 0 : profileData.age, readOnly: isReadonly, name: ProfileField.AGE, onChange: handleProfileDataEdit }), _jsx(Input, { label: t('Город'), value: profileData === null || profileData === void 0 ? void 0 : profileData.city, readOnly: isReadonly, name: ProfileField.CITY, onChange: handleProfileDataEdit }), _jsx(Input, { value: profileData === null || profileData === void 0 ? void 0 : profileData.username, readOnly: isReadonly, name: ProfileField.USERNAME, onChange: handleProfileDataEdit, label: t('Юзернейм') }), _jsx(Input, { value: profileData === null || profileData === void 0 ? void 0 : profileData.avatar, readOnly: isReadonly, name: ProfileField.AVATAR, onChange: handleProfileDataEdit, label: t('Фото') }), _jsx(CurrencySelect, { selectedValue: profileData === null || profileData === void 0 ? void 0 : profileData.currency, disabled: isReadonly, onChange: handleProfileDataEdit }), _jsx(CountrySelect, { onChange: handleProfileDataEdit, selectedValue: profileData === null || profileData === void 0 ? void 0 : profileData.country, disabled: isReadonly })] }))] })));
 };
 //# sourceMappingURL=ProfileCard.js.map

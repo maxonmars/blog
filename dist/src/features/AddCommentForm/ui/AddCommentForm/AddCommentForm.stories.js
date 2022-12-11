@@ -11,6 +11,7 @@ var __assign = (this && this.__assign) || function () {
 };
 import { jsx as _jsx } from "react/jsx-runtime";
 import AddCommentForm from './AddCommentForm';
+import { storeDecorator } from 'shared/lib/storybook/StoreDecorator';
 export default {
     title: 'features/AddCommentForm',
     component: AddCommentForm,
@@ -22,5 +23,5 @@ export default {
 var Template = function (args) { return _jsx(AddCommentForm, __assign({}, args)); };
 export var Default = Template.bind({});
 Default.args = {};
-Default.decorators = [];
+Default.decorators = [storeDecorator({ addCommentForm: {} })];
 //# sourceMappingURL=AddCommentForm.stories.js.map

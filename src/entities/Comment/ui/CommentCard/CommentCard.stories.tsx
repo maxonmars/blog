@@ -5,7 +5,7 @@ import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 type StoryType = ComponentStory<typeof CommentCard>;
 
 export default {
-	title: 'entities/CommentCard',
+	title: 'entities/Comment/CommentCard',
 	component: CommentCard,
 	argTypes: {
 		backgroundColor: {control: 'color'},

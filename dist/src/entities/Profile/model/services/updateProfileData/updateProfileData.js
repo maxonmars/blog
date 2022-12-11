@@ -43,29 +43,27 @@ var checkData = function (data) {
         throw new Error();
     }
 };
-export var updateProfileData = createAsyncThunk('profile/updateProfileData', function (profileId, thunkAPI) { return __awaiter(void 0, void 0, void 0, function () {
+export var updateProfileData = createAsyncThunk('profile/updateProfileData', function (_, thunkAPI) { return __awaiter(void 0, void 0, void 0, function () {
     var profileData, errors, response, e_1;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var _a;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0:
-                if (!profileId) {
-                    return [2 /*return*/, thunkAPI.rejectWithValue([ValidateProfileError.INCORRECT_PROFILE_ID])];
-                }
                 profileData = selectEditableProfileData(thunkAPI.getState());
                 errors = validateProfileData(profileData);
                 if (errors.length) {
                     return [2 /*return*/, thunkAPI.rejectWithValue(errors)];
                 }
-                _a.label = 1;
+                _b.label = 1;
             case 1:
-                _a.trys.push([1, 3, , 4]);
-                return [4 /*yield*/, thunkAPI.extra.api.put("/profile/".concat(profileId), profileData)];
+                _b.trys.push([1, 3, , 4]);
+                return [4 /*yield*/, thunkAPI.extra.api.put("/profiles/".concat((_a = profileData === null || profileData === void 0 ? void 0 : profileData.id) !== null && _a !== void 0 ? _a : ''), profileData)];
             case 2:
-                response = _a.sent();
+                response = _b.sent();
                 checkData(response.data);
                 return [2 /*return*/, response.data];
             case 3:
-                e_1 = _a.sent();
+                e_1 = _b.sent();
                 return [2 /*return*/, thunkAPI.rejectWithValue([ValidateProfileError.SERVER_ERROR])];
             case 4: return [2 /*return*/];
         }

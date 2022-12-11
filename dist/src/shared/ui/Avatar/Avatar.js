@@ -30,10 +30,9 @@ export var AvatarSize;
     AvatarSize["MD"] = "100px";
     AvatarSize["LG"] = "200px";
 })(AvatarSize || (AvatarSize = {}));
-// TODO: добавить аватар заглушку
 export var Avatar = memo(function (_a) {
-    var className = _a.className, _b = _a.size, size = _b === void 0 ? AvatarSize.SM : _b, restProps = __rest(_a, ["className", "size"]);
-    return _jsx("img", __assign({}, restProps, { width: size, alt: "avatar", className: classNames([module.avatar, className]) }));
+    var className = _a.className, _b = _a.size, size = _b === void 0 ? AvatarSize.SM : _b, _c = _a.alt, alt = _c === void 0 ? 'аватар' : _c, restProps = __rest(_a, ["className", "size", "alt"]);
+    return (_jsx("img", __assign({}, restProps, { alt: alt, width: size, height: size, className: classNames([module.avatar, className]) })));
 });
 Avatar.displayName = 'Avatar';
 //# sourceMappingURL=Avatar.js.map

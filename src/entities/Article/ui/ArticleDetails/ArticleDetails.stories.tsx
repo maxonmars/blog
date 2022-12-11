@@ -3,6 +3,7 @@ import {ArticleDetails} from './ArticleDetails';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
 import type {Article} from 'entities/Article';
 import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/article';
+import avatar from 'shared/assets/tests/image/avatar-stories.jpeg';
 
 type StoryType = ComponentStory<typeof ArticleDetails>;
 
@@ -13,6 +14,11 @@ const article: Article = {
 	img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 	views: 1022,
 	createdAt: '26.02.2022',
+	user: {
+		id: '1',
+		avatar: avatar as string,
+		username: 'Max',
+	},
 	type: [
 		ArticleType.IT,
 	],
@@ -79,7 +85,7 @@ const article: Article = {
 };
 
 export default {
-	title: 'entities/ArticleDetails',
+	title: 'entities/Article/ArticleDetails',
 	component: ArticleDetails,
 	argTypes: {
 		backgroundColor: {control: 'color'},

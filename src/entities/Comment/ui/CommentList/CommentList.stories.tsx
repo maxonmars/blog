@@ -5,7 +5,7 @@ import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 type StoryType = ComponentStory<typeof CommentList>;
 
 export default {
-	title: 'entities/CommentList',
+	title: 'entities/Comment/CommentList',
 	component: CommentList,
 	argTypes: {
 		backgroundColor: {control: 'color'},

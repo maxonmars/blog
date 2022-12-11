@@ -10,4 +10,9 @@ export var ArticleType;
     ArticleType["SCIENCE"] = "SCIENCE";
     ArticleType["ECONOMICS"] = "ECONOMICS";
 })(ArticleType || (ArticleType = {}));
+export var ArticleView;
+(function (ArticleView) {
+    ArticleView["LIST"] = "list";
+    ArticleView["GRID"] = "grid";
+})(ArticleView || (ArticleView = {}));
 //# sourceMappingURL=article.js.map

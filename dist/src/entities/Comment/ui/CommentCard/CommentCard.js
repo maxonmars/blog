@@ -23,7 +23,10 @@ export var CommentCard = function (_a) {
     if (isLoading) {
         return (_jsxs("div", __assign({ className: classNames([module.commentCard, className]) }, { children: [_jsx(Skeleton, { borderRadius: '50%', width: 50, height: 50 }), _jsx(Skeleton, { width: 150, height: 20 }), _jsx(Skeleton, { className: module.commentText, width: '100%', height: 16 })] })));
     }
+    if (!comment) {
+        return null;
+    }
     var profileLink = "".concat(ROUTE_PATH.PROFILE).concat(comment.user.id);
-    return (_jsxs("div", __assign({ className: classNames([module.commentCard, className]) }, { children: [_jsx(AppLink, __assign({ to: profileLink }, { children: _jsx(Avatar, { src: comment.user.avatar, size: AvatarSize.SM }) })), _jsx(AppLink, __assign({ to: profileLink }, { children: _jsx(Title, __assign({ order: 4 }, { children: comment.user.username })) })), _jsx(Text, __assign({ className: module.commentText }, { children: comment.text }))] })));
+    return (_jsxs("div", __assign({ className: classNames([module.commentCard, className]) }, { children: [_jsx(AppLink, __assign({ to: profileLink }, { children: _jsx(Avatar, { alt: "\u0430\u0432\u0430\u0442\u0430\u0440 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F", loading: "lazy", decoding: "async", src: comment.user.avatar, size: AvatarSize.SM }) })), _jsx(AppLink, __assign({ to: profileLink }, { children: _jsx(Title, __assign({ order: 4 }, { children: comment.user.username })) })), _jsx(Text, __assign({ className: module.commentText }, { children: comment.text }))] })));
 };
 //# sourceMappingURL=CommentCard.js.map
