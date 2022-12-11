@@ -23,18 +23,19 @@ export const ArticleList = ({className, articles, isLoading, view}: ArticleListP
 		return <ArticleListItem key={article.id} article={article} view={view}/>;
 	};
 
-	if (isLoading) {
-		return (
-			<div className={classNames([module.articleList, className, module[view]])}>
-				{getSkeletons(view)}
-			</div>);
-	}
+	// if (isLoading) {
+	// 	return (
+	// 		<div className={classNames([module.articleList, className, module[view]])}>
+	// 			{getSkeletons(view)}
+	// 		</div>);
+	// }
 
 	return (
 		<div className={classNames([module.articleList, className, module[view]])}>
 			{articles.length > 0
 				? articles.map(renderArticle)
 				: null}
+			{isLoading && getSkeletons(view)}
 		</div>
 	);
 };

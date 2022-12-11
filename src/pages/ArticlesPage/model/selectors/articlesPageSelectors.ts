@@ -12,3 +12,15 @@ export const selectArticlesPageError = (state: StateScheme) => {
 export const selectArticlesPageView = (state: StateScheme) => {
 	return state.articlesPage?.view ?? ArticleView.GRID;
 };
+
+export const selectArticlesPageNumber = (state: StateScheme) => {
+	return state.articlesPage?.page ?? 1;
+};
+
+export const selectArticlesPageLimit = (state: StateScheme) => {
+	return state.articlesPage?.limit;
+};
+
+export const selectArticlesPageHasMore = (state: StateScheme) => {
+	return state.articlesPage?.hasMore;
+};
