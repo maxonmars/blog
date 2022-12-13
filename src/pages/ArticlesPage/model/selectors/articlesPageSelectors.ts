@@ -24,3 +24,7 @@ export const selectArticlesPageLimit = (state: StateScheme) => {
 export const selectArticlesPageHasMore = (state: StateScheme) => {
 	return state.articlesPage?.hasMore;
 };
+
+export const selectArticlesPageIsInit = (state: StateScheme) => {
+	return state.articlesPage?._isInit;
+};

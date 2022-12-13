@@ -40,7 +40,7 @@ const AddCommentForm = ({className, onCommentSend}: AddCommentFormProps) => {
 	};
 
 	return (
-		<DynamicModuleLoader reducers={reducers}>
+		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
 			<div className={classNames([module.addCommentForm, className])}>
 				<Input onChange={handleCommentChange} value={text} placeholder={t('комментарий')}/>
 				<Button onClick={handleCommentSend}>{t('Отправить')}</Button>

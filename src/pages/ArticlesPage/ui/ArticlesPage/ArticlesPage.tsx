@@ -8,20 +8,20 @@ import {
 	articlesPageActions,
 	articlesPageReducer,
 	selectArticles,
-} from 'pages/ArticlesPage/model/slice/articlesPageSlice';
+} from '../../model/slice/articlesPageSlice';
 import {useAppDispatch} from 'shared/hooks';
 import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
 import {useCallback} from 'react';
-import {fetchArticlesList} from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
 import {useSelector} from 'react-redux';
 import {
 	selectArticlesPageIsLoading,
 	selectArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+} from '../../model/selectors/articlesPageSelectors';
 import {ArticleViewSelector} from 'features/ArticleViewSelector/ui/ArticleViewSelector';
 import {ARTICLES_VIEW_STORAGE_KEY} from 'shared/const/localStorage';
 import {Page} from 'shared/ui/Page/Page';
-import {fetchNextArticlesPage} from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -38,8 +38,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
 	const view = useSelector(selectArticlesPageView);
 
 	useInitialEffect(useCallback(() => {
-		dispatch(articlesPageActions.setLimit());
-		void dispatch(fetchArticlesList({page: 1}));
+		void dispatch(initArticlesPage());
 	}, [dispatch]));
 
 	const handleViewChange = (view: ArticleView) => {

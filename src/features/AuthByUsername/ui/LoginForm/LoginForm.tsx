@@ -49,7 +49,7 @@ const LoginForm = ({className, onCloseModal}: LoginFormProps) => {
 	};
 
 	return (
-		<DynamicModuleLoader reducers={initialReducers}>
+		<DynamicModuleLoader reducers={initialReducers} isRemoveAfterUnmount>
 			<div className={classNames([module.loginForm, className])}>
 				{error && <Text size={TextSize.SM} variant={TextVariant.RED}>
 					{t('неверный пароль или имя пользователя')}

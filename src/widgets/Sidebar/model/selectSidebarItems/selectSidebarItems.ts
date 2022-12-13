@@ -1,4 +1,3 @@
-import type {StateScheme} from 'app/providers/StoreProvider/config/StateScheme';
 import {createSelector} from '@reduxjs/toolkit';
 import {selectUserAuthData} from 'entities/User';
 import {ROUTE_PATH} from 'app/providers/router';

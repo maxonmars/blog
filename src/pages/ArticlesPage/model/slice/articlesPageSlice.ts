@@ -24,6 +24,7 @@ const initialState = articlesAdapter.getInitialState<ArticlesPageScheme>({
 	view: localStorage.getItem(ARTICLES_VIEW_STORAGE_KEY) as ArticleView ?? ArticleView.GRID,
 	page: 1,
 	hasMore: true,
+	_isInit: false,
 });
 
 const articlesPageSlice = createSlice({
@@ -36,8 +37,9 @@ const articlesPageSlice = createSlice({
 		setPage(state, action: PayloadAction<number>) {
 			state.page = action.payload;
 		},
-		setLimit(state) {
+		initState(state) {
 			state.limit = state.view === ArticleView.LIST ? 4 : 9;
+			state._isInit = true;
 		},
 	},
 	extraReducers(builder) {
