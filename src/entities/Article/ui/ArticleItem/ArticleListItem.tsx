@@ -24,7 +24,7 @@ export const ArticleListItem = ({className, article, view}: ArticleListItemProps
 	const navigate = useNavigate();
 
 	const handleArticleDetailsNavigate = () => {
-		navigate(`${ROUTE_PATH.ARTICLE_DETAILS_PAGE}${article.id}`);
+		navigate(`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`);
 	};
 
 	if (view === ArticleView.LIST) {

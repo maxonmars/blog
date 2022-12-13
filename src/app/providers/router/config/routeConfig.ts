@@ -12,7 +12,7 @@ export const ROUTE_PATH = {
 	ABOUT: '/about',
 	PROFILE: '/profile/',
 	ARTICLES: '/articles',
-	ARTICLE_DETAILS_PAGE: '/articles/',
+	ARTICLE_DETAILS: '/articles/',
 	// last
 	NOT_FOUND: '*',
 } as const;
@@ -44,8 +44,8 @@ const routeConfig: Record<PathKey, PathValue> = ({
 		element: createElement(ArticlesPage),
 		authOnly: true,
 	},
-	ARTICLE_DETAILS_PAGE: {
-		path: ROUTE_PATH.ARTICLE_DETAILS_PAGE + ':id',
+	ARTICLE_DETAILS: {
+		path: ROUTE_PATH.ARTICLE_DETAILS + ':id',
 		element: createElement(ArticleDetailsPage),
 		authOnly: true,
 	},
