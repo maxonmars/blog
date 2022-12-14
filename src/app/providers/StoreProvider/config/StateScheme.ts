@@ -7,9 +7,11 @@ import type {ArticleDetailsScheme} from 'entities/Article';
 import type {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
 import type {AddCommentFormScheme} from 'features/AddCommentForm';
 import type {ArticlesPageScheme} from 'pages/ArticlesPage';
+import type {RestorationScrollScheme} from 'features/RestorationScroll';
 
 export interface StateScheme {
 	user: UserScheme;
+	restorationScroll: RestorationScrollScheme;
 
 	// Async reducers
 	login?: LoginScheme;
