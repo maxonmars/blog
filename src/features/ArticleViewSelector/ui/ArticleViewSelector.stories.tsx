@@ -4,7 +4,7 @@ import {ArticleViewSelector} from './ArticleViewSelector';
 type StoryType = ComponentStory<typeof ArticleViewSelector>;
 
 export default {
-	title: '!/ArticleViewSelector',
+	title: 'features/Article/ArticleViewSelector',
 	component: ArticleViewSelector,
 	argTypes: {
 		backgroundColor: {control: 'color'},

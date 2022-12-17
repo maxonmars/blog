@@ -22,6 +22,8 @@ import {ARTICLES_VIEW_STORAGE_KEY} from 'shared/const/localStorage';
 import {Page} from 'widgets/Page/Page';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
+import {ArticlesPageFilters} from 'pages/ArticlesPage/ui/ArticlesPageFilters/ArticlesPageFilters';
+import {useSearchParams} from 'react-router-dom';
 
 interface ArticlesPageProps {
 	className?: string;
@@ -36,15 +38,11 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
 	const articles = useSelector(selectArticles.selectAll);
 	const isLoading = useSelector(selectArticlesPageIsLoading);
 	const view = useSelector(selectArticlesPageView);
+	const [searchParams] = useSearchParams();
 
 	useInitialEffect(useCallback(() => {
-		void dispatch(initArticlesPage());
-	}, [dispatch]));
-
-	const handleViewChange = (view: ArticleView) => {
-		dispatch(articlesPageActions.setView(view));
-		localStorage.setItem(ARTICLES_VIEW_STORAGE_KEY, view);
-	};
+		void dispatch(initArticlesPage(searchParams));
+	}, [dispatch, searchParams]));
 
 	const handleNextPartLoad = useCallback(() => {
 		void dispatch(fetchNextArticlesPage());
@@ -54,7 +52,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
 		<DynamicModuleLoader reducers={reducers}>
 			<Page onScrollEnd={handleNextPartLoad}>
 				<div className={classNames([module.articlesPage, className])}>
-					<ArticleViewSelector onViewChange={handleViewChange} view={view}/>
+					<ArticlesPageFilters/>
 					<ArticleList articles={articles} isLoading={isLoading} view={view}/>
 				</div>
 			</Page>

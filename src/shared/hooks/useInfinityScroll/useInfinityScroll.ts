@@ -1,22 +1,22 @@
 import type {MutableRefObject} from 'react';
 import {useEffect, useRef} from 'react';
 
-export interface UseInfinityScrollProps {
+interface UseInfinityScrollOptions {
 	callback?: () => void;
 	triggerRef: MutableRefObject<HTMLElement>;
 	wrapperRef: MutableRefObject<HTMLElement>;
 }
 
-export const useInfinityScroll = ({wrapperRef, triggerRef, callback}: UseInfinityScrollProps) => {
+export const useInfinityScroll = ({callback, wrapperRef, triggerRef}: UseInfinityScrollOptions) => {
 	const observer = useRef<IntersectionObserver | undefined>();
 
 	useEffect(() => {
-		const currentTrigger = triggerRef.current;
-		const currentWrapper = wrapperRef.current;
+		const wrapperElement = wrapperRef.current;
+		const triggerElement = triggerRef.current;
 
 		if (callback) {
 			const options = {
-				root: currentWrapper,
+				root: wrapperElement,
 				rootMargin: '0px',
 				threshold: 1.0,
 			};
@@ -27,13 +27,13 @@ export const useInfinityScroll = ({wrapperRef, triggerRef, callback}: UseInfinit
 				}
 			}, options);
 
-			observer.current.observe(currentTrigger);
+			observer.current.observe(triggerElement);
 		}
 
 		return () => {
-			if (observer.current) {
-				observer.current.unobserve(currentTrigger);
+			if (observer.current && triggerElement) {
+				observer.current.unobserve(triggerElement);
 			}
 		};
-	}, [wrapperRef, callback, triggerRef]);
+	}, [callback, triggerRef, wrapperRef]);
 };

@@ -4,7 +4,7 @@ import ArticlesPage from './ArticlesPage';
 type StoryType = ComponentStory<typeof ArticlesPage>;
 
 export default {
-	title: 'pages/ArticlesPage',
+	title: 'pages/Articles/ArticlesPage',
 	component: ArticlesPage,
 	argTypes: {
 		backgroundColor: {control: 'color'},

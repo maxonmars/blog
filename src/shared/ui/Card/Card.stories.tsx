@@ -1,5 +1,5 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import {Card} from './Card';
+import {Card, CardVariant} from './Card';
 import {Text} from 'shared/ui/Text/Text';
 
 type StoryType = ComponentStory<typeof Card>;
@@ -27,3 +27,8 @@ Default.args = {
 };
 
 Default.decorators = [];
+
+export const Outline = Template.bind({});
+Outline.args = {
+	variant: CardVariant.OUTLINE,
+};

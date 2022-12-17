@@ -3,3 +3,8 @@
 	background-color: var(--secondary-color);
 	border-radius: 1em;
 }
+
+.card.outline {
+	background-color: transparent;
+	border: 1px solid #ced4da;
+}

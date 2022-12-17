@@ -1,0 +1,9 @@
+.tabs {
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 0.5em;
+}
+
+.tab {
+	cursor: pointer;
+}

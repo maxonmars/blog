@@ -32,7 +32,6 @@ export const Page = ({className, children, onScrollEnd}: PageProps) => {
 	useInfinityScroll({wrapperRef, triggerRef, callback: onScrollEnd});
 
 	const handleScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-		console.log('RENDER');
 		dispatch(restorationScrollActions.setScrollPosition(
 			{
 				position: e.currentTarget.scrollTop,

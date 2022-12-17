@@ -26,3 +26,7 @@ type DeepPartial<T> = T extends object ? {
 // type DeepPartial<T> = T extends Record<string, unknown> ? {
 // 	[P in keyof T]?: DeepPartial<T[P]>;
 // } : T;
+
+type OptionRecord<K extends keyof any, T> = {
+	[P in K]?: T;
+};
