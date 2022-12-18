@@ -18,4 +18,5 @@
 	display: flex;
 	grid-gap: 16px;
 	justify-content: flex-end;
+	align-items: center;
 }

@@ -7,6 +7,8 @@ import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
 import {selectUserAuthData, userActions} from 'entities/User';
+import {AppLink, AppLinkVariant} from 'shared/ui/AppLink/AppLink';
+import {ROUTE_PATH} from 'app/providers/router';
 
 const activeStyle = ({isActive}: {isActive: boolean}): React.CSSProperties =>
 	isActive
@@ -43,9 +45,14 @@ export const Navbar = ({className}: NavbarProps) => {
 			<div className={module.links}>
 				{isAuth
 					? (
-						<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleLogout}>
-							{t('Выйти')}
-						</Button>
+						<>
+							<AppLink variant={AppLinkVariant.INVERTED} to={ROUTE_PATH.ARTICLE_CREATE}>
+								{t('Создать статью')}
+							</AppLink>
+							<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleLogout}>
+								{t('Выйти')}
+							</Button>
+						</>
 					)
 					: (
 						<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleOpenAuthModal}>

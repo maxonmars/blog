@@ -6,6 +6,7 @@ import {ProfilePage} from 'pages/ProfilePage';
 import {createElement} from 'react';
 import {ArticlesPage} from 'pages/ArticlesPage';
 import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
+import {ArticleEditPage} from 'pages/ArticleEditPage';
 
 export const ROUTE_PATH = {
 	MAIN: '/',
@@ -13,6 +14,8 @@ export const ROUTE_PATH = {
 	PROFILE: '/profile/',
 	ARTICLES: '/articles',
 	ARTICLE_DETAILS: '/articles/',
+	ARTICLE_CREATE: '/articles/new',
+	ARTICLE_EDIT: '/articles/:id/edit',
 	// last
 	NOT_FOUND: '*',
 } as const;
@@ -47,6 +50,16 @@ const routeConfig: Record<PathKey, PathValue> = ({
 	ARTICLE_DETAILS: {
 		path: ROUTE_PATH.ARTICLE_DETAILS + ':id',
 		element: createElement(ArticleDetailsPage),
+		authOnly: true,
+	},
+	ARTICLE_CREATE: {
+		path: ROUTE_PATH.ARTICLE_CREATE,
+		element: createElement(ArticleEditPage),
+		authOnly: true,
+	},
+	ARTICLE_EDIT: {
+		path: ROUTE_PATH.ARTICLE_EDIT,
+		element: createElement(ArticleEditPage),
 		authOnly: true,
 	},
 	//last

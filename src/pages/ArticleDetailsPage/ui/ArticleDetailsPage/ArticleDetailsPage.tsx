@@ -31,6 +31,7 @@ import {
 } from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import {Title} from 'shared/ui/Title/Title';
 import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage/model/slice';
+import {ArticleDetailsPageHeader} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -43,7 +44,6 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 	const {t} = useTranslation('articleDetailsPage');
 	const dispatch = useAppDispatch();
-	const navigate = useNavigate();
 	const {id} = useParams<{id: string}>();
 
 	const isLoading = useSelector(selectArticleDetailsCommentsIsLoading);
@@ -62,10 +62,6 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 		void dispatch(sendComment(text));
 	}, [dispatch]);
 
-	const handleArticleListBack = useCallback(() => {
-		navigate(ROUTE_PATH.ARTICLES);
-	}, [navigate]);
-
 	if (!id) {
 		return (
 			<div className={classNames([module.articleDetailsPage, className])}>
@@ -77,11 +73,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
 			<div className={classNames([module.articleDetailsPage, className])}>
-				<Button
-					onClick={handleArticleListBack}
-					variant={ButtonVariant.OUTLINE}>
-					{t('Назад к списку')}
-				</Button>
+				<ArticleDetailsPageHeader/>
 				<ArticleDetails id={id}/>
 				<Title order={3}>{t('Рекомендуем')}</Title>
 				<ArticleList articles={recommendations} target="_blank" isLoading={isLoadingRecommendations}/>

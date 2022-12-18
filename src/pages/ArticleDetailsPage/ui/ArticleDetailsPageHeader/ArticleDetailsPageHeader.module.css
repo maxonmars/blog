@@ -1,0 +1,12 @@
+.articleDetailsPageHeader {
+	display: flex;
+	column-gap: 1em;
+}
+
+.articleDetailsPageHeader > :last-child {
+	margin-left: auto;
+}
+
+.articleDetailsPageHeader > :first-child {
+	margin-left: initial;
+}
