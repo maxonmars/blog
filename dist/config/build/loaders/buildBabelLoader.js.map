@@ -1,1 +1,0 @@
-{"version":3,"file":"buildBabelLoader.js","sourceRoot":"","sources":["../../../../config/build/loaders/buildBabelLoader.ts"],"names":[],"mappings":"AAEA,MAAM,CAAC,IAAM,gBAAgB,GAAG,UAAC,OAAqB;IACrD,OAAO;QACN,IAAI,EAAE,cAAc;QACpB,OAAO,EAAE,cAAc;QACvB,GAAG,EAAE;YACJ,MAAM,EAAE,cAAc;SACtB;KACD,CAAC;AACH,CAAC,CAAC"}
