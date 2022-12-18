@@ -1,9 +1,9 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
-import { fetchCommentsByArticleId, } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 var commentsAdapter = createEntityAdapter({
     selectId: function (comment) { return comment.id; },
 });
-export var selectArticleComments = commentsAdapter.getSelectors(function (state) { var _a; return (_a = state.articleDetailsComments) !== null && _a !== void 0 ? _a : commentsAdapter.getInitialState(); });
+export var selectArticleComments = commentsAdapter.getSelectors(function (state) { var _a, _b; return (_b = (_a = state.articleDetailsPage) === null || _a === void 0 ? void 0 : _a.comments) !== null && _b !== void 0 ? _b : commentsAdapter.getInitialState(); });
 var initialState = commentsAdapter.getInitialState({
     isLoading: false,
     error: undefined,

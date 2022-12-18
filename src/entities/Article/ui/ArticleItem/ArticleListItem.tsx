@@ -12,14 +12,17 @@ import {Title} from 'shared/ui/Title/Title';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {useNavigate} from 'react-router-dom';
 import {ROUTE_PATH} from 'app/providers/router';
+import {AppLink} from 'shared/ui/AppLink/AppLink';
+import type {HTMLAttributeAnchorTarget} from 'react';
 
 interface ArticleListItemProps {
 	className?: string;
 	article: Article;
 	view: ArticleView;
+	target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = ({className, article, view}: ArticleListItemProps) => {
+export const ArticleListItem = ({className, article, view, target}: ArticleListItemProps) => {
 	const {t} = useTranslation();
 	const navigate = useNavigate();
 
@@ -47,12 +50,13 @@ export const ArticleListItem = ({className, article, view}: ArticleListItemProps
 				{textBlock
 					&& <ArticleTextBlockComponent block={textBlock} className={module.textBlock}/>
 				}
-				<Button
-					onClick={handleArticleDetailsNavigate}
-					variant={ButtonVariant.OUTLINE}
-					className={module.readBtn}>
-					{t('Читать далее...')}
-				</Button>
+				<AppLink to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}>
+					<Button
+						variant={ButtonVariant.OUTLINE}
+						className={module.readBtn}>
+						{t('Читать далее...')}
+					</Button>
+				</AppLink>
 				<div className={module.viewsCounter}>
 					<Text>{article.views}</Text>
 					<IcoThinEyeEvil width={20}/>
@@ -62,24 +66,29 @@ export const ArticleListItem = ({className, article, view}: ArticleListItemProps
 	}
 
 	return (
-		<Card
-			className={classNames([module.articleListItem, className, module[view]])}
-			onClick={handleArticleDetailsNavigate}>
-			<div className={module.cover}>
-				<img
-					className={module.coverImage}
-					src={article.img}
-					width={200}
-					height={200}
-					alt={article.title}/>
-				<Text className={module.coverDate}>{article.createdAt}</Text>
-			</div>
-			<Text className={module.articleTypes}>{article.type.join(', ')}</Text>
-			<div className={module.viewsCounter}>
-				<Text>{article.views}</Text>
-				<IcoThinEyeEvil width={20}/>
-			</div>
-			<Title order={3} className={module.articleTitle}>{article.title}</Title>
-		</Card>
+		<AppLink
+			target={target}
+			to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}
+			className={module.appLinkCardWrapper}>
+			<Card
+				className={classNames([module.articleListItem, className, module[view]])}
+				onClick={handleArticleDetailsNavigate}>
+				<div className={module.cover}>
+					<img
+						className={module.coverImage}
+						src={article.img}
+						width={200}
+						height={200}
+						alt={article.title}/>
+					<Text className={module.coverDate}>{article.createdAt}</Text>
+				</div>
+				<Text className={module.articleTypes}>{article.type.join(', ')}</Text>
+				<div className={module.viewsCounter}>
+					<Text>{article.views}</Text>
+					<IcoThinEyeEvil width={20}/>
+				</div>
+				<Title order={3} className={module.articleTitle}>{article.title}</Title>
+			</Card>
+		</AppLink>
 	);
 };

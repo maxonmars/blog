@@ -10,7 +10,7 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { jsx as _jsx } from "react/jsx-runtime";
-import { Card } from './Card';
+import { Card, CardVariant } from './Card';
 import { Text } from 'shared/ui/Text/Text';
 export default {
     title: 'shared/Card',
@@ -26,4 +26,8 @@ var Template = function (args) {
 export var Default = Template.bind({});
 Default.args = {};
 Default.decorators = [];
+export var Outline = Template.bind({});
+Outline.args = {
+    variant: CardVariant.OUTLINE,
+};
 //# sourceMappingURL=Card.stories.js.map

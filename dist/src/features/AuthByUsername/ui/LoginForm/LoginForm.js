@@ -93,7 +93,7 @@ var LoginForm = function (_a) {
             }
         });
     }); };
-    return (_jsx(DynamicModuleLoader, __assign({ reducers: initialReducers }, { children: _jsxs("div", __assign({ className: classNames([module.loginForm, className]) }, { children: [error && _jsx(Text, __assign({ size: TextSize.SM, variant: TextVariant.RED }, { children: t('неверный пароль или имя пользователя') })), _jsx(Input, { onChange: handleUsernameChange, autoFocus: true, type: "text", value: username, placeholder: t('введите имя пользователя') }), _jsx(Input, { onChange: handlePasswordChange, type: "text", value: password, placeholder: t('введите пароль') }), _jsx(Button, __assign({ disabled: isLoading, onClick: handleLogin, variant: ButtonVariant.FILLED }, { children: t('Войти') }))] })) })));
+    return (_jsx(DynamicModuleLoader, __assign({ reducers: initialReducers, isRemoveAfterUnmount: true }, { children: _jsxs("div", __assign({ className: classNames([module.loginForm, className]) }, { children: [error && _jsx(Text, __assign({ size: TextSize.SM, variant: TextVariant.RED }, { children: t('неверный пароль или имя пользователя') })), _jsx(Input, { onChange: handleUsernameChange, autoFocus: true, type: "text", value: username, placeholder: t('введите имя пользователя') }), _jsx(Input, { onChange: handlePasswordChange, type: "text", value: password, placeholder: t('введите пароль') }), _jsx(Button, __assign({ disabled: isLoading, onClick: handleLogin, variant: ButtonVariant.FILLED }, { children: t('Войти') }))] })) })));
 };
 export default LoginForm;
 //# sourceMappingURL=LoginForm.js.map

@@ -13,7 +13,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { CommentCard } from './CommentCard';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 export default {
-    title: 'entities/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -1,24 +1,14 @@
 import module from './ArticlesPage.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {ArticleView} from 'entities/Article';
 import {ArticleList} from 'entities/Article';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {
-	articlesPageActions,
-	articlesPageReducer,
-	selectArticles,
-} from '../../model/slice/articlesPageSlice';
+import {articlesPageReducer, selectArticles} from '../../model/slice/articlesPageSlice';
 import {useAppDispatch} from 'shared/hooks';
 import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
 import {useCallback} from 'react';
 import {useSelector} from 'react-redux';
-import {
-	selectArticlesPageIsLoading,
-	selectArticlesPageView,
-} from '../../model/selectors/articlesPageSelectors';
-import {ArticleViewSelector} from 'features/ArticleViewSelector/ui/ArticleViewSelector';
-import {ARTICLES_VIEW_STORAGE_KEY} from 'shared/const/localStorage';
+import {selectArticlesPageIsLoading, selectArticlesPageView} from '../../model/selectors/articlesPageSelectors';
 import {Page} from 'widgets/Page/Page';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';

@@ -13,7 +13,6 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { Provider } from 'react-redux';
 import { createReduxStore } from '../config/store';
 export var StoreProvider = function (_a) {
-    // const navigate = useNavigate();
     var children = _a.children, initialState = _a.initialState, asyncReducers = _a.asyncReducers;
     var store = createReduxStore(initialState, asyncReducers);
     return (_jsx(Provider, __assign({ store: store }, { children: children })));

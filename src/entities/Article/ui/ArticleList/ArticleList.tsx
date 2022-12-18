@@ -6,12 +6,14 @@ import {ArticleListItem} from '../ArticleItem/ArticleListItem';
 import {ArticleListItemSkeleton} from 'entities/Article/ui/ArticleItem/ArticleListItemSkeleton';
 import {useTranslation} from 'react-i18next';
 import {Text, TextSize} from 'shared/ui/Text/Text';
+import type {HTMLAttributeAnchorTarget} from 'react';
 
 interface ArticleListProps {
 	className?: string;
 	articles: Article[];
 	isLoading?: boolean;
-	view: ArticleView;
+	view?: ArticleView;
+	target?: HTMLAttributeAnchorTarget;
 }
 
 const getSkeletons = (view: ArticleView) => {
@@ -20,10 +22,10 @@ const getSkeletons = (view: ArticleView) => {
 	});
 };
 
-export const ArticleList = ({className, articles, isLoading, view}: ArticleListProps) => {
+export const ArticleList = ({className, target, articles, isLoading, view = ArticleView.GRID}: ArticleListProps) => {
 	const {t} = useTranslation();
 	const renderArticle = (article: Article) => {
-		return <ArticleListItem key={article.id} article={article} view={view}/>;
+		return <ArticleListItem key={article.id} target={target} article={article} view={view}/>;
 	};
 
 	if (!isLoading && !articles.length) {

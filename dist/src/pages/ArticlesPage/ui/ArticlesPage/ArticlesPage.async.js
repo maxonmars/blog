@@ -41,7 +41,7 @@ export var ArticlesPageAsync = lazy(function () { return __awaiter(void 0, void 
                 setTimeout(function () {
                     // @ts-expect-error
                     resolve(import('./ArticlesPage'));
-                }, 1500);
+                }, 400);
             })];
     });
 }); });

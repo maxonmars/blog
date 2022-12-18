@@ -23,5 +23,5 @@ export default {
 var Template = function (args) { return _jsx(ArticleDetailsPage, __assign({}, args)); };
 export var Default = Template.bind({});
 Default.args = {};
-Default.decorators = [storeDecorator({ articleDetailsComments: { entities: {} } })];
+Default.decorators = [storeDecorator({ articleDetailsPage: { comments: { entities: { 1: { text: 'dsds', user: { id: '1', username: 'dw', avatar: '' }, id: '1' } } } } })];
 //# sourceMappingURL=ArticleDetailsPage.stories.js.map

@@ -13,8 +13,9 @@ import { configureStore } from '@reduxjs/toolkit';
 import { userReducer } from 'entities/User';
 import { createReducerManager } from './reducerManager';
 import { $api } from 'shared/api/api';
-export var createReduxStore = function (initialState, asyncReducers, navigate) {
-    var rootReducers = __assign(__assign({}, asyncReducers), { user: userReducer });
+import { restorationScrollReducer } from 'features/RestorationScroll';
+export var createReduxStore = function (initialState, asyncReducers) {
+    var rootReducers = __assign(__assign({}, asyncReducers), { user: userReducer, restorationScroll: restorationScrollReducer });
     var reducerManager = createReducerManager(rootReducers);
     var store = configureStore({
         reducer: reducerManager.reduce,
@@ -24,7 +25,6 @@ export var createReduxStore = function (initialState, asyncReducers, navigate) {
             thunk: {
                 extraArgument: {
                     api: $api,
-                    navigate: navigate,
                 },
             },
         }); },

@@ -23,7 +23,7 @@ describe('fetchNextArticlesPage', () => {
 		await thunk.callThunk();
 
 		expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-		expect(fetchArticlesList).toBeCalledWith({page: 3});
+		expect(fetchArticlesList).toHaveBeenCalledWith({});
 	});
 	test('should be rejected/error if get status 403', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {

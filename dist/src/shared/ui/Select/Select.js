@@ -23,7 +23,8 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import module from './Select.module.css';
 import { classNames } from 'shared/lib/classNames/classNames';
-export var Select = function (_a) {
+import { typedMemo } from 'shared/lib/typedMemo/typedMemo';
+export var Select = typedMemo(function (_a) {
     var className = _a.className, options = _a.options, label = _a.label, selectedValue = _a.selectedValue, onChange = _a.onChange, restProps = __rest(_a, ["className", "options", "label", "selectedValue", "onChange"]);
     var optionsList = options.map(function (opt) {
         return (_jsx("option", __assign({ value: opt.value }, { children: opt.label }), opt.value));
@@ -32,5 +33,5 @@ export var Select = function (_a) {
         onChange(e.target.value);
     };
     return (_jsxs("div", __assign({ className: classNames([module.wrapper, className]) }, { children: [label && _jsx("label", { children: "".concat(label, ":") }), _jsx("select", __assign({}, restProps, { value: selectedValue, onChange: handleChange, className: module.select }, { children: optionsList }))] })));
-};
+});
 //# sourceMappingURL=Select.js.map

@@ -1,3 +1,9 @@
+export var ArticleSortField;
+(function (ArticleSortField) {
+    ArticleSortField["VIEWS"] = "views";
+    ArticleSortField["TITLE"] = "title";
+    ArticleSortField["CREATED_AT"] = "createdAt";
+})(ArticleSortField || (ArticleSortField = {}));
 export var ArticleBlockType;
 (function (ArticleBlockType) {
     ArticleBlockType["CODE"] = "CODE";
@@ -6,6 +12,7 @@ export var ArticleBlockType;
 })(ArticleBlockType || (ArticleBlockType = {}));
 export var ArticleType;
 (function (ArticleType) {
+    ArticleType["ALL"] = "ALL";
     ArticleType["IT"] = "IT";
     ArticleType["SCIENCE"] = "SCIENCE";
     ArticleType["ECONOMICS"] = "ECONOMICS";

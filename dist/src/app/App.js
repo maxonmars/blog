@@ -26,6 +26,6 @@ export var App = function () {
     useEffect(function () {
         dispatch(userActions.initAuthData());
     }, [dispatch]);
-    return (_jsx("div", __assign({ className: classNames(['app', 'app-layout']) }, { children: _jsxs(Suspense, __assign({ fallback: _jsx(PageLoader, { className: "app-suspense-loader" }) }, { children: [_jsx(Navbar, {}), _jsx(Sidebar, {}), _jsx("div", __assign({ className: "page-wrapper" }, { children: isInit && _jsx(AppRouter, {}) }))] })) })));
+    return (_jsx("div", __assign({ className: classNames(['app', 'app-layout']) }, { children: _jsxs(Suspense, __assign({ fallback: _jsx(PageLoader, { className: "app-suspense-loader" }) }, { children: [_jsx(Navbar, {}), _jsx(Sidebar, {}), isInit && _jsx(AppRouter, {})] })) })));
 };
 //# sourceMappingURL=App.js.map

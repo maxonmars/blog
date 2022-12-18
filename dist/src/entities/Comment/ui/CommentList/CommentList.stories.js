@@ -13,7 +13,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { CommentList } from './CommentList';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 export default {
-    title: 'entities/CommentList',
+    title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: {
         backgroundColor: { control: 'color' },

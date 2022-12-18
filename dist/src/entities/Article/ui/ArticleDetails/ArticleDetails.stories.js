@@ -13,6 +13,7 @@ import { jsx as _jsx } from "react/jsx-runtime";
 import { ArticleDetails } from './ArticleDetails';
 import { storeDecorator } from 'shared/lib/storybook/StoreDecorator';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import avatar from 'shared/assets/tests/image/avatar-stories.jpeg';
 var article = {
     id: '1',
     title: 'Javascript news',
@@ -22,7 +23,7 @@ var article = {
     createdAt: '26.02.2022',
     user: {
         id: '1',
-        avatar: 'https://howlongtobeat.com/avatars/DeathGrips_1614523743.jpg',
+        avatar: avatar,
         username: 'Max',
     },
     type: [
@@ -90,7 +91,7 @@ var article = {
     ],
 };
 export default {
-    title: 'entities/ArticleDetails',
+    title: 'entities/Article/ArticleDetails',
     component: ArticleDetails,
     argTypes: {
         backgroundColor: { control: 'color' },

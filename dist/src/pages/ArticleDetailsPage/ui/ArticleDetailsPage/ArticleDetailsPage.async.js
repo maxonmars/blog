@@ -41,7 +41,7 @@ export var ArticleDetailsPageAsync = lazy(function () { return __awaiter(void 0,
                 setTimeout(function () {
                     // @ts-expect-error
                     resolve(import('./ArticleDetailsPage'));
-                }, 1500);
+                }, 400);
             })];
     });
 }); });

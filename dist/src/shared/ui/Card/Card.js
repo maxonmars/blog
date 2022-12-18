@@ -23,8 +23,13 @@ var __rest = (this && this.__rest) || function (s, e) {
 import { jsx as _jsx } from "react/jsx-runtime";
 import module from './Card.module.css';
 import { classNames } from 'shared/lib/classNames/classNames';
+export var CardVariant;
+(function (CardVariant) {
+    CardVariant["DEFAULT"] = "default";
+    CardVariant["OUTLINE"] = "outline";
+})(CardVariant || (CardVariant = {}));
 export var Card = function (_a) {
-    var className = _a.className, children = _a.children, restProps = __rest(_a, ["className", "children"]);
-    return (_jsx("div", __assign({}, restProps, { className: classNames([module.card, className]) }, { children: children })));
+    var className = _a.className, children = _a.children, _b = _a.variant, variant = _b === void 0 ? CardVariant.DEFAULT : _b, restProps = __rest(_a, ["className", "children", "variant"]);
+    return (_jsx("div", __assign({}, restProps, { className: classNames([module.card, className, module[variant]]) }, { children: children })));
 };
 //# sourceMappingURL=Card.js.map

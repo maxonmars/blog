@@ -18,4 +18,4 @@ const Template: StoryType = args => <ArticleDetailsPage {...args}/>;
 export const Default = Template.bind({});
 Default.args = {};
 
-Default.decorators = [storeDecorator({articleDetailsComments: {entities: {1: {text: 'dsds', user: {id: '1', username: 'dw', avatar: ''}, id: '1'}}}})];
+Default.decorators = [storeDecorator({articleDetailsPage: {comments: {entities: {1: {text: 'dsds', user: {id: '1', username: 'dw', avatar: ''}, id: '1'}}}}})];

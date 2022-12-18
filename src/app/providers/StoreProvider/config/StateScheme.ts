@@ -4,7 +4,11 @@ import type {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject
 import type {ProfileScheme} from 'entities/Profile';
 import type {AxiosInstance} from 'axios';
 import type {ArticleDetailsScheme} from 'entities/Article';
-import type {ArticleDetailsCommentsScheme} from 'pages/ArticleDetailsPage';
+import type {
+	ArticleDetailsCommentsScheme,
+	ArticleDetailsPageScheme,
+	ArticleDetailsRecommendationsScheme,
+} from 'pages/ArticleDetailsPage';
 import type {AddCommentFormScheme} from 'features/AddCommentForm';
 import type {ArticlesPageScheme} from 'pages/ArticlesPage';
 import type {RestorationScrollScheme} from 'features/RestorationScroll';
@@ -17,9 +21,9 @@ export interface StateScheme {
 	login?: LoginScheme;
 	profile?: ProfileScheme;
 	articleDetails?: ArticleDetailsScheme;
-	articleDetailsComments?: ArticleDetailsCommentsScheme;
 	addCommentForm?: AddCommentFormScheme;
 	articlesPage?: ArticlesPageScheme;
+	articleDetailsPage?: ArticleDetailsPageScheme;
 }
 
 export type StateSchemeKey = keyof StateScheme;

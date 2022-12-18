@@ -32,3 +32,18 @@ body {
 svg {
 	min-width: 1em;
 }
+
+*::-webkit-scrollbar {
+	width: 12px;               /* ширина scrollbar */
+	height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--bg-color);        /* цвет дорожки */
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--bg-color-inverted);    /* цвет плашки */
+	border-radius: 20px;       /* закругления плашки */
+	border: 2px solid var(--bg-color);  /* padding вокруг плашки */
+}

@@ -37,7 +37,7 @@ var AddCommentForm = function (_a) {
         onCommentSend(text !== null && text !== void 0 ? text : '');
         dispatch(addCommentFormActions.setText(''));
     };
-    return (_jsx(DynamicModuleLoader, __assign({ reducers: reducers }, { children: _jsxs("div", __assign({ className: classNames([module.addCommentForm, className]) }, { children: [_jsx(Input, { onChange: handleCommentChange, value: text, placeholder: t('комментарий') }), _jsx(Button, __assign({ onClick: handleCommentSend }, { children: t('Отправить') }))] })) })));
+    return (_jsx(DynamicModuleLoader, __assign({ reducers: reducers, isRemoveAfterUnmount: true }, { children: _jsxs("div", __assign({ className: classNames([module.addCommentForm, className]) }, { children: [_jsx(Input, { onChange: handleCommentChange, value: text, placeholder: t('комментарий') }), _jsx(Button, __assign({ onClick: handleCommentSend }, { children: t('Отправить') }))] })) })));
 };
 export default AddCommentForm;
 //# sourceMappingURL=AddCommentForm.js.map

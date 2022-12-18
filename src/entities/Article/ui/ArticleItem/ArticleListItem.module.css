@@ -1,3 +1,7 @@
+.appLinkCardWrapper {
+	display: contents;
+}
+
 .articleListItem {
 	display: grid;
 	grid-gap: 0.5em;
