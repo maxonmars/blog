@@ -7,6 +7,8 @@ const buildPath: BuildPath = {
 	entry: '',
 	build: '',
 	html: '',
+	locales: '',
+	buildLocales: '',
 	src: path.resolve(__dirname, '..', '..', 'src'),
 };
 
