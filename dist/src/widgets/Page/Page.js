@@ -36,6 +36,6 @@ export var Page = function (_a) {
             path: pathname,
         }));
     }, 500);
-    return (_jsxs("div", __assign({ ref: wrapperRef, className: classNames([module.page, className]), onScroll: handleScroll }, { children: [children, onScrollEnd && _jsx("div", { className: module.trigger, ref: triggerRef })] })));
+    return (_jsxs("div", __assign({ ref: wrapperRef, className: classNames([module.page, className]), onScroll: handleScroll }, { children: [children, onScrollEnd ? _jsx("div", { className: module.trigger, ref: triggerRef }) : null] })));
 };
 //# sourceMappingURL=Page.js.map

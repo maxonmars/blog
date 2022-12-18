@@ -58,7 +58,7 @@ describe('fetchNextArticlesPage', function () {
                 case 1:
                     _a.sent();
                     expect(thunk.dispatch).toHaveBeenCalledTimes(4);
-                    expect(fetchArticlesList).toBeCalledWith({ page: 3 });
+                    expect(fetchArticlesList).toHaveBeenCalledWith({});
                     return [2 /*return*/];
             }
         });
