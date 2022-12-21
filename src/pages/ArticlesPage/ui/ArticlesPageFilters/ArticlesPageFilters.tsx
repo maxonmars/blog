@@ -23,6 +23,7 @@ import {useDebounce} from 'shared/hooks/useDebounce/useDebounce';
 import {useCallback} from 'react';
 import type {ArticleType} from 'entities/Article/model/types/article';
 import {ArticleTypeTabs} from 'features/ArticleTypeTabs/ArticleTypeTabs';
+import {articleVirtualizedListActions} from 'features/ArticleVirtualizedList';
 
 interface ArticlesPageFiltersProps {
 	className?: string;
@@ -37,9 +38,14 @@ export const ArticlesPageFilters = ({className}: ArticlesPageFiltersProps) => {
 	const search = useSelector(selectArticlesPageSearch);
 	const type = useSelector(selectArticlesPageType);
 
+	const resetScroll = () => {
+		dispatch(articleVirtualizedListActions.setItemIndex(undefined));
+	};
+
 	const handleViewChange = (view: ArticleView) => {
 		dispatch(articlesPageActions.setView(view));
 		localStorage.setItem(ARTICLES_VIEW_STORAGE_KEY, view);
+		resetScroll();
 	};
 
 	const fetchData = useCallback(() => {
@@ -52,24 +58,28 @@ export const ArticlesPageFilters = ({className}: ArticlesPageFiltersProps) => {
 		dispatch(articlesPageActions.setSort(sortField));
 		dispatch(articlesPageActions.setPage(1));
 		fetchData();
+		resetScroll();
 	};
 
 	const handleOrderChange = (order: SortOrder) => {
 		dispatch(articlesPageActions.setOrder(order));
 		dispatch(articlesPageActions.setPage(1));
 		fetchData();
+		resetScroll();
 	};
 
 	const handleSearchChange = (search: string) => {
 		dispatch(articlesPageActions.setSearch(search));
 		dispatch(articlesPageActions.setPage(1));
 		debounceFetchData();
+		resetScroll();
 	};
 
 	const handleTabChange = (value: ArticleType) => {
 		dispatch(articlesPageActions.setType(value));
 		dispatch(articlesPageActions.setPage(1));
 		fetchData();
+		resetScroll();
 	};
 
 	return (

@@ -5,6 +5,7 @@ import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
 import {$api} from 'shared/api/api';
 import {restorationScrollReducer} from 'features/RestorationScroll';
+import {articleVirtualizedListReducer} from 'features/ArticleVirtualizedList';
 
 export const createReduxStore = (
 	initialState?: StateScheme,
@@ -14,6 +15,7 @@ export const createReduxStore = (
 		...asyncReducers,
 		user: userReducer,
 		restorationScroll: restorationScrollReducer,
+		articleVirtualizedList: articleVirtualizedListReducer,
 	};
 
 	const reducerManager = createReducerManager(rootReducers);

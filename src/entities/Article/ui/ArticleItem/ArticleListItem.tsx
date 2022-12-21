@@ -20,14 +20,20 @@ interface ArticleListItemProps {
 	article: Article;
 	view: ArticleView;
 	target?: HTMLAttributeAnchorTarget;
+	setVirtualIndex?: () => void;
 }
 
-export const ArticleListItem = ({className, article, view, target}: ArticleListItemProps) => {
+export const ArticleListItem = ({className, article, view, target, setVirtualIndex}: ArticleListItemProps) => {
 	const {t} = useTranslation();
 	const navigate = useNavigate();
 
 	const handleArticleDetailsNavigate = () => {
 		navigate(`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`);
+		setVirtualIndex?.();
+	};
+
+	const handleClickReadMore = () => {
+		setVirtualIndex?.();
 	};
 
 	if (view === ArticleView.LIST) {
@@ -50,8 +56,9 @@ export const ArticleListItem = ({className, article, view, target}: ArticleListI
 				{textBlock
 					&& <ArticleTextBlockComponent block={textBlock} className={module.textBlock}/>
 				}
-				<AppLink to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}>
+				<AppLink className={module.readMoreLink} to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}>
 					<Button
+						onClick={handleClickReadMore}
 						variant={ButtonVariant.OUTLINE}
 						className={module.readBtn}>
 						{t('Читать далее...')}

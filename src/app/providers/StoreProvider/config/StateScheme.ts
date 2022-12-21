@@ -8,10 +8,12 @@ import type {ArticleDetailsPageScheme} from 'pages/ArticleDetailsPage';
 import type {ArticlesPageScheme} from 'pages/ArticlesPage';
 import type {RestorationScrollScheme} from 'features/RestorationScroll';
 import type {AddCommentFormScheme} from 'features/addCommentForm';
+import type {ArticleVirtualizedListScheme} from 'features/ArticleVirtualizedList';
 
 export interface StateScheme {
 	user: UserScheme;
 	restorationScroll: RestorationScrollScheme;
+	articleVirtualizedList: ArticleVirtualizedListScheme;
 
 	// Async reducers
 	login?: LoginScheme;

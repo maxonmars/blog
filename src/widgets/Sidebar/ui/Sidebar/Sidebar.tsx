@@ -25,28 +25,31 @@ export const Sidebar = ({className}: SidebarProps) => {
 		<div
 			data-testid="sidebar"
 			className={classNames([module.sidebar, className], {[module.collapsed]: isCollapsed})}>
-			<div className={module.navigateLinks}>
-				{sidebarItemList.map(item => {
-					return <SidebarItem key={item.path} isCollapsed={isCollapsed} item={item}/>;
-				})}
-			</div>
-			<Button
-				data-testid="sidebar-toggle"
-				className={module.collapseBtn}
-				square
-				inverted
-				variant={ButtonVariant.SUBTLE}
-				size={ButtonSize.SM}
-				onClick={onToggle}>
-				{isCollapsed
-					? <IcoThinChevronRight/>
-					: <IcoThinChevronLeft/>
-				}
-			</Button>
-			<div className={module.switchers}>
-				<ThemeSwitcher/>
-				<LangSwitcher isShort={isCollapsed}/>
-			</div>
+			<div className={module.sidebarContent}>
+				<div className={module.navigateLinks}>
+					{sidebarItemList.map(item => {
+						return <SidebarItem key={item.path} isCollapsed={isCollapsed} item={item}/>;
+					})}
+				</div>
+				<Button
+					data-testid="sidebar-toggle"
+					className={module.collapseBtn}
+					square
+					inverted
+					variant={ButtonVariant.SUBTLE}
+					size={ButtonSize.SM}
+					onClick={onToggle}>
+					{isCollapsed
+						? <IcoThinChevronRight/>
+						: <IcoThinChevronLeft/>
+					}
+				</Button>
+				<div className={module.switchers}>
+					<ThemeSwitcher/>
+					<LangSwitcher isShort={isCollapsed}/>
+				</div>
+			</div> {/* for position sticky */}
+			<div/>
 		</div>
 	);
 };

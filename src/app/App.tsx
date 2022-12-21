@@ -23,7 +23,9 @@ export const App = () => {
 			<Suspense fallback={<PageLoader className="app-suspense-loader"/>}>
 				<Navbar/>
 				<Sidebar/>
-				{isInit && <AppRouter/>}
+				<div className="page-wrapper">
+					{isInit && <AppRouter/>}
+				</div>
 			</Suspense>
 		</div>
 	);

@@ -1,12 +1,11 @@
 import module from './ArticleDetailsPage.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {useNavigate, useParams} from 'react-router-dom';
-import {Text} from 'shared/ui/Text/Text';
+import {useParams} from 'react-router-dom';
 import {CommentList} from 'entities/Comment';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {articleDetailsCommentsReducer, selectArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
+import {selectArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
 import {useSelector} from 'react-redux';
 import {selectArticleDetailsError} from 'entities/Article/model/selectors/selectArticleDetails';
 import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
@@ -17,11 +16,7 @@ import {ArticleDetails, ArticleList} from 'entities/Article';
 import {AddCommentForm} from 'features/addCommentForm';
 import {sendComment} from '../../model/services/sendComment/sendComment';
 import {selectArticleDetailsCommentsIsLoading} from '../../model/selectors/comments';
-import {Button, ButtonVariant} from 'shared/ui/Button/Button';
-import {ROUTE_PATH} from 'app/providers/router';
-import {
-	articleDetailsRecommendationsReducer, selectArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/slice/articleDetailsRecommendationsSlice';
+import {selectArticleRecommendations} from 'pages/ArticleDetailsPage/model/slice/articleDetailsRecommendationsSlice';
 import {
 	selectArticleDetailsRecommendationsError,
 	selectArticleDetailsRecommendationsIsLoading,
