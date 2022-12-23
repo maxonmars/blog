@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Card, CardVariant} from './Card';
-import {Text} from 'shared/ui/Text/Text';
+import {Text} from '../Text/Text';
 
 type StoryType = ComponentStory<typeof Card>;
 

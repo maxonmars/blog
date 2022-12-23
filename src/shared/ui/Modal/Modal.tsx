@@ -2,12 +2,12 @@ import module from './Modal.module.css';
 import type {ReactNode} from 'react';
 import {useEffect, useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
-import {Portal} from 'shared/ui/Portal/Portal';
-import {Overlay} from 'shared/ui/Overlay/Overlay';
-import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
+import {Portal} from '../Portal/Portal';
+import {Overlay} from '../Overlay/Overlay';
+import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
 import {IcoThinXmark} from 'shared/assets/icons';
-import type {TitleOrder} from 'shared/ui/Title/Title';
-import {Title} from 'shared/ui/Title/Title';
+import type {TitleOrder} from '../Title/Title';
+import {Title} from '../Title/Title';
 
 type ModalChildren =
 	| ReactNode

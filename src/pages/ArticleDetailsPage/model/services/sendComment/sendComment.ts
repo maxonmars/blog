@@ -5,7 +5,7 @@ import {selectUserAuthData} from 'entities/User';
 import {selectArticleDetailsData} from 'entities/Article/model/selectors/selectArticleDetails';
 import {
 	fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 const checkData = (data: Comment) => {
 	if (!data) {

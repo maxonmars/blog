@@ -39,6 +39,7 @@ module.exports = {
 		'react',
 		'i18next',
 		'react-hooks',
+		'fsd-strict',
 	],
 	rules: {
 		'i18next/no-literal-string': 1,
@@ -48,6 +49,7 @@ module.exports = {
 		'jsx-quotes': ['error', 'prefer-double'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
+		'fsd-strict/path-checker': 'error',
 	},
 	globals: {
 		__IS_DEV__: true,

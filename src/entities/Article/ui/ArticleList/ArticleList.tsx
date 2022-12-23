@@ -3,7 +3,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import type {Article} from '../../model/types/article';
 import {ArticleView} from '../../model/types/article';
 import {ArticleListItem} from '../ArticleItem/ArticleListItem';
-import {ArticleListItemSkeleton} from 'entities/Article/ui/ArticleItem/ArticleListItemSkeleton';
+import {ArticleListItemSkeleton} from '../ArticleItem/ArticleListItemSkeleton';
 import {useTranslation} from 'react-i18next';
 import {Text, TextSize} from 'shared/ui/Text/Text';
 import type {HTMLAttributeAnchorTarget} from 'react';

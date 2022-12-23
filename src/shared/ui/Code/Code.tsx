@@ -1,6 +1,6 @@
 import module from './Code.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
+import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
 import {IcoThinCopy} from 'shared/assets/icons/index';
 
 interface CodeProps {

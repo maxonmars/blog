@@ -2,7 +2,7 @@ import module from './ArticlesPageFilters.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import {ArticleViewSelector} from 'features/ArticleViewSelector/ui/ArticleViewSelector';
 import type {ArticleSortField, ArticleView} from 'entities/Article';
-import {articlesPageActions} from 'pages/ArticlesPage/model/slice/articlesPageSlice';
+import {articlesPageActions} from '../../model/slice/articlesPageSlice';
 import {ARTICLES_VIEW_STORAGE_KEY} from 'shared/const/localStorage';
 import {useSelector} from 'react-redux';
 import {
@@ -11,14 +11,14 @@ import {
 	selectArticlesPageSort,
 	selectArticlesPageType,
 	selectArticlesPageView,
-} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+} from '../../model/selectors/articlesPageSelectors';
 import {useAppDispatch} from 'shared/hooks';
 import {useTranslation} from 'react-i18next';
 import {Card} from 'shared/ui/Card/Card';
 import {Input} from 'shared/ui/Input/Input';
 import {ArticleSortSelector} from 'entities/ArticleSortSelector/ArticleSortSelector';
 import type {SortOrder} from 'shared/types';
-import {fetchArticlesList} from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
+import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from 'shared/hooks/useDebounce/useDebounce';
 import {useCallback} from 'react';
 import type {ArticleType} from 'entities/Article/model/types/article';

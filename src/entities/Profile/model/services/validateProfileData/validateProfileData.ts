@@ -1,5 +1,5 @@
-import type {Profile} from 'entities/Profile';
-import {ValidateProfileError} from 'entities/Profile/model/types/profile';
+import type {Profile} from '../../types/profile';
+import {ValidateProfileError} from '../../types/profile';
 import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
 import {Country} from 'entities/Country/model/types/country';
 

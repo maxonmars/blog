@@ -16,17 +16,17 @@ import {ArticleDetails, ArticleList} from 'entities/Article';
 import {AddCommentForm} from 'features/addCommentForm';
 import {sendComment} from '../../model/services/sendComment/sendComment';
 import {selectArticleDetailsCommentsIsLoading} from '../../model/selectors/comments';
-import {selectArticleRecommendations} from 'pages/ArticleDetailsPage/model/slice/articleDetailsRecommendationsSlice';
+import {selectArticleRecommendations} from '../../model/slice/articleDetailsRecommendationsSlice';
 import {
 	selectArticleDetailsRecommendationsError,
 	selectArticleDetailsRecommendationsIsLoading,
-} from 'pages/ArticleDetailsPage/model/selectors/recommendations';
+} from '../../model/selectors/recommendations';
 import {
 	fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import {Title} from 'shared/ui/Title/Title';
-import {articleDetailsPageReducer} from 'pages/ArticleDetailsPage/model/slice';
-import {ArticleDetailsPageHeader} from 'pages/ArticleDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import {articleDetailsPageReducer} from '../../model/slice';
+import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
 	className?: string;

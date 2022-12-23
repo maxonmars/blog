@@ -1,6 +1,6 @@
 import module from './CommentCard.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {Comment} from 'entities/Comment';
+import type {Comment} from '../../model/types/comment';
 import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 import {Title} from 'shared/ui/Title/Title';
 import {Text} from 'shared/ui/Text/Text';

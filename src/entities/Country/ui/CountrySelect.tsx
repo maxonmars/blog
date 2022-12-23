@@ -2,7 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames';
 import {Select} from 'shared/ui/Select/Select';
 import {useTranslation} from 'react-i18next';
 import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
-import {Country} from 'entities/Country/model/types/country';
+import {Country} from '../model/types/country';
 import {memo} from 'react';
 
 interface CountrySelectProps {

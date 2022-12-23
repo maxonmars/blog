@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ArticleList} from './ArticleList';
-import type {Article} from 'entities/Article';
+import type {Article} from '../../model/types/article';
 import {ArticleView} from '../../model/types/article';
 
 type StoryType = ComponentStory<typeof ArticleList>;

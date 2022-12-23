@@ -3,7 +3,7 @@ import {ProfileCard} from './ProfileCard';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
-import type {ProfileScheme} from 'entities/Profile';
+import type {ProfileScheme} from '../../model/types/profile';
 import {Currency} from 'entities/Currency/model/types/currency';
 import {Country} from 'entities/Country/model/types/country';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';

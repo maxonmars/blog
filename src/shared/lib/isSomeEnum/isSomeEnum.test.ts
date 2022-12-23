@@ -1,4 +1,4 @@
-import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
+import {isSomeEnum} from './isSomeEnum';
 
 enum Test {
 	A = 'A',

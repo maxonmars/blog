@@ -1,7 +1,7 @@
 import module from './Tabs.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {ReactNode} from 'react';
-import {Card, CardVariant} from 'shared/ui/Card/Card';
+import {Card, CardVariant} from '../Card/Card';
 import {typedMemo} from 'shared/lib/typedMemo/typedMemo';
 
 export interface TabsItem<T> {

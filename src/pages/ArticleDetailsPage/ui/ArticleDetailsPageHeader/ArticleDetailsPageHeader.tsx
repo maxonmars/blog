@@ -6,9 +6,8 @@ import {ROUTE_PATH} from 'app/providers/router';
 import {useNavigate} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-import {selectUserAuthData} from 'entities/User';
 import {selectArticleDetailsData} from 'entities/Article/model/selectors/selectArticleDetails';
-import {selectArticleDetailsIsEdit} from 'pages/ArticleDetailsPage/model/selectors/article';
+import {selectArticleDetailsIsEdit} from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
 	className?: string;

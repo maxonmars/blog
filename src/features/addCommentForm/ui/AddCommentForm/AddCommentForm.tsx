@@ -7,13 +7,12 @@ import {useSelector} from 'react-redux';
 import {
 	selectCommentFormError,
 	selectCommentFormText,
-} from 'features/addCommentForm/model/selectors/addCommentFormSelectors';
+} from '../../model/selectors/addCommentFormSelectors';
 import {useCallback} from 'react';
-import {addCommentFormActions, addCommentFormReducer} from 'features/addCommentForm/model/slice/addCommentFormSlice';
+import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/addCommentFormSlice';
 import {useAppDispatch} from 'shared/hooks';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {sendComment} from 'pages/ArticleDetailsPage/model/services/sendComment/sendComment';
 
 export interface AddCommentFormProps {
 	className?: string;

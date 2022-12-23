@@ -7,7 +7,7 @@ import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 import {IcoThinChevronLeft, IcoThinChevronRight} from 'shared/assets/icons';
 import {SidebarItem} from '../SidebarItem/SidebarItem';
 import {useSelector} from 'react-redux';
-import {selectSidebarItems} from 'widgets/Sidebar/model/selectSidebarItems/selectSidebarItems';
+import {selectSidebarItems} from '../../model/selectSidebarItems/selectSidebarItems';
 
 interface SidebarProps {
 	className?: string;

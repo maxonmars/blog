@@ -1,9 +1,5 @@
-
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
-import {Currency} from 'entities/Currency/model/types/currency';
-import {Country} from 'entities/Country/model/types/country';
-import {fetchNextArticlesPage} from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import {fetchNextArticlesPage} from './fetchNextArticlesPage';
 import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList';
 
 jest.mock('../fetchArticlesList/fetchArticlesList');

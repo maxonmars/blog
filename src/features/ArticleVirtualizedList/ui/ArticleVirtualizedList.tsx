@@ -11,10 +11,10 @@ import type {Article} from 'entities/Article';
 import {ArticleView} from 'entities/Article';
 import {useSelector} from 'react-redux';
 import {useAppDispatch} from 'shared/hooks';
-import {articleVirtualizedListActions} from 'features/ArticleVirtualizedList/model/slice/articleVirtualizedListSlice';
+import {articleVirtualizedListActions} from '../model/slice/articleVirtualizedListSlice';
 import {
 	selectArticleVirtualizedListItemIndex,
-} from 'features/ArticleVirtualizedList/model/selectors/selectArticleVirtualizedListItemIndex';
+} from '../model/selectors/selectArticleVirtualizedListItemIndex';
 import {Button} from 'shared/ui/Button/Button';
 
 interface ArticleVirtualizedListProps {

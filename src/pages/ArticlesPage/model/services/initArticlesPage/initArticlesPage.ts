@@ -1,8 +1,8 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import type {ThunkConfig} from 'app/providers/StoreProvider';
-import {articlesPageActions} from 'pages/ArticlesPage/model/slice/articlesPageSlice';
-import {fetchArticlesList} from 'pages/ArticlesPage/model/services/fetchArticlesList/fetchArticlesList';
-import {selectArticlesPageIsInit} from 'pages/ArticlesPage/model/selectors/articlesPageSelectors';
+import {articlesPageActions} from '../../slice/articlesPageSlice';
+import {fetchArticlesList} from '../fetchArticlesList/fetchArticlesList';
+import {selectArticlesPageIsInit} from '../../selectors/articlesPageSelectors';
 
 export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkConfig<string>>(
 	'articlesPage/initArticlesPage',

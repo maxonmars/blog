@@ -2,7 +2,7 @@ import {validateProfileData} from './validateProfileData';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 import {Currency} from 'entities/Currency/model/types/currency';
 import {Country} from 'entities/Country/model/types/country';
-import {ValidateProfileError} from 'entities/Profile/model/types/profile';
+import {ValidateProfileError} from '../../types/profile';
 
 describe('validateProfileData', () => {
 	const profileData = {
