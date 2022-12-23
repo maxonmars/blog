@@ -1,12 +1,4 @@
 .commentCard {
 	border: 1px solid var(--primary-color);
 	padding: 1em;
-	display: grid;
-	grid-template-columns: min-content 1fr;
-	align-items: center;
-	grid-gap: 0.5em;
-}
-
-.commentText {
-	grid-column: span 2;
 }

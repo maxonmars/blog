@@ -13,6 +13,7 @@ import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/ad
 import {useAppDispatch} from 'shared/hooks';
 import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {HStack} from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
 	className?: string;
@@ -40,10 +41,10 @@ const AddCommentForm = ({className, onCommentSend}: AddCommentFormProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
-			<div className={classNames([module.addCommentForm, className])}>
-				<Input onChange={handleCommentChange} value={text} placeholder={t('комментарий')}/>
+			<HStack gap="1" isMax justify="between" className={classNames([module.addCommentForm, className])}>
+				<Input className={module.commentInput} onChange={handleCommentChange} value={text} placeholder={t('комментарий')}/>
 				<Button onClick={handleCommentSend}>{t('Отправить')}</Button>
-			</div>
+			</HStack>
 		</DynamicModuleLoader>
 	);
 };

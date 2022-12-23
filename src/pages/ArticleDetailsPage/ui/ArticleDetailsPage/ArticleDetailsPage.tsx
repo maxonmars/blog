@@ -27,6 +27,7 @@ import {
 import {Title} from 'shared/ui/Title/Title';
 import {articleDetailsPageReducer} from '../../model/slice';
 import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import {VStack} from 'shared/ui/Stack';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -59,7 +60,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
 	if (!id) {
 		return (
-			<div className={classNames([module.articleDetailsPage, className])}>
+			<div className={classNames([className])}>
 				{t('Статья не найдена')}
 			</div>
 		);
@@ -67,7 +68,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
-			<div className={classNames([module.articleDetailsPage, className])}>
+			<VStack gap="2" isMax>
 				<ArticleDetailsPageHeader/>
 				<ArticleDetails id={id}/>
 				<Title order={3}>{t('Рекомендуем')}</Title>
@@ -75,7 +76,7 @@ const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 				<Title order={3}>{t('Комментарии')}</Title>
 				<AddCommentForm onCommentSend={handleCommentSend}/>
 				<CommentList isLoading={isLoading} comments={comments}/>
-			</div>
+			</VStack>
 		</DynamicModuleLoader>
 	);
 };

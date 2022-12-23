@@ -7,6 +7,7 @@ import {Text} from 'shared/ui/Text/Text';
 import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
 import {AppLink} from 'shared/ui/AppLink/AppLink';
 import {ROUTE_PATH} from 'app/providers/router';
+import {HStack, VStack} from 'shared/ui/Stack';
 
 interface CommentCardProps {
 	className?: string;
@@ -17,11 +18,13 @@ interface CommentCardProps {
 export const CommentCard = ({className, comment, isLoading}: CommentCardProps) => {
 	if (isLoading) {
 		return (
-			<div className={classNames([module.commentCard, className])}>
-				<Skeleton borderRadius={'50%'} width={50} height={50}/>
-				<Skeleton width={150} height={20}/>
+			<VStack gap="1" isMax className={classNames([module.commentCard, className])}>
+				<HStack gap="1">
+					<Skeleton borderRadius={'50%'} width={50} height={50}/>
+					<Skeleton width={150} height={20}/>
+				</HStack>
 				<Skeleton className={module.commentText} width={'100%'} height={16}/>
-			</div>
+			</VStack>
 		);
 	}
 
@@ -32,19 +35,21 @@ export const CommentCard = ({className, comment, isLoading}: CommentCardProps) =
 	const profileLink = `${ROUTE_PATH.PROFILE}${comment.user.id}`;
 
 	return (
-		<div className={classNames([module.commentCard, className])}>
-			<AppLink to={profileLink}>
-				<Avatar
-					alt="аватар пользователя"
-					loading="lazy"
-					decoding="async"
-					src={comment.user.avatar}
-					size={AvatarSize.SM}/>
-			</AppLink>
-			<AppLink to={profileLink}>
-				<Title order={4}>{comment.user.username}</Title>
-			</AppLink>
+		<VStack gap="1" isMax className={classNames([module.commentCard, className])}>
+			<HStack gap="1">
+				<AppLink to={profileLink}>
+					<Avatar
+						alt="аватар пользователя"
+						loading="lazy"
+						decoding="async"
+						src={comment.user.avatar}
+						size={AvatarSize.SM}/>
+				</AppLink>
+				<AppLink to={profileLink}>
+					<Title order={4}>{comment.user.username}</Title>
+				</AppLink>
+			</HStack>
 			<Text className={module.commentText}>{comment.text}</Text>
-		</div>
+		</VStack>
 	);
 };
