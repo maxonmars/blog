@@ -104,7 +104,7 @@ export const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
-			<VStack gap="1.5" isMax className={classNames([className])}>
+			<VStack role="article" gap="1.5" isMax className={classNames([className])}>
 				{content}
 			</VStack>
 		</DynamicModuleLoader>

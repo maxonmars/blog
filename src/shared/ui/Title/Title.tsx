@@ -11,30 +11,25 @@ interface TitleProps {
 	order?: TitleOrder;
 }
 
-export const Title = memo(({className, children, order}: TitleProps) => {
+type HeaderTag = 'h1' | 'h2' | 'h3' | 'h4';
+
+const mapHeaderTag: Record<TitleOrder, HeaderTag> = {
+	1: 'h1',
+	2: 'h2',
+	3: 'h3',
+	4: 'h4',
+};
+
+export const Title = memo(({className, children, order = 1}: TitleProps) => {
 	const titleClass = classNames([module.title, className]);
 
-	switch (order) {
-		case 1: {
-			return <h1 className={titleClass}>{children}</h1>;
-		}
+	const HeaderTag = mapHeaderTag[order];
 
-		case 2: {
-			return <h2 className={titleClass}>{children}</h2>;
-		}
-
-		case 3: {
-			return <h3 className={titleClass}>{children}</h3>;
-		}
-
-		case 4: {
-			return <h4 className={titleClass}>{children}</h4>;
-		}
-
-		default: {
-			return <h1 className={titleClass}>{children}</h1>;
-		}
-	}
+	return (
+		<HeaderTag className={titleClass}>
+			{children}
+		</HeaderTag>
+	);
 });
 
 Title.displayName = 'Title';
