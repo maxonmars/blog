@@ -1,6 +1,6 @@
 import module from './ProfileCard.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import {useDispatch, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {
 	selectEditableProfileData,
 	selectProfileError,

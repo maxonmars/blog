@@ -1,10 +1,10 @@
 import module from './ArticleSortSelector.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {SelectOption} from 'shared/ui/Select/Select';
-import {Select} from 'shared/ui/Select/Select';
 import {useTranslation} from 'react-i18next';
 import {ArticleSortField} from 'entities/Article';
 import type {SortOrder} from 'shared/types';
+import type {SelectOption} from 'shared/ui/Select/Select';
+import {Select} from 'shared/ui/Select/Select';
 
 interface ArticleSortSelectorProps {
 	className?: string;
@@ -19,26 +19,26 @@ export const ArticleSortSelector = ({className, sort, order, onChangeSortField, 
 
 	const sortFieldOptions: Array<SelectOption<ArticleSortField>> = [
 		{
-			label: t('дате создания'),
+			content: t('дате создания'),
 			value: ArticleSortField.CREATED_AT,
 		},
 		{
-			label: t('просмотрам'),
+			content: t('просмотрам'),
 			value: ArticleSortField.VIEWS,
 		},
 		{
-			label: t('названию'),
+			content: t('названию'),
 			value: ArticleSortField.TITLE,
 		},
 	];
 
 	const orderOptions: Array<SelectOption<SortOrder>> = [
 		{
-			label: t('возрастанию'),
+			content: t('возрастанию'),
 			value: 'desc',
 		},
 		{
-			label: t('убыванию'),
+			content: t('убыванию'),
 			value: 'asc',
 		},
 	];

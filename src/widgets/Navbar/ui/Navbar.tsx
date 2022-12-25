@@ -9,6 +9,9 @@ import {useDispatch, useSelector} from 'react-redux';
 import {selectUserAuthData, userActions} from 'entities/User';
 import {AppLink, AppLinkVariant} from 'shared/ui/AppLink/AppLink';
 import {ROUTE_PATH} from 'app/providers/router';
+import type {DropdownItem} from 'shared/ui/Dropdown/Dropdown';
+import {Dropdown} from 'shared/ui/Dropdown/Dropdown';
+import {Avatar} from 'shared/ui/Avatar/Avatar';
 
 const activeStyle = ({isActive}: {isActive: boolean}): React.CSSProperties =>
 	isActive
@@ -39,6 +42,11 @@ export const Navbar = ({className}: NavbarProps) => {
 
 	const isAuth = Boolean(authData);
 
+	const dropdownItems: DropdownItem[] = [
+		{content: t('Выйти'), onClick: handleLogout},
+		{content: t('Профиль'), href: `${ROUTE_PATH.PROFILE}${authData?.id ?? ''}`},
+	];
+
 	return (
 		<div className={classNames([module.navbar, className])}>
 			<div className={module.logo}>LOGO</div>
@@ -49,9 +57,10 @@ export const Navbar = ({className}: NavbarProps) => {
 							<AppLink variant={AppLinkVariant.INVERTED} to={ROUTE_PATH.ARTICLE_CREATE}>
 								{t('Создать статью')}
 							</AppLink>
-							<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleLogout}>
-								{t('Выйти')}
-							</Button>
+							<Dropdown
+								placement="bottom-start"
+								items={dropdownItems}
+								trigger={<Avatar src={authData?.avatar}/>}/>
 						</>
 					)
 					: (

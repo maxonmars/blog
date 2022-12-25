@@ -1,9 +1,9 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import {Select} from 'shared/ui/Select/Select';
 import {useTranslation} from 'react-i18next';
 import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
 import {Country} from '../model/types/country';
 import {memo} from 'react';
+import {Select} from 'shared/ui/Select/Select';
 
 interface CountrySelectProps {
 	className?: string;
@@ -13,11 +13,11 @@ interface CountrySelectProps {
 }
 
 const options = [
-	{label: Country.Armenia, value: Country.Armenia},
-	{label: Country.Russia, value: Country.Russia},
-	{label: Country.Ukraine, value: Country.Ukraine},
-	{label: Country.Belarus, value: Country.Belarus},
-	{label: Country.Kazakhstan, value: Country.Kazakhstan},
+	{value: Country.Armenia, content: Country.Armenia},
+	{value: Country.Russia, content: Country.Russia},
+	{value: Country.Ukraine, content: Country.Ukraine},
+	{value: Country.Belarus, content: Country.Belarus},
+	{value: Country.Kazakhstan, content: Country.Kazakhstan},
 ];
 
 const isCountryEnum = isSomeEnum(Country);
@@ -30,14 +30,15 @@ export const CountrySelect = memo(({className, selectedValue, onChange, disabled
 		}
 	};
 
-	return <Select
-		className={classNames([className])}
-		label={t('Страна')}
-		options={options}
-		disabled={disabled}
-		selectedValue={selectedValue}
-		onChange={handleOptionChange}
-	/>;
+	return (
+		<Select<Country>
+			isDisabled={disabled}
+			selectedValue={selectedValue}
+			label={t('Страна')}
+			className={classNames([className])}
+			options={options}
+			onChange={handleOptionChange}/>
+	);
 });
 
 CountrySelect.displayName = 'CountrySelect';

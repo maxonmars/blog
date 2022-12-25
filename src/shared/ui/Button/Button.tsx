@@ -1,7 +1,7 @@
 import module from './Button.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {ButtonHTMLAttributes, ReactNode} from 'react';
-import {memo} from 'react';
+import type {ButtonHTMLAttributes, ForwardedRef, ReactNode} from 'react';
+import {forwardRef, memo} from 'react';
 
 export enum ButtonVariant {
 	SUBTLE = 'subtle',
@@ -34,7 +34,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children: ReactNode;
 }
 
-export const Button = memo(({
+const Button = ({
 	className,
 	variant = ButtonVariant.DEFAULT,
 	square,
@@ -45,7 +45,7 @@ export const Button = memo(({
 	uppercase,
 	children,
 	...restProps
-}: ButtonProps) => {
+}: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
 	const buttonClass = classNames(
 		[
 			module.button,
@@ -64,12 +64,15 @@ export const Button = memo(({
 
 	return (
 		<button
+			ref={ref}
 			{...restProps}
 			className={buttonClass}
 		>
 			{children}
 		</button>
 	);
-});
+};
 
-Button.displayName = 'Button';
+const ButtonWithRef = forwardRef<HTMLButtonElement, ButtonProps>(Button);
+const ButtonWithMemo = memo(ButtonWithRef);
+export {ButtonWithMemo as Button};

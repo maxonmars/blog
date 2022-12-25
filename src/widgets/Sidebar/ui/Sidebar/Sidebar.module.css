@@ -10,7 +10,7 @@
 	position: sticky;
 	top: 2em;
 	display: grid;
-	height: calc(100vh - var(--navbar-height));
+	height: calc(95vh - var(--navbar-height));
 }
 
 .collapsed {

@@ -1,9 +1,9 @@
 import {classNames} from 'shared/lib/classNames/classNames';
-import {Select} from 'shared/ui/Select/Select';
 import {useTranslation} from 'react-i18next';
 import {Currency} from '../model/types/currency';
 import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
 import {memo} from 'react';
+import {Select} from 'shared/ui/Select/Select';
 
 interface CurrencySelectProps {
 	className?: string;
@@ -13,9 +13,9 @@ interface CurrencySelectProps {
 }
 
 const options = [
-	{label: Currency.EUR, value: Currency.EUR},
-	{label: Currency.RUB, value: Currency.RUB},
-	{label: Currency.USD, value: Currency.USD},
+	{value: Currency.EUR, content: Currency.EUR},
+	{value: Currency.RUB, content: Currency.RUB},
+	{value: Currency.USD, content: Currency.USD},
 ];
 
 const isCurrencyEnum = isSomeEnum(Currency);
@@ -29,11 +29,11 @@ export const CurrencySelect = memo(({className, selectedValue, onChange, disable
 	};
 
 	return (
-		<Select
+		<Select<Currency>
 			className={classNames([className])}
 			label={t('Валюта')}
 			options={options}
-			disabled={disabled}
+			isDisabled={disabled}
 			selectedValue={selectedValue}
 			onChange={handleOptionChange}
 		/>);

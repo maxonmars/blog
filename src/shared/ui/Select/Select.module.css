@@ -1,20 +1,54 @@
-.wrapper {
-	display: grid;
-	grid-template-columns: max-content 1fr;
-	grid-column-gap: 1em;
-	align-items: center;
-}
-
 .select {
-	width: 100%;
-	font-size: 1rem;
-	border: 1px solid var(--bg-color-inverted);
-	border-radius: var(--radius-m);
-	color: inherit;
+	position: relative;
 }
 
-.select:disabled {
+.label {
+	margin-right: 0.5em;
+}
+
+.btn {
 	border: none;
-	background-color: var(--bg-color);
+	margin: 0;
+	padding: 0;
+	background: none;
+}
+
+.options {
+	background-color: var(--code-bg);
+	color: var(--primary-color);
+	border-radius: 12px;
+	list-style: none;
+	box-shadow: 4px 4px 8px black;
+}
+
+.option {
+	font-size: inherit;
+}
+
+.item {
+	padding: 0.5em;
+	display: flex;
+	align-items: center;
+	gap: 0.5em;
+	transition: all 200ms ease-in;
+	cursor: pointer;
+}
+
+.options > :last-child {
+	border-bottom-left-radius: 12px;
+	border-bottom-right-radius: 12px;
+}
+
+.options > :first-child {
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+}
+
+.item.itemActive {
+	background-color: var(--secondary-color);
+	color: white;
+}
+
+.item.itemDisabled {
 	opacity: 0.5;
 }
