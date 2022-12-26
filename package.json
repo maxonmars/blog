@@ -11,6 +11,7 @@
     "build:prod": "webpack --env mode=production apiUrl=https://blog-fake-server.vercel.app",
     "build:dev": "webpack --env mode=development",
     "exp:ico": "node scripts/export-icons.js",
+    "generate:slice": "node ./scripts/createSlice/index.js",
     "lint:ts": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "lint:css": "npx stylelint \"src/**/*.css\"",
