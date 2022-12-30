@@ -39,7 +39,7 @@ export const VirtualizedList = <T extends Record<string, any>>(props: Virtualize
 	const virtualArray = rowVirtualizer.getVirtualItems();
 
 	useLayoutEffect(() => {
-		if (isLoading === false && isInit && scrollIndex !== undefined) {
+		if (isLoading === false && isInit.current && scrollIndex !== undefined) {
 			rowVirtualizer.scrollToIndex(scrollIndex);
 			isInit.current = false;
 		}

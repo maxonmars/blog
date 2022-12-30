@@ -60,9 +60,6 @@ export const ArticleVirtualizedList = (props: ArticleVirtualizedListProps) => {
 				scrollIndex={itemIndex}
 				fetchNextPage={handleNextPartLoad}>
 				{(article, {isLoaderRow, virtualItemIndex}) => {
-					console.log('article:->>', article);
-					console.log('isLoaderRow:->>', isLoaderRow);
-					console.log('hasMore:->>', hasMore);
 					return (
 						<>
 							{isLoaderRow
