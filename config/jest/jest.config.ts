@@ -78,6 +78,17 @@ const jestConfig: JestConfigWithTsJest = {
 		'entities/(.*)': '<rootDir>src/entities/$1',
 	},
 
+	// Use this configuration option to add custom reporters to Jest
+	reporters: [
+		'default',
+		['jest-html-reporters', {
+			publicPath: '<rootDir>/reports/unit',
+			filename: 'report.html',
+			openReport: true,
+			inlineSource: true,
+		}],
+	],
+
 	// A map from regular expressions to paths to transformers
 	// transform: {
 	// 	// '^.+\\.tsx?$' to default
@@ -148,9 +159,6 @@ const jestConfig: JestConfigWithTsJest = {
 
 	// Run tests from one or more projects
 	// projects: undefined,
-
-	// Use this configuration option to add custom reporters to Jest
-	// reporters: undefined,
 
 	// Automatically reset mock state before every test
 	// resetMocks: false,
