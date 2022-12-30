@@ -66,7 +66,7 @@ export const VirtualizedList = <T extends Record<string, any>>(props: Virtualize
 					position: 'relative',
 				}}>
 				{virtualArray.map(virtualItem => {
-					const isLoaderRow = virtualItem.index >= count - 1;
+					const isLoaderRow = Boolean((virtualItem.index >= count - 1) && isLoading);
 					const itemData = dataList[virtualItem.index];
 
 					return (

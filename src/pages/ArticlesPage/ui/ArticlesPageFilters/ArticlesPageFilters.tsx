@@ -23,7 +23,7 @@ import {useDebounce} from 'shared/hooks/useDebounce/useDebounce';
 import {useCallback} from 'react';
 import type {ArticleType} from 'entities/Article/model/types/article';
 import {ArticleTypeTabs} from 'features/ArticleTypeTabs/ArticleTypeTabs';
-import {articleVirtualizedListActions} from 'features/ArticleVirtualizedList';
+import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

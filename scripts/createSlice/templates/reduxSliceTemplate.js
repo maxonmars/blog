@@ -32,7 +32,9 @@ export const ${sliceName}Slice = createSlice({
 	//},
 });
 
-export const {actions: ${sliceName}Actions} = ${sliceName}Slice;
-export const {reducer: ${sliceName}Reducer} = ${sliceName}Slice;
+export const {
+	reducer: ${sliceName}Reducer,
+	actions: ${sliceName}Actions
+} = ${sliceName}Slice;
 `);
 };

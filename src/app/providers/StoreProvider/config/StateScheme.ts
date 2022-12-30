@@ -1,26 +1,26 @@
 import type {UserScheme} from 'entities/User';
 import type {LoginScheme} from 'features/AuthByUsername';
 import type {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
-import type {ProfileScheme} from 'entities/Profile';
 import type {AxiosInstance} from 'axios';
 import type {ArticleDetailsScheme} from 'entities/Article';
 import type {ArticleDetailsPageScheme} from 'pages/ArticleDetailsPage';
-import type {ArticlesPageScheme} from 'pages/ArticlesPage';
+import type {ArticleListPageScheme} from 'pages/ArticlesPage';
 import type {RestorationScrollScheme} from 'features/RestorationScroll';
 import type {AddCommentFormScheme} from 'features/addCommentForm';
-import type {ArticleVirtualizedListScheme} from 'features/ArticleVirtualizedList';
+import type {rtkApi} from 'shared/api/rtkApi';
+import type {EditableProfileCardSchema} from 'features/editableProfileCard';
 
 export interface StateScheme {
 	user: UserScheme;
 	restorationScroll: RestorationScrollScheme;
-	articleVirtualizedList: ArticleVirtualizedListScheme;
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
 	// Async reducers
 	login?: LoginScheme;
-	profile?: ProfileScheme;
+	profile?: EditableProfileCardSchema;
 	articleDetails?: ArticleDetailsScheme;
 	addCommentForm?: AddCommentFormScheme;
-	articlesPage?: ArticlesPageScheme;
+	articleListPage?: ArticleListPageScheme;
 	articleDetailsPage?: ArticleDetailsPageScheme;
 }
 

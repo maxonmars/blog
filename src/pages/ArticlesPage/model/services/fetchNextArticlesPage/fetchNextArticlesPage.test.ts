@@ -7,13 +7,15 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage', () => {
 	test('should be fulfilled/profileData', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: {
-				page: 2,
-				ids: [],
-				entities: {},
-				limit: 5,
-				hasMore: true,
-				isLoading: false,
+			articleListPage: {
+				pages: {
+					page: 2,
+					ids: [],
+					entities: {},
+					limit: 5,
+					hasMore: true,
+					isLoading: false,
+				},
 			},
 		});
 		await thunk.callThunk();
@@ -23,13 +25,15 @@ describe('fetchNextArticlesPage', () => {
 	});
 	test('should be rejected/error if get status 403', async () => {
 		const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-			articlesPage: {
-				page: 2,
-				ids: [],
-				entities: {},
-				limit: 5,
-				hasMore: false,
-				isLoading: false,
+			articleListPage: {
+				pages: {
+					page: 2,
+					ids: [],
+					entities: {},
+					limit: 5,
+					hasMore: false,
+					isLoading: false,
+				},
 			},
 		});
 		await thunk.callThunk();

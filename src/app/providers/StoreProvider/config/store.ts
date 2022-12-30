@@ -5,7 +5,7 @@ import {userReducer} from 'entities/User';
 import {createReducerManager} from './reducerManager';
 import {$api} from 'shared/api/api';
 import {restorationScrollReducer} from 'features/RestorationScroll';
-import {articleVirtualizedListReducer} from 'features/ArticleVirtualizedList';
+import {rtkApi} from 'shared/api/rtkApi';
 
 export const createReduxStore = (
 	initialState?: StateScheme,
@@ -15,7 +15,7 @@ export const createReduxStore = (
 		...asyncReducers,
 		user: userReducer,
 		restorationScroll: restorationScrollReducer,
-		articleVirtualizedList: articleVirtualizedListReducer,
+		[rtkApi.reducerPath]: rtkApi.reducer,
 	};
 
 	const reducerManager = createReducerManager(rootReducers);
@@ -30,7 +30,7 @@ export const createReduxStore = (
 					api: $api,
 				},
 			},
-		}),
+		}).concat(rtkApi.middleware),
 	});
 
 	return Object.assign(store, {reducerManager});

@@ -1,33 +1,22 @@
 import module from './ProfilePage.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import {useTranslation} from 'react-i18next';
-import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile';
-import {useCallback, useEffect} from 'react';
-import {useAppDispatch} from 'shared/hooks';
-import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
+import {EditableProfileCard} from 'features/editableProfileCard';
 import {useParams} from 'react-router-dom';
-
-const reducers: ReducersList = {
-	profile: profileReducer,
-};
+import {Title} from 'shared/ui/Title/Title';
+import {useTranslation} from 'react-i18next';
 
 const ProfilePage = () => {
-	const {t} = useTranslation();
-	const dispatch = useAppDispatch();
+	const {t} = useTranslation('profile');
 	const {id} = useParams<{id: string}>();
 
-	useInitialEffect(useCallback(() => {
-		void dispatch(fetchProfileData(id));
-	}, [dispatch, id]));
+	if (!id) {
+		return <Title>{t('Профиль не найден')}</Title>;
+	}
 
 	return (
-		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
-			<div className={classNames([module.profilePage])}>
-				<ProfileCard/>
-			</div>
-		</DynamicModuleLoader>
+		<div className={classNames([module.profilePage])}>
+			<EditableProfileCard idProfile={id}/>
+		</div>
 	);
 };
 

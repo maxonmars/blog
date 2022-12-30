@@ -16,7 +16,7 @@ export const ${componentName} = memo((props: ${componentName}Props) => {
 	const {t} = useTranslation();
 
 	return (
-		<div className={classNames([module.${firstCharToLowerCase(componentName)}, className], {})}>
+		<div className={classNames([module.${firstCharToLowerCase(componentName)}, className])}>
 			${componentName}
 		</div>
 	);

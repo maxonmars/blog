@@ -29,7 +29,7 @@ module.exports = async (layer, sliceName) => {
 				storyTemplate(layer, componentName),
 			);
 			await fs.writeFile(
-				resolveUIPath(componentName, `${componentName}.module.scss`),
+				resolveUIPath(componentName, `${componentName}.module.css`),
 				styleTemplate(componentName),
 			);
 		} catch {

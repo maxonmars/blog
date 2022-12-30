@@ -1,14 +1,27 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import ProfilePage from './ProfilePage';
+import {EditableProfileCard} from './EditableProfileCard';
 import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
-import type {EditableProfileCardSchema} from 'features/editableProfileCard/model/types/editableProfileCardSchema';
+import type {EditableProfileCardSchema} from '../../model/types/editableProfileCardSchema';
 import {Currency} from 'entities/Currency/model/types/currency';
 import {Country} from 'entities/Country/model/types/country';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 
-type StoryType = ComponentStory<typeof ProfilePage>;
+type StoryType = ComponentStory<typeof EditableProfileCard>;
+
+export default {
+	title: 'features/EditableProfileCard',
+	component: EditableProfileCard,
+	argTypes: {
+		backgroundColor: {control: 'color'},
+	},
+	args: {
+		idProfile: '1',
+	},
+} as ComponentMeta<typeof EditableProfileCard>;
+
+const Template: StoryType = args => <EditableProfileCard {...args}/>;
 
 const initialState: EditableProfileCardSchema = {
 	editableProfileData: {
@@ -25,22 +38,19 @@ const initialState: EditableProfileCardSchema = {
 	isReadonly: true,
 };
 
-export default {
-	title: 'pages/ProfilePage',
-	component: ProfilePage,
-	argTypes: {
-		backgroundColor: {control: 'color'},
-	},
-} as ComponentMeta<typeof ProfilePage>;
-
-const Template: StoryType = () => <ProfilePage/>;
-
 export const Light = Template.bind({});
 Light.args = {
 };
+Light.decorators = [storeDecorator({})];
 Light.decorators = [storeDecorator({profile: initialState})];
 
 export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({profile: initialState})];
+
+export const Loading = Template.bind({});
+Loading.decorators = [storeDecorator({profile: {...initialState, isLoading: true}})];
+
+export const Error = Template.bind({});
+Error.decorators = [storeDecorator({profile: {...initialState, error: 'error'}})];
