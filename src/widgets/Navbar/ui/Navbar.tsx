@@ -6,7 +6,7 @@ import {useTranslation} from 'react-i18next';
 import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
 import {LoginModal} from 'features/AuthByUsername';
 import {useDispatch, useSelector} from 'react-redux';
-import {selectUserAuthData, userActions} from 'entities/User';
+import {selectUserAuthData, selectUserIsAdmin, selectUserIsManager, userActions} from 'entities/User';
 import {AppLink, AppLinkVariant} from 'shared/ui/AppLink/AppLink';
 import {ROUTE_PATH} from 'app/providers/router';
 import type {DropdownItem} from 'shared/ui/Dropdown/Dropdown';
@@ -26,6 +26,8 @@ export const Navbar = ({className}: NavbarProps) => {
 	const {t} = useTranslation('translation');
 	const dispatch = useDispatch();
 	const authData = useSelector(selectUserAuthData);
+	const isAdmin = useSelector(selectUserIsAdmin);
+	const isManager = useSelector(selectUserIsManager);
 	const [isOpenAuthModal, setIsOpenAuthModal] = useState(false);
 
 	const handleCloseAuthModal = () => {
@@ -42,9 +44,22 @@ export const Navbar = ({className}: NavbarProps) => {
 
 	const isAuth = Boolean(authData);
 
-	const dropdownItems: DropdownItem[] = [
+	const dropdownUserItems: DropdownItem[] = [
 		{content: t('Выйти'), onClick: handleLogout},
 		{content: t('Профиль'), href: `${ROUTE_PATH.PROFILE}${authData?.id ?? ''}`},
+	];
+
+	const dropdownAdminItems: DropdownItem[] = [
+		{content: t('Админка'), href: ROUTE_PATH.ADMIN},
+		...dropdownUserItems,
+	];
+
+	const isAdminPageAvailable = isAdmin || isManager;
+
+	const dropdownItems: DropdownItem[] = [
+		...(isAdminPageAvailable
+			? dropdownAdminItems
+			: dropdownUserItems),
 	];
 
 	return (

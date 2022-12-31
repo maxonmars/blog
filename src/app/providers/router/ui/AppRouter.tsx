@@ -9,7 +9,7 @@ export const AppRouter = () => {
 		return {
 			...route,
 			element: route.authOnly
-				? <RequireAuth key={route.path}>{route.element}</RequireAuth>
+				? <RequireAuth roles={route.roles} key={route.path}>{route.element}</RequireAuth>
 				: route.element,
 		};
 	});
