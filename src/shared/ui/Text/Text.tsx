@@ -1,6 +1,6 @@
 import module from './Text.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
-import type {ReactNode} from 'react';
+import type {HTMLAttributes, ReactNode} from 'react';
 
 export enum TextVariant {
 	DEFAULT = 'default',
@@ -13,16 +13,18 @@ export enum TextSize {
 	LG = 'lg',
 }
 
-interface TextProps {
+type Paragraph = Omit<HTMLAttributes<HTMLParagraphElement>, 'className' | 'children'>;
+
+interface TextProps extends Paragraph {
 	className?: string;
 	children: ReactNode;
 	variant?: TextVariant;
 	size?: TextSize;
 }
 
-export const Text = ({className, children, variant = TextVariant.DEFAULT, size = TextSize.MD}: TextProps) => {
+export const Text = ({className, children, variant = TextVariant.DEFAULT, size = TextSize.MD, ...restProps}: TextProps) => {
 	return (
-		<p className={classNames([module.text, className, module[variant], module[size]])}>
+		<p {...restProps} className={classNames([module.text, className, module[variant], module[size]])}>
 			{children}
 		</p>
 	);

@@ -77,6 +77,7 @@ export const EditableProfileCard = memo(({className, idProfile}: EditableProfile
 					&& (isReadonly
 						? (
 							<Button
+								data-testid="EditableProfileCard.editButton"
 								variant={ButtonVariant.OUTLINE}
 								onClick={handleProfileEditable}>
 								{t('редактировать')}
@@ -84,11 +85,13 @@ export const EditableProfileCard = memo(({className, idProfile}: EditableProfile
 						: (
 							<>
 								<Button
+									data-testid="EditableProfileCard.cancelButton"
 									variant={ButtonVariant.OUTLINE}
 									onClick={handleProfileDataEditCancel}>
 									{t('отменить')}
 								</Button>
 								<Button
+									data-testid="EditableProfileCard.saveButton"
 									variant={ButtonVariant.FILLED}
 									onClick={handleProfileSubmit}>
 									{t('сохранить')}
@@ -101,7 +104,13 @@ export const EditableProfileCard = memo(({className, idProfile}: EditableProfile
 					<div>
 						{validateErrors.map(error => {
 							return (
-								<Text variant={TextVariant.RED} size={TextSize.SM} key={error}>{error}</Text>
+								<Text
+									data-testid="EditableProfileCard.error"
+									variant={TextVariant.RED}
+									size={TextSize.SM}
+									key={error}>
+									{error}
+								</Text>
 							);
 						})}
 					</div>)}

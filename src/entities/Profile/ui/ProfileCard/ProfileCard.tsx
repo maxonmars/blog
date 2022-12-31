@@ -49,6 +49,7 @@ export const ProfileCard = ({className, onProfileDataEdit, profileData, isLoadin
 				readOnly={isReadonly}
 				name={ProfileField.FIRST_NAME}
 				onChange={onProfileDataEdit}
+				data-testid="ProfileCard.firstName"
 			/>
 			<Input
 				label={t('Фамилия')}
@@ -56,6 +57,7 @@ export const ProfileCard = ({className, onProfileDataEdit, profileData, isLoadin
 				readOnly={isReadonly}
 				name={ProfileField.LAST_NAME}
 				onChange={onProfileDataEdit}
+				data-testid="ProfileCard.lastName"
 			/>
 			<Input
 				label={t('Возраст')}
