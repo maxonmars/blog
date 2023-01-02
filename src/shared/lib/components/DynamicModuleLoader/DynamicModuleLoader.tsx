@@ -1,4 +1,4 @@
-import type {FC, ReactElement} from 'react';
+import type {ReactElement} from 'react';
 import {useEffect} from 'react';
 import {useDispatch, useStore} from 'react-redux';
 import type {ReduxStoreWithManager, StateScheme} from 'app/providers/StoreProvider';
@@ -15,7 +15,7 @@ interface DynamicModuleLoaderProps {
 	isRemoveAfterUnmount?: boolean;
 }
 
-export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = props => {
+export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
 	const {children, reducers, isRemoveAfterUnmount} = props;
 	const dispatch = useDispatch();
 	const store = useStore() as ReduxStoreWithManager;
