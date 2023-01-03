@@ -1,8 +1,8 @@
 import {fetchProfileData} from './fetchProfileData';
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
-import {Currency} from 'entities/Currency/model/types/currency';
-import {Country} from 'entities/Country/model/types/country';
+import {Country} from 'entities/Country/model/consts/country';
+import {Currency} from 'entities/Currency/model/consts/currency';
 
 describe('fetchProfileData', () => {
 	test('should be fulfilled/profileData', async () => {

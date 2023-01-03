@@ -21,9 +21,9 @@ import type {SortOrder} from 'shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {useDebounce} from 'shared/hooks/useDebounce/useDebounce';
 import {useCallback} from 'react';
-import type {ArticleType} from 'entities/Article/model/types/article';
 import {ArticleTypeTabs} from 'features/ArticleTypeTabs/ArticleTypeTabs';
 import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
+import type {ArticleType} from 'entities/Article/model/consts/article';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

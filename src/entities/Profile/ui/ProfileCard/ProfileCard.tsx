@@ -8,8 +8,8 @@ import type {Profile} from '../../model/types/profile';
 import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 import {CurrencySelect} from 'entities/Currency';
 import {CountrySelect} from 'entities/Country';
-import {ProfileField} from '../../model/types/profile';
 import {VStack} from 'shared/ui/Stack';
+import {ProfileField} from '../../model/consts/profile';
 
 interface ProfileCardProps {
 	className?: string;

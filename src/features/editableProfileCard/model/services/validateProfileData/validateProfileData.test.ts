@@ -1,8 +1,8 @@
 import {validateProfileData} from './validateProfileData';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
-import {Currency} from 'entities/Currency/model/types/currency';
-import {Country} from 'entities/Country/model/types/country';
-import {ValidateProfileError} from '../../types/editableProfileCardSchema';
+import {Country} from 'entities/Country/model/consts/country';
+import {Currency} from 'entities/Currency/model/consts/currency';
+import {ValidateProfileError} from '../../consts/validateProfileError';
 
 describe('validateProfileData', () => {
 	const profileData = {

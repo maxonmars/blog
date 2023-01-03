@@ -2,10 +2,10 @@ import type {PayloadAction} from '@reduxjs/toolkit';
 import {createSlice} from '@reduxjs/toolkit';
 import {fetchProfileData} from '../services/fetchProfileData/fetchProfileData';
 import {updateProfileData} from '../services/updateProfileData/updateProfileData';
-import {Country} from 'entities/Country/model/types/country';
-import {Currency} from 'entities/Currency/model/types/currency';
 import type {EditableProfileCardSchema} from '../types/editableProfileCardSchema';
 import type {Profile} from 'entities/Profile';
+import {Country} from 'entities/Country/model/consts/country';
+import {Currency} from 'entities/Currency/model/consts/currency';
 
 const initialState: EditableProfileCardSchema = {
 	isLoading: false,

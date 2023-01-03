@@ -1,6 +1,6 @@
 import type {StateScheme} from 'app/providers/StoreProvider';
 import {selectProfileValidateErrors} from './selectProfileValidateErrors';
-import {ValidateProfileError} from '../../types/editableProfileCardSchema';
+import {ValidateProfileError} from '../../consts/validateProfileError';
 
 describe('selectProfileValidateErrors', () => {
 	test('should be true is read only', () => {

@@ -1,7 +1,6 @@
 import module from './ArticleListItem.module.css';
 import {classNames} from 'shared/lib/classNames/classNames';
 import type {Article, ArticleTextBlock} from '../../model/types/article';
-import {ArticleBlockType, ArticleView} from '../../model/types/article';
 import {Text} from 'shared/ui/Text/Text';
 import {IcoThinEyeEvil} from 'shared/assets/icons';
 import {Card} from 'shared/ui/Card/Card';
@@ -14,6 +13,7 @@ import {useNavigate} from 'react-router-dom';
 import {ROUTE_PATH} from 'app/providers/router';
 import {AppLink} from 'shared/ui/AppLink/AppLink';
 import type {HTMLAttributeAnchorTarget} from 'react';
+import {ArticleBlockType, ArticleView} from '../../model/consts/article';
 
 interface ArticleListItemProps {
 	className?: string;

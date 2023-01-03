@@ -3,7 +3,7 @@ import type {ThunkConfig} from 'app/providers/StoreProvider';
 import type {Profile} from '../../../../../entities/Profile/model/types/profile';
 import {selectEditableProfileData} from '../../selectors';
 import {validateProfileData} from '../validateProfileData/validateProfileData';
-import {ValidateProfileError} from '../../types/editableProfileCardSchema';
+import {ValidateProfileError} from '../../consts/validateProfileError';
 
 const checkData = (data: Profile) => {
 	if (!data) {

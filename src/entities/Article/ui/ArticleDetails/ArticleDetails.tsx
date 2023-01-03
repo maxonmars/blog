@@ -18,11 +18,11 @@ import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
 import {Title} from 'shared/ui/Title/Title';
 import {IcoThinCalendarDays, IcoThinEyeEvil} from 'shared/assets/icons/index';
 import type {ArticleBlock} from '../../model/types/article';
-import {ArticleBlockType} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {HStack, VStack} from 'shared/ui/Stack';
+import {ArticleBlockType} from '../../model/consts/article';
 
 interface ArticleDetailsProps {
 	className?: string;

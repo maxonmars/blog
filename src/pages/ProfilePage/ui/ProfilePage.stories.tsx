@@ -4,10 +4,10 @@ import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
 import {Theme} from 'shared/lib/theme';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
 import type {EditableProfileCardSchema} from 'features/editableProfileCard/model/types/editableProfileCardSchema';
-import {Currency} from 'entities/Currency/model/types/currency';
-import {Country} from 'entities/Country/model/types/country';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
 import type {Profile} from 'entities/Profile';
+import {Country} from 'entities/Country/model/consts/country';
+import {Currency} from 'entities/Currency/model/consts/currency';
 
 type StoryType = ComponentStory<typeof ProfilePage>;
 

@@ -1,9 +1,9 @@
 import {classNames} from 'shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {Currency} from '../model/types/currency';
 import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
 import {memo} from 'react';
 import {Select} from 'shared/ui/Select/Select';
+import {Currency} from '../model/consts/currency';
 
 interface CurrencySelectProps {
 	className?: string;

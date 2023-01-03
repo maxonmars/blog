@@ -1,7 +1,7 @@
 import {fetchArticleById} from './fetchArticleById';
 import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import type {Article} from '../../types/article';
-import {ArticleBlockType, ArticleType} from '../../types/article';
+import {ArticleBlockType, ArticleType} from '../../consts/article';
 
 describe('fetchArticleById', () => {
 	test('should be fulfilled/article', async () => {
