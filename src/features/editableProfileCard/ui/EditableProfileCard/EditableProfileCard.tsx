@@ -26,7 +26,7 @@ import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/Dyn
 
 interface EditableProfileCardProps {
 	className?: string;
-	idProfile: string;
+	idProfile?: string;
 }
 
 const reducers: ReducersList = {

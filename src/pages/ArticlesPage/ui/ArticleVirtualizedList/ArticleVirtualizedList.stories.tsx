@@ -1,12 +1,12 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import ArticlesPage from './ArticlesPage';
+import {ArticleVirtualizedList} from './ArticleVirtualizedList';
 import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
 import type {Article} from 'entities/Article';
 import {ArticleBlockType, ArticleType} from 'entities/Article/model/types/article';
 import {UserRoles} from 'entities/User';
 import {ArticleSortField, ArticleView} from 'entities/Article';
 
-type StoryType = ComponentStory<typeof ArticlesPage>;
+type StoryType = ComponentStory<typeof ArticleVirtualizedList>;
 
 const article: Article = {
 	type: [ArticleType.IT],
@@ -23,14 +23,15 @@ const article: Article = {
 };
 
 export default {
-	title: 'pages/Articles/ArticlesPage',
-	component: ArticlesPage,
+	title: 'pages/Articles/ArticleVirtualizedList',
+	component: ArticleVirtualizedList,
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
 	args: {},
 	decorators: [storeDecorator({
 		articleListPage: {
+			virtualizedList: {itemIndex: 1},
 			pages: {
 				entities: {
 					1: {...article},
@@ -51,9 +52,9 @@ export default {
 			},
 		},
 	})],
-} as ComponentMeta<typeof ArticlesPage>;
+} as ComponentMeta<typeof ArticleVirtualizedList>;
 
-const Template: StoryType = args => <ArticlesPage {...args}/>;
+const Template: StoryType = args => <ArticleVirtualizedList {...args}/>;
 
 export const Default = Template.bind({});
 Default.args = {};

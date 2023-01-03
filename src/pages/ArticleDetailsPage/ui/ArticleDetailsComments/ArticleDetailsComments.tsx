@@ -17,7 +17,7 @@ import {fetchCommentsByArticleId} from '../../model/services/fetchCommentsByArti
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
-	articleId: string;
+	articleId?: string;
 }
 
 export const ArticleDetailsComments = ({className, articleId}: ArticleDetailsCommentsProps) => {

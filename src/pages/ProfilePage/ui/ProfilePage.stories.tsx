@@ -7,20 +7,24 @@ import type {EditableProfileCardSchema} from 'features/editableProfileCard/model
 import {Currency} from 'entities/Currency/model/types/currency';
 import {Country} from 'entities/Country/model/types/country';
 import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
+import type {Profile} from 'entities/Profile';
 
 type StoryType = ComponentStory<typeof ProfilePage>;
 
+const profile: Profile = {
+	firstName: 'Max',
+	lastName: 'Mars',
+	age: 22,
+	username: 'Admin13',
+	city: 'Irkutsk',
+	avatar: AvatarImg as string,
+	currency: Currency.RUB,
+	country: Country.Russia,
+};
+
 const initialState: EditableProfileCardSchema = {
-	editableProfileData: {
-		firstName: 'Max',
-		lastName: 'Mars',
-		age: 22,
-		username: 'Admin13',
-		city: 'Irkutsk',
-		avatar: AvatarImg as string,
-		currency: Currency.RUB,
-		country: Country.Russia,
-	},
+	editableProfileData: profile,
+	readonlyProfileData: profile,
 	isLoading: false,
 	isReadonly: true,
 };
@@ -31,6 +35,7 @@ export default {
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
+	decorators: [storeDecorator({profile: initialState})],
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: StoryType = () => <ProfilePage/>;
@@ -38,9 +43,8 @@ const Template: StoryType = () => <ProfilePage/>;
 export const Light = Template.bind({});
 Light.args = {
 };
-Light.decorators = [storeDecorator({profile: initialState})];
 
 export const Dark = Template.bind({});
 Dark.args = {
 };
-Dark.decorators = [themeDecorator(Theme.DARK), storeDecorator({profile: initialState})];
+Dark.decorators = [themeDecorator(Theme.DARK)];

@@ -82,28 +82,12 @@ OutlineRadiusL.args = {
 	radius: ButtonRadius.LG,
 };
 
-export const OutlineInvertedRadiusL = Template.bind({});
-OutlineInvertedRadiusL.args = {
-	variant: ButtonVariant.OUTLINE,
-	children: 'click me',
-	radius: ButtonRadius.LG,
-	inverted: true,
-};
-
 export const OutlineWithDarkTheme = Template.bind({});
 OutlineWithDarkTheme.args = {
 	variant: ButtonVariant.OUTLINE,
 	children: 'click me',
 };
 OutlineWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
-
-export const OutlineInvertedWithDarkTheme = Template.bind({});
-OutlineInvertedWithDarkTheme.args = {
-	variant: ButtonVariant.OUTLINE,
-	children: 'click me',
-	inverted: true,
-};
-OutlineInvertedWithDarkTheme.decorators = [themeDecorator(Theme.DARK)];
 
 export const Subtle = Template.bind({});
 Subtle.args = {

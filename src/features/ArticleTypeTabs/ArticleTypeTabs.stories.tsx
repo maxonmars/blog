@@ -4,7 +4,7 @@ import {ArticleTypeTabs} from './ArticleTypeTabs';
 type StoryType = ComponentStory<typeof ArticleTypeTabs>;
 
 export default {
-	title: '!/ArticleTypeTabs',
+	title: 'features/ArticleTypeTabs',
 	component: ArticleTypeTabs,
 	argTypes: {
 		backgroundColor: {control: 'color'},
