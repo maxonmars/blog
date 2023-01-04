@@ -21,19 +21,12 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
 	const babelLoader = buildBabelLoader(options);
 
-	const typescriptLoader = {
-		test: /\.tsx?$/,
-		use: 'ts-loader',
-		exclude: /node_modules/,
-	};
-
 	const cssLoader = buildCssLoader(options);
 
 	return [
 		fileLoader,
 		svgLoader,
 		babelLoader,
-		typescriptLoader,
 		cssLoader,
 	];
 }

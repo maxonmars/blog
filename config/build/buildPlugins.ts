@@ -6,6 +6,7 @@ import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import CopyPlugin from 'copy-webpack-plugin';
 import CircularDependencyPlugin from 'circular-dependency-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins({path, isDev, isHotRefresh, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
 	return [
@@ -22,6 +23,7 @@ export function buildPlugins({path, isDev, isHotRefresh, apiUrl, project}: Build
 			exclude: /node_modules/,
 			failOnError: true,
 		}),
+		new ForkTsCheckerWebpackPlugin(),
 		!isDev && new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
