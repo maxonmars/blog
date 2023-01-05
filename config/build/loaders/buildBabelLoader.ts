@@ -1,4 +1,5 @@
 import type {BuildOptions} from '../types';
+import babelRemovePropsPlugin from '../../babel/babelRemovePropsPlugin';
 
 export const buildBabelLoader = (options: BuildOptions) => {
 	return {
@@ -17,6 +18,10 @@ export const buildBabelLoader = (options: BuildOptions) => {
 				],
 				plugins: [
 					'@babel/plugin-transform-runtime',
+					[
+						babelRemovePropsPlugin,
+						{forbiddenNodeNames: ['data-testid']},
+					],
 				],
 			},
 		},

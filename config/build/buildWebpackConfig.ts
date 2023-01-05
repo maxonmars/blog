@@ -5,6 +5,7 @@ import {buildResolve} from './buildResolve';
 import type {BuildOptions} from './types';
 import {buildDevServer} from './buildDevServer';
 import CssMinimizerPlugin from 'css-minimizer-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
 	const {mode, path, isDev} = options;
@@ -19,8 +20,10 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			publicPath: '/',
 		},
 		optimization: {
+			minimize: true,
 			minimizer: [
 				new CssMinimizerPlugin(),
+				new TerserPlugin(),
 			],
 		},
 		plugins: buildPlugins(options),

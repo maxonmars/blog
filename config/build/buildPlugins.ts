@@ -23,7 +23,15 @@ export function buildPlugins({path, isDev, isHotRefresh, apiUrl, project}: Build
 			exclude: /node_modules/,
 			failOnError: true,
 		}),
-		new ForkTsCheckerWebpackPlugin(),
+		new ForkTsCheckerWebpackPlugin({
+			typescript: {
+				diagnosticOptions: {
+					semantic: true,
+					syntactic: true,
+				},
+				mode: 'write-references',
+			},
+		}),
 		!isDev && new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash:8].css',
 			chunkFilename: 'css/[name].[contenthash:8].css',
