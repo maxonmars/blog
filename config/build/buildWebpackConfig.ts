@@ -10,6 +10,16 @@ import TerserPlugin from 'terser-webpack-plugin';
 export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
 	const {mode, path, isDev} = options;
 
+	const optimization = isDev
+		? undefined
+		: {
+			minimize: true,
+			minimizer: [
+				new CssMinimizerPlugin(),
+				new TerserPlugin(),
+			],
+		};
+
 	return {
 		mode,
 		entry: path.entry,
@@ -19,13 +29,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
 			clean: true,
 			publicPath: '/',
 		},
-		optimization: {
-			minimize: true,
-			minimizer: [
-				new CssMinimizerPlugin(),
-				new TerserPlugin(),
-			],
-		},
+		optimization,
 		plugins: buildPlugins(options),
 		module: {
 			rules: buildLoaders(options),

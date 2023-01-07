@@ -1,0 +1,19 @@
+.popover {
+	position: relative;
+}
+
+.triggerBtn {
+	background: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+	cursor: pointer;
+	display: flex;
+}
+
+.panel {
+	background: var(--code-bg);
+	border-radius: 12px;
+	border: 1px solid var(--primary-color);
+	padding: 0.5em;
+}

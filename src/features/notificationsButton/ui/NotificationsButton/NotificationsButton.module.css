@@ -1,0 +1,6 @@
+.notificationList {
+	max-height: 300px;
+	overflow: auto;
+	width: max-content;
+	max-width: 500px;
+}
