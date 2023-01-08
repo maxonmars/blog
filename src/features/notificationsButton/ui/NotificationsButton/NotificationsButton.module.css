@@ -1,6 +1,13 @@
 .notificationList {
 	max-height: 300px;
 	overflow: auto;
+}
+
+.popoverNotificationList {
 	width: max-content;
 	max-width: 500px;
+}
+
+.drawerNotificationList {
+	width: 100%;
 }

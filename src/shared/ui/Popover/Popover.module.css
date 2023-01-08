@@ -16,4 +16,5 @@
 	border-radius: 12px;
 	border: 1px solid var(--primary-color);
 	padding: 0.5em;
+	z-index: var(--popup-index);
 }

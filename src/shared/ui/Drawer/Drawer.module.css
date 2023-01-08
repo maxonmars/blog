@@ -1,0 +1,70 @@
+.portalLayer {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	z-index: 1;
+	inset: 0;
+}
+
+.drawer {
+	display: flex;
+	flex-direction: column;
+	grid-row-gap: 1em;
+	border-top-left-radius: 1em;
+	border-top-right-radius: 1em;
+	overflow: auto;
+	background-color: var(--bg-color);
+	z-index: 3;
+	width: 100%;
+	padding: 1.25em;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	font-family: inherit;
+}
+
+/* Animation */
+
+.contentAppear {
+	transform: translateY(100%);
+}
+
+.contentAppearActive {
+	transform: translateY(0%);
+	transition: transform 300ms;
+}
+
+.contentExit {
+	transform: translateY(0%);
+}
+
+.contentExitActive {
+	transform: translateY(100%);
+	transition: transform 300ms;
+}
+
+.overlayEnterStart {
+	opacity: 0;
+	transition: opacity 300ms;
+}
+
+.overlayEnterDone {
+	opacity: 1;
+}
+
+.overlayExitStart {
+	opacity: 1;
+	transition: opacity 300ms;
+}
+
+.overlayExitDone {
+	opacity: 0;
+}

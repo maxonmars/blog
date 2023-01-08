@@ -43,7 +43,9 @@ export const Navbar = ({className}: NavbarProps) => {
 				{isAuth
 					? (
 						<>
-							<AppLink variant={AppLinkVariant.INVERTED} to={ROUTE_PATH.ARTICLE_CREATE}>
+							<AppLink
+								variant={AppLinkVariant.INVERTED}
+								to={ROUTE_PATH.ARTICLE_CREATE}>
 								{t('Создать статью')}
 							</AppLink>
 							<NotificationsButton/>
@@ -51,7 +53,10 @@ export const Navbar = ({className}: NavbarProps) => {
 						</>
 					)
 					: (
-						<Button size={ButtonSize.SM} variant={ButtonVariant.FILLED} onClick={handleOpenAuthModal}>
+						<Button
+							size={ButtonSize.SM}
+							variant={ButtonVariant.FILLED}
+							onClick={handleOpenAuthModal}>
 							{t('Войти')}
 						</Button>
 					)
