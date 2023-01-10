@@ -4,8 +4,7 @@ import {Overlay} from '../Overlay/Overlay';
 import {Portal} from '../Portal/Portal';
 import type {ReactNode} from 'react';
 import {useState} from 'react';
-import {useDrag} from '@use-gesture/react';
-import {a, config, useSpring} from '@react-spring/web';
+import {AnimationProvider, useAnimationLibs} from 'shared/lib/components/AnimationProvider';
 
 type DrawerMobileChildren =
 	| ReactNode
@@ -19,8 +18,19 @@ interface DrawerMobileProps {
 
 const height = window.innerHeight - 100;
 
-export const DrawerMobile = (props: DrawerMobileProps) => {
+const DrawerMobileContent = (props: DrawerMobileProps) => {
 	const {children, target, className} = props;
+	const {
+		Gesture: {
+			useDrag,
+		},
+		Spring: {
+			a,
+			config,
+			useSpring,
+		},
+	} = useAnimationLibs();
+
 	const [isOpened, setIsDrawerOpen] = useState(false);
 
 	const [{y}, api] = useSpring(() => ({y: height}));
@@ -90,5 +100,23 @@ export const DrawerMobile = (props: DrawerMobileProps) => {
 				)
 				: null}
 		</>
+	);
+};
+
+const DrawerMobileAsync = (props: DrawerMobileProps) => {
+	const {isLoading} = useAnimationLibs();
+
+	if (isLoading) {
+		return null;
+	}
+
+	return <DrawerMobileContent {...props}/>;
+};
+
+export const DrawerMobile = (props: DrawerMobileProps) => {
+	return (
+		<AnimationProvider>
+			<DrawerMobileAsync {...props}/>
+		</AnimationProvider>
 	);
 };
