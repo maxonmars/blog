@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ArticleDetailsPageHeader} from './ArticleDetailsPageHeader';
-import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 
 type StoryType = ComponentStory<typeof ArticleDetailsPageHeader>;
 

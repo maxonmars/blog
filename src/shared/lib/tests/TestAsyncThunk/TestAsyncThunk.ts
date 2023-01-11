@@ -1,4 +1,4 @@
-import type {StateScheme} from 'app/providers/StoreProvider';
+import type {StateScheme} from '@/app/providers/StoreProvider';
 import type {AsyncThunkAction} from '@reduxjs/toolkit';
 import type {AxiosStatic} from 'axios';
 import axios from 'axios';

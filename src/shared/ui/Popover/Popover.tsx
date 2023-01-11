@@ -1,5 +1,5 @@
 import module from './Popover.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {Popover as HPopover} from '@headlessui/react';
 import type {ReactNode} from 'react';
 import {flip, offset, useFloating} from '@floating-ui/react';

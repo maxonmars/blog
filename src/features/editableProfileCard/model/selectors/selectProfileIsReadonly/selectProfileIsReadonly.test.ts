@@ -1,4 +1,4 @@
-import type {StateScheme} from 'app/providers/StoreProvider';
+import type {StateScheme} from '@/app/providers/StoreProvider';
 import {selectProfileIsReadonly} from './selectProfileIsReadonly';
 
 describe('selectProfileIsReadonly', () => {

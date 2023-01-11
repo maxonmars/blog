@@ -1,6 +1,6 @@
-import type {StateScheme} from 'app/providers/StoreProvider/config/StateScheme';
-import {ArticleSortField, ArticleView} from 'entities/Article';
-import {ArticleType} from 'entities/Article/model/consts/article';
+import type {StateScheme} from '@/app/providers/StoreProvider/config/StateScheme';
+import {ArticleSortField, ArticleView} from '@/entities/Article';
+import {ArticleType} from '@/entities/Article/model/consts/article';
 
 export const selectArticlesPageIsLoading = (state: StateScheme) => {
 	return state.articleListPage?.pages?.isLoading;

@@ -1,9 +1,9 @@
 import module from './ArticlesPage.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {useAppDispatch} from 'shared/hooks';
-import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {useAppDispatch} from '@/shared/hooks';
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import {useCallback} from 'react';
 import {initArticlesPage} from '../../model/services/initArticlesPage/initArticlesPage';
 import {ArticlesPageFilters} from '../ArticlesPageFilters/ArticlesPageFilters';

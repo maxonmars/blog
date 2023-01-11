@@ -1,9 +1,9 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import {memo} from 'react';
-import {Title} from 'shared/ui/Title/Title';
-import {ArticleList} from 'entities/Article';
-import {VStack} from 'shared/ui/Stack';
+import {Title} from '@/shared/ui/Title/Title';
+import {ArticleList} from '@/entities/Article';
+import {VStack} from '@/shared/ui/Stack';
 import {useArticleRecommendationsList} from '../../api/articleRecommendationsApi';
 
 interface ArticleRecommendationsListProps {

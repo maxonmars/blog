@@ -1,18 +1,18 @@
 import module from './ArticleDetailsComments.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {Title} from 'shared/ui/Title/Title';
-import {AddCommentForm} from 'features/addCommentForm';
-import {CommentList} from 'entities/Comment';
-import {VStack} from 'shared/ui/Stack';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {Title} from '@/shared/ui/Title/Title';
+import {AddCommentForm} from '@/features/addCommentForm';
+import {CommentList} from '@/entities/Comment';
+import {VStack} from '@/shared/ui/Stack';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
 import {selectArticleDetailsCommentsIsLoading} from '../../model/selectors/comments';
-import {selectArticleDetailsError} from 'entities/Article/model/selectors/selectArticleDetails';
+import {selectArticleDetailsError} from '@/entities/Article/model/selectors/selectArticleDetails';
 import {selectArticleComments} from '../../model/slice/articleDetailsCommentsSlice';
 import {useCallback} from 'react';
 import {sendComment} from '../../model/services/sendComment/sendComment';
-import {useAppDispatch} from 'shared/hooks';
-import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
+import {useAppDispatch} from '@/shared/hooks';
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import {fetchCommentsByArticleId} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 interface ArticleDetailsCommentsProps {

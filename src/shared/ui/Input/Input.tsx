@@ -1,5 +1,5 @@
 import module from './Input.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ChangeEvent, InputHTMLAttributes} from 'react';
 import {memo} from 'react';
 

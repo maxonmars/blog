@@ -1,7 +1,7 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Avatar, AvatarSize} from './Avatar';
-import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
-import {Theme} from 'shared/lib/theme';
+import {themeDecorator} from '@/shared/lib/storybook/ThemeDecorator';
+import {Theme} from '@/shared/lib/theme';
 import AvatarImg from '../../assets/tests/image/avatar-stories.jpeg';
 
 type StoryType = ComponentStory<typeof Avatar>;

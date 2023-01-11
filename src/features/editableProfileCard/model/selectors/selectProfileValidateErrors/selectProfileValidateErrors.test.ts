@@ -1,4 +1,4 @@
-import type {StateScheme} from 'app/providers/StoreProvider';
+import type {StateScheme} from '@/app/providers/StoreProvider';
 import {selectProfileValidateErrors} from './selectProfileValidateErrors';
 import {ValidateProfileError} from '../../consts/validateProfileError';
 

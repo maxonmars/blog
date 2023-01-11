@@ -1,14 +1,14 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {Input} from 'shared/ui/Input/Input';
-import {Title} from 'shared/ui/Title/Title';
-import {Loader} from 'shared/ui/Loader/Loader';
-import {Text, TextVariant} from 'shared/ui/Text/Text';
+import {Input} from '@/shared/ui/Input/Input';
+import {Title} from '@/shared/ui/Title/Title';
+import {Loader} from '@/shared/ui/Loader/Loader';
+import {Text, TextVariant} from '@/shared/ui/Text/Text';
 import type {Profile} from '../../model/types/profile';
-import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
-import {CurrencySelect} from 'entities/Currency';
-import {CountrySelect} from 'entities/Country';
-import {VStack} from 'shared/ui/Stack';
+import {Avatar, AvatarSize} from '@/shared/ui/Avatar/Avatar';
+import {CurrencySelect} from '@/entities/Currency';
+import {CountrySelect} from '@/entities/Country';
+import {VStack} from '@/shared/ui/Stack';
 import {ProfileField} from '../../model/consts/profile';
 
 interface ProfileCardProps {

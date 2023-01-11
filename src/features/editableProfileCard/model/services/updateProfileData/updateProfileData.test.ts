@@ -1,8 +1,8 @@
 import {updateProfileData} from './updateProfileData';
-import {TestAsyncThunk} from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
-import {Country} from 'entities/Country/model/consts/country';
-import {Currency} from 'entities/Currency/model/consts/currency';
+import {TestAsyncThunk} from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
+import {Country} from '@/entities/Country/model/consts/country';
+import {Currency} from '@/entities/Currency/model/consts/currency';
 import {ValidateProfileError} from '../../consts/validateProfileError';
 
 describe('updateProfileData', () => {

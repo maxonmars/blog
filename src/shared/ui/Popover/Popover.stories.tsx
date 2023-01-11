@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Popover} from './Popover';
-import cover from 'shared/assets/tests/image/javaScript_logo.png';
+import cover from '@/shared/assets/tests/image/javaScript_logo.png';
 import {IcoThinAlien} from '../../assets/icons';
 
 type StoryType = ComponentStory<typeof Popover>;

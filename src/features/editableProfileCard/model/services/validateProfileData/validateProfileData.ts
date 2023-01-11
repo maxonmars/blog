@@ -1,6 +1,6 @@
 import type {Profile} from '../../../../../entities/Profile/model/types/profile';
-import {isSomeEnum} from 'shared/lib/isSomeEnum/isSomeEnum';
-import {Country} from 'entities/Country/model/consts/country';
+import {isSomeEnum} from '@/shared/lib/isSomeEnum/isSomeEnum';
+import {Country} from '@/entities/Country/model/consts/country';
 import {ValidateProfileError} from '../../consts/validateProfileError';
 
 export const validateProfileData = (profile?: Profile) => {

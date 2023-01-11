@@ -1,7 +1,7 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import {IcoThinBacterium, IcoThinMoonStars, IcoThinSunBright} from 'shared/assets/icons';
-import {useTheme} from 'shared/lib/theme';
-import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {IcoThinBacterium, IcoThinMoonStars, IcoThinSunBright} from '@/shared/assets/icons';
+import {useTheme} from '@/shared/lib/theme';
+import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
 
 interface ThemeSwitcherProps {
 	className?: string;

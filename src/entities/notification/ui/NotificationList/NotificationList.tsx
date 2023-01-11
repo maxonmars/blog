@@ -1,7 +1,7 @@
 import {useNotifications} from '../../api/notificationApi';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
-import {VStack} from 'shared/ui/Stack';
-import {Title} from 'shared/ui/Title/Title';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {VStack} from '@/shared/ui/Stack';
+import {Title} from '@/shared/ui/Title/Title';
 import {useTranslation} from 'react-i18next';
 import {NotificationItem} from '../NotificationItem/NotificationItem';
 

@@ -1,14 +1,14 @@
-import type {UserScheme} from 'entities/User';
-import type {LoginScheme} from 'features/AuthByUsername';
+import type {UserScheme} from '@/entities/User';
+import type {LoginScheme} from '@/features/AuthByUsername';
 import type {AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject} from '@reduxjs/toolkit';
 import type {AxiosInstance} from 'axios';
-import type {ArticleDetailsScheme} from 'entities/Article';
-import type {ArticleDetailsPageScheme} from 'pages/ArticleDetailsPage';
-import type {ArticleListPageScheme} from 'pages/ArticlesPage';
-import type {RestorationScrollScheme} from 'features/RestorationScroll';
-import type {AddCommentFormScheme} from 'features/addCommentForm';
-import type {rtkApi} from 'shared/api/rtkApi';
-import type {EditableProfileCardSchema} from 'features/editableProfileCard';
+import type {ArticleDetailsScheme} from '@/entities/Article';
+import type {ArticleDetailsPageScheme} from '@/pages/ArticleDetailsPage';
+import type {ArticleListPageScheme} from '@/pages/ArticlesPage';
+import type {RestorationScrollScheme} from '@/features/RestorationScroll';
+import type {AddCommentFormScheme} from '@/features/addCommentForm';
+import type {rtkApi} from '@/shared/api/rtkApi';
+import type {EditableProfileCardSchema} from '@/features/editableProfileCard';
 
 export interface StateScheme {
 	user: UserScheme;

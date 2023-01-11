@@ -1,10 +1,10 @@
 import module from './DrawerMobile.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {Overlay} from '../Overlay/Overlay';
 import {Portal} from '../Portal/Portal';
 import type {ReactNode} from 'react';
 import {useState} from 'react';
-import {AnimationProvider, useAnimationLibs} from 'shared/lib/components/AnimationProvider';
+import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 
 type DrawerMobileChildren =
 	| ReactNode

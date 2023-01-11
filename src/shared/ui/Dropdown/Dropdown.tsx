@@ -1,5 +1,5 @@
 import module from './Dropdown.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {Menu} from '@headlessui/react';
 import type {ReactNode} from 'react';
 import {AppLink} from '../AppLink/AppLink';

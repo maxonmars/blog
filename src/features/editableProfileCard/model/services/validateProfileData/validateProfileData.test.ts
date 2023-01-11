@@ -1,7 +1,7 @@
 import {validateProfileData} from './validateProfileData';
-import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
-import {Country} from 'entities/Country/model/consts/country';
-import {Currency} from 'entities/Currency/model/consts/currency';
+import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
+import {Country} from '@/entities/Country/model/consts/country';
+import {Currency} from '@/entities/Currency/model/consts/currency';
 import {ValidateProfileError} from '../../consts/validateProfileError';
 
 describe('validateProfileData', () => {

@@ -58,6 +58,9 @@ export default ({config}: {config: Config}) => {
 			...config.resolve,
 			modules: [buildPath.src, ...config.resolve.modules],
 			extensions: [...config.resolve.extensions, '.tsx', '.ts'],
+			alias: {
+				'@': buildPath.src,
+			},
 		},
 	} as Configuration;
 };

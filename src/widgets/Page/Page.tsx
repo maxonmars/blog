@@ -1,13 +1,13 @@
 import module from './Page.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {MutableRefObject, ReactNode, UIEvent} from 'react';
 import {useCallback, useRef} from 'react';
-import {useInfinityScroll} from 'shared/hooks/useInfinityScroll/useInfinityScroll';
-import {useAppDispatch, useAppSelector} from 'shared/hooks';
-import {restorationScrollActions, selectRestorationScrollByPath} from 'features/RestorationScroll';
+import {useInfinityScroll} from '@/shared/hooks/useInfinityScroll/useInfinityScroll';
+import {useAppDispatch, useAppSelector} from '@/shared/hooks';
+import {restorationScrollActions, selectRestorationScrollByPath} from '@/features/RestorationScroll';
 import {useLocation} from 'react-router-dom';
-import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
-import {useThrottle} from 'shared/hooks/useThrottle/useThrottle';
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect/useInitialEffect';
+import {useThrottle} from '@/shared/hooks/useThrottle/useThrottle';
 
 interface PageProps {
 	className?: string;

@@ -1,7 +1,7 @@
 import type {ReactNode} from 'react';
 import {forwardRef} from 'react';
 import module from './AppLink.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {LinkProps} from 'react-router-dom';
 import {Link} from 'react-router-dom';
 

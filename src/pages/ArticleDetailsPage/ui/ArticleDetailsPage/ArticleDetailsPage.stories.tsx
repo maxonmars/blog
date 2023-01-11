@@ -1,8 +1,8 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
-import {apiHandlers} from 'shared/mock/mockServiceWorker';
-import {article, commentsNormalized} from 'shared/mock';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
+import {apiHandlers} from '@/shared/mock/mockServiceWorker';
+import {article, commentsNormalized} from '@/shared/mock';
 
 type StoryType = ComponentStory<typeof ArticleDetailsPage>;
 

@@ -1,8 +1,8 @@
 import module from './ArticleViewSelector.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {ArticleView} from 'entities/Article';
-import {IcoThinGrid2, IcoThinListUl} from 'shared/assets/icons';
-import {Button, ButtonVariant} from 'shared/ui/Button/Button';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {ArticleView} from '@/entities/Article';
+import {IcoThinGrid2, IcoThinListUl} from '@/shared/assets/icons';
+import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
 
 interface ArticleViewSelectorProps {
 	className?: string;

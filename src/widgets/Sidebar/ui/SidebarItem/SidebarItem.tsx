@@ -1,6 +1,6 @@
 import module from './SidebarItem.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {AppLink, AppLinkVariant} from 'shared/ui/AppLink/AppLink';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {AppLink, AppLinkVariant} from '@/shared/ui/AppLink/AppLink';
 import React from 'react';
 import type {SidebarItemType} from '../../model/types/sidebar';
 

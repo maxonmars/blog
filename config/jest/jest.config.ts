@@ -75,7 +75,8 @@ const jestConfig: JestConfigWithTsJest = {
 		'\\.css$': 'identity-obj-proxy',
 		'\\.svg$': '<rootDir>config/jest/__mocks__/svg.tsx',
 		'\\.jpeg$': '<rootDir>config/jest/__mocks__/jpeg.ts',
-		'entities/(.*)': '<rootDir>src/entities/$1',
+		// 'entities/(.*)': '<rootDir>src/entities/$1',
+		'@/(.*)': '<rootDir>src/$1',
 	},
 
 	// Use this configuration option to add custom reporters to Jest

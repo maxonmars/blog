@@ -5,7 +5,7 @@ import {CSSTransition} from 'react-transition-group';
 import {Portal} from '../Portal/Portal';
 import {Overlay} from '../Overlay/Overlay';
 import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
-import {IcoThinXmark} from 'shared/assets/icons';
+import {IcoThinXmark} from '@/shared/assets/icons';
 import type {TitleOrder} from '../Title/Title';
 import {Title} from '../Title/Title';
 

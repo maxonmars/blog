@@ -1,7 +1,7 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Input} from './Input';
-import {themeDecorator} from 'shared/lib/storybook/ThemeDecorator';
-import {Theme} from 'shared/lib/theme';
+import {themeDecorator} from '@/shared/lib/storybook/ThemeDecorator';
+import {Theme} from '@/shared/lib/theme';
 import {useState} from 'react';
 
 type StoryType = ComponentStory<typeof Input>;

@@ -1,10 +1,10 @@
 import module from './ArticleTypeTabs.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import type {TabsItem} from 'shared/ui/Tabs/Tabs';
-import {Tabs} from 'shared/ui/Tabs/Tabs';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import type {TabsItem} from '@/shared/ui/Tabs/Tabs';
+import {Tabs} from '@/shared/ui/Tabs/Tabs';
 import {useMemo} from 'react';
 import {useTranslation} from 'react-i18next';
-import {ArticleType} from 'entities/Article/model/consts/article';
+import {ArticleType} from '@/entities/Article/model/consts/article';
 
 interface ArticleTypeTabsProps {
 	className?: string;

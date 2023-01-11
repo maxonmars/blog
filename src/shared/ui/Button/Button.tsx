@@ -1,5 +1,5 @@
 import module from './Button.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ButtonHTMLAttributes, ForwardedRef, ReactNode} from 'react';
 import {forwardRef, memo} from 'react';
 

@@ -1,8 +1,8 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ArticleDetails} from './ArticleDetails';
-import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 import type {Article} from '../../model/types/article';
-import avatar from 'shared/assets/tests/image/avatar-stories.jpeg';
+import avatar from '@/shared/assets/tests/image/avatar-stories.jpeg';
 import {ArticleBlockType, ArticleType} from '../../model/consts/article';
 
 type StoryType = ComponentStory<typeof ArticleDetails>;

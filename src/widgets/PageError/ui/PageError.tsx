@@ -1,7 +1,7 @@
 import module from './PageError.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {Button} from 'shared/ui/Button/Button';
+import {Button} from '@/shared/ui/Button/Button';
 
 interface PageErrorProps {
 	className?: string;

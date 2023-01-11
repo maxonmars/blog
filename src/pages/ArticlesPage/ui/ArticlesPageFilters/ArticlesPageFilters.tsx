@@ -1,9 +1,9 @@
 import module from './ArticlesPageFilters.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
-import {ArticleViewSelector} from 'features/ArticleViewSelector/ui/ArticleViewSelector';
-import type {ArticleSortField, ArticleView} from 'entities/Article';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {ArticleViewSelector} from '@/features/ArticleViewSelector/ui/ArticleViewSelector';
+import type {ArticleSortField, ArticleView} from '@/entities/Article';
 import {articlesPageActions} from '../../model/slice/articlesPageSlice';
-import {ARTICLES_VIEW_STORAGE_KEY} from 'shared/const/localStorage';
+import {ARTICLES_VIEW_STORAGE_KEY} from '@/shared/const/localStorage';
 import {useSelector} from 'react-redux';
 import {
 	selectArticlesPageOrder,
@@ -12,18 +12,18 @@ import {
 	selectArticlesPageType,
 	selectArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import {useAppDispatch} from 'shared/hooks';
+import {useAppDispatch} from '@/shared/hooks';
 import {useTranslation} from 'react-i18next';
-import {Card} from 'shared/ui/Card/Card';
-import {Input} from 'shared/ui/Input/Input';
-import {ArticleSortSelector} from 'entities/ArticleSortSelector/ArticleSortSelector';
-import type {SortOrder} from 'shared/types';
+import {Card} from '@/shared/ui/Card/Card';
+import {Input} from '@/shared/ui/Input/Input';
+import {ArticleSortSelector} from '@/entities/ArticleSortSelector/ArticleSortSelector';
+import type {SortOrder} from '@/shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';
-import {useDebounce} from 'shared/hooks/useDebounce/useDebounce';
+import {useDebounce} from '@/shared/hooks/useDebounce/useDebounce';
 import {useCallback} from 'react';
-import {ArticleTypeTabs} from 'features/ArticleTypeTabs/ArticleTypeTabs';
+import {ArticleTypeTabs} from '@/features/ArticleTypeTabs/ArticleTypeTabs';
 import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
-import type {ArticleType} from 'entities/Article/model/consts/article';
+import type {ArticleType} from '@/entities/Article/model/consts/article';
 
 interface ArticlesPageFiltersProps {
 	className?: string;

@@ -1,4 +1,4 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useSelector} from 'react-redux';
 import {
 	selectEditableProfileData,
@@ -7,22 +7,22 @@ import {
 	selectProfileValidateErrors,
 } from '../../model/selectors';
 import {useTranslation} from 'react-i18next';
-import {Button, ButtonVariant} from 'shared/ui/Button/Button';
-import {Title} from 'shared/ui/Title/Title';
-import {Text, TextSize, TextVariant} from 'shared/ui/Text/Text';
+import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
+import {Title} from '@/shared/ui/Title/Title';
+import {Text, TextSize, TextVariant} from '@/shared/ui/Text/Text';
 import {selectProfileIsReadonly} from '../../model/selectors/selectProfileIsReadonly/selectProfileIsReadonly';
 import {editableProfileCardActions, editableProfileCardReducer} from '../../model/slices/editableProfileCardSlice';
 import {memo, useCallback} from 'react';
 import {updateProfileData} from '../../model/services/updateProfileData/updateProfileData';
-import {useAppDispatch} from 'shared/hooks';
-import {selectUserAuthData} from 'entities/User';
-import {ProfileCard} from 'entities/Profile';
+import {useAppDispatch} from '@/shared/hooks';
+import {selectUserAuthData} from '@/entities/User';
+import {ProfileCard} from '@/entities/Profile';
 import module from './EditableProfileCard.module.css';
-import {useInitialEffect} from 'shared/hooks/useInitialEffect/useInitialEffect';
+import {useInitialEffect} from '@/shared/hooks/useInitialEffect/useInitialEffect';
 import {fetchProfileData} from '../../model/services/fetchProfileData/fetchProfileData';
-import {HStack, VStack} from 'shared/ui/Stack';
-import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {HStack, VStack} from '@/shared/ui/Stack';
+import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 interface EditableProfileCardProps {
 	className?: string;

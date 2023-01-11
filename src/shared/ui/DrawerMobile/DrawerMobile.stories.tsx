@@ -4,7 +4,7 @@ import {DrawerMobile} from './DrawerMobile';
 type StoryType = ComponentStory<typeof DrawerMobile>;
 
 export default {
-	title: '!/DrawerMobile',
+	title: 'shared/DrawerMobile',
 	component: DrawerMobile,
 	argTypes: {
 		backgroundColor: {control: 'color'},
@@ -12,7 +12,30 @@ export default {
 	args: {},
 } as ComponentMeta<typeof DrawerMobile>;
 
-const Template: StoryType = args => <DrawerMobile {...args}/>;
+const Template: StoryType = args => {
+	return (
+		<DrawerMobile
+			{...args}
+			target={
+				open => (
+					<button onClick={open}>Open</button>
+				)
+			}>
+			{close => (
+				<div>
+					<button onClick={close}>close</button>
+					<ol>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+						<li>Lorem ipsum dolor sit amet.</li>
+					</ol>
+				</div>)}
+		</DrawerMobile>);
+};
 
 export const Default = Template.bind({});
 Default.args = {};

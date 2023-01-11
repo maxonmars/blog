@@ -1,8 +1,8 @@
-import {classNames} from 'shared/lib/classNames/classNames';
-import type {ReducersList} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {DynamicModuleLoader} from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
-import {useAppDispatch} from 'shared/hooks';
+import {useAppDispatch} from '@/shared/hooks';
 import {useEffect} from 'react';
 import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
 import {useSelector} from 'react-redux';
@@ -11,17 +11,17 @@ import {
 	selectArticleDetailsError,
 	selectArticleDetailsIsLoading,
 } from '../../model/selectors/selectArticleDetails';
-import {Text, TextVariant} from 'shared/ui/Text/Text';
+import {Text, TextVariant} from '@/shared/ui/Text/Text';
 import {useTranslation} from 'react-i18next';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
-import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
-import {Title} from 'shared/ui/Title/Title';
-import {IcoThinCalendarDays, IcoThinEyeEvil} from 'shared/assets/icons/index';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {Avatar, AvatarSize} from '@/shared/ui/Avatar/Avatar';
+import {Title} from '@/shared/ui/Title/Title';
+import {IcoThinCalendarDays, IcoThinEyeEvil} from '@/shared/assets/icons/index';
 import type {ArticleBlock} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {HStack, VStack} from 'shared/ui/Stack';
+import {HStack, VStack} from '@/shared/ui/Stack';
 import {ArticleBlockType} from '../../model/consts/article';
 
 interface ArticleDetailsProps {

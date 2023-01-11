@@ -1,5 +1,5 @@
 import module from './Avatar.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ImgHTMLAttributes} from 'react';
 import {memo} from 'react';
 

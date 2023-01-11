@@ -1,5 +1,5 @@
 import module from './Card.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {HTMLAttributes, ReactNode} from 'react';
 
 export enum CardVariant {

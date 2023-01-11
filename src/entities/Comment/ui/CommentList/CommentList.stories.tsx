@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {CommentList} from './CommentList';
-import AvatarImg from 'shared/assets/tests/image/avatar-stories.jpeg';
+import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
 
 type StoryType = ComponentStory<typeof CommentList>;
 

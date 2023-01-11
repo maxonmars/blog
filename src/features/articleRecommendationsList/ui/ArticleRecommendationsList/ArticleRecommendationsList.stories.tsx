@@ -1,7 +1,7 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {ArticleRecommendationsList} from './ArticleRecommendationsList';
-import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
-import {apiHandlers} from 'shared/mock';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
+import {apiHandlers} from '@/shared/mock';
 
 export default {
 	title: 'features/ArticleRecommendationsList',

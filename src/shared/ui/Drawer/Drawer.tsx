@@ -4,7 +4,7 @@ import {Overlay} from '../Overlay/Overlay';
 import type {TitleOrder} from '../Title/Title';
 import {Title} from '../Title/Title';
 import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
-import {IcoThinXmark} from 'shared/assets/icons';
+import {IcoThinXmark} from '@/shared/assets/icons';
 import {Portal} from '../Portal/Portal';
 import type {ReactNode} from 'react';
 import {useEffect, useState} from 'react';

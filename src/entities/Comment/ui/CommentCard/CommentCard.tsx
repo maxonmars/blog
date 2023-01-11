@@ -1,13 +1,13 @@
 import module from './CommentCard.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {Comment} from '../../model/types/comment';
-import {Avatar, AvatarSize} from 'shared/ui/Avatar/Avatar';
-import {Title} from 'shared/ui/Title/Title';
-import {Text} from 'shared/ui/Text/Text';
-import {Skeleton} from 'shared/ui/Skeleton/Skeleton';
-import {AppLink} from 'shared/ui/AppLink/AppLink';
-import {ROUTE_PATH} from 'app/providers/router';
-import {HStack, VStack} from 'shared/ui/Stack';
+import {Avatar, AvatarSize} from '@/shared/ui/Avatar/Avatar';
+import {Title} from '@/shared/ui/Title/Title';
+import {Text} from '@/shared/ui/Text/Text';
+import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import {AppLink} from '@/shared/ui/AppLink/AppLink';
+import {ROUTE_PATH} from '@/app/providers/router';
+import {HStack, VStack} from '@/shared/ui/Stack';
 
 interface CommentCardProps {
 	className?: string;

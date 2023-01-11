@@ -1,10 +1,10 @@
 import module from './Sidebar.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import React, {useState} from 'react';
-import {ThemeSwitcher} from 'widgets/ThemeSwitcher';
-import {LangSwitcher} from 'widgets/LangSwitcher';
-import {Button, ButtonSize, ButtonVariant} from 'shared/ui/Button/Button';
-import {IcoThinChevronLeft, IcoThinChevronRight} from 'shared/assets/icons';
+import {ThemeSwitcher} from '@/widgets/ThemeSwitcher';
+import {LangSwitcher} from '@/widgets/LangSwitcher';
+import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
+import {IcoThinChevronLeft, IcoThinChevronRight} from '@/shared/assets/icons';
 import {SidebarItem} from '../SidebarItem/SidebarItem';
 import {useSelector} from 'react-redux';
 import {selectSidebarItems} from '../../model/selectSidebarItems/selectSidebarItems';

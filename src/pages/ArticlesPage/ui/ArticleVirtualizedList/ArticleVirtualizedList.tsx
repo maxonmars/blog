@@ -1,18 +1,18 @@
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import module from './ArticleVirtualizedList.module.css';
 import type {HTMLAttributeAnchorTarget} from 'react';
 import React, {useCallback} from 'react';
-import {VirtualizedList} from 'shared/ui/VirtualizedList/VirtualizedList';
-import {ArticleListItemSkeleton} from 'entities/Article/ui/ArticleItem/ArticleListItemSkeleton';
-import {Card} from 'shared/ui/Card/Card';
-import {Title} from 'shared/ui/Title/Title';
-import {ArticleListItem} from 'entities/Article/ui/ArticleItem/ArticleListItem';
-import type {Article} from 'entities/Article';
+import {VirtualizedList} from '@/shared/ui/VirtualizedList/VirtualizedList';
+import {ArticleListItemSkeleton} from '@/entities/Article/ui/ArticleItem/ArticleListItemSkeleton';
+import {Card} from '@/shared/ui/Card/Card';
+import {Title} from '@/shared/ui/Title/Title';
+import {ArticleListItem} from '@/entities/Article/ui/ArticleItem/ArticleListItem';
+import type {Article} from '@/entities/Article';
 import {useSelector} from 'react-redux';
-import {useAppDispatch} from 'shared/hooks';
+import {useAppDispatch} from '@/shared/hooks';
 import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
 import {selectArticleVirtualizedListItemIndex} from '../../model/selectors/selectArticleVirtualizedListItemIndex';
-import {Button} from 'shared/ui/Button/Button';
+import {Button} from '@/shared/ui/Button/Button';
 import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
 	selectArticlesPageHasMore,

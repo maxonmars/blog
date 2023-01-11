@@ -1,6 +1,6 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import AddCommentForm from './AddCommentForm';
-import {storeDecorator} from 'shared/lib/storybook/StoreDecorator';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 
 type StoryType = ComponentStory<typeof AddCommentForm>;
 

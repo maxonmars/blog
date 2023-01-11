@@ -1,5 +1,5 @@
 import module from './Title.module.css';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ReactNode} from 'react';
 import {memo} from 'react';
 

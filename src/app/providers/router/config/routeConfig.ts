@@ -1,15 +1,15 @@
 import type {RouteObject} from 'react-router-dom';
-import {MainPage} from 'pages/MainPage';
-import {AboutPage} from 'pages/AboutPage';
-import {NotFoundPage} from 'pages/NotFoundPage';
-import {ProfilePage} from 'pages/ProfilePage';
+import {MainPage} from '@/pages/MainPage';
+import {AboutPage} from '@/pages/AboutPage';
+import {NotFoundPage} from '@/pages/NotFoundPage';
+import {ProfilePage} from '@/pages/ProfilePage';
 import {createElement} from 'react';
-import {ArticlesPage} from 'pages/ArticlesPage';
-import {ArticleDetailsPage} from 'pages/ArticleDetailsPage';
-import {ArticleEditPage} from 'pages/ArticleEditPage';
-import AdminPage from 'pages/AdminPage/ui/AdminPage';
-import {UserRoles} from 'entities/User';
-import {ForbiddenPage} from 'pages/ForbiddenPage';
+import {ArticlesPage} from '@/pages/ArticlesPage';
+import {ArticleDetailsPage} from '@/pages/ArticleDetailsPage';
+import {ArticleEditPage} from '@/pages/ArticleEditPage';
+import AdminPage from '@/pages/AdminPage/ui/AdminPage';
+import {UserRoles} from '@/entities/User';
+import {ForbiddenPage} from '@/pages/ForbiddenPage';
 
 export const ROUTE_PATH = {
 	MAIN: '/',

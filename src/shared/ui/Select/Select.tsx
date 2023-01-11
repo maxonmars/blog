@@ -1,12 +1,12 @@
 import type {ReactNode} from 'react';
 import {Fragment} from 'react';
 import {Listbox} from '@headlessui/react';
-import {classNames} from 'shared/lib/classNames/classNames';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import module from './Select.module.css';
-import {IcoThinBadgeCheck} from 'shared/assets/icons';
+import {IcoThinBadgeCheck} from '@/shared/assets/icons';
 import {Button, ButtonRadius, ButtonSize, ButtonVariant} from '../Button/Button';
 import {flip, FloatingPortal, offset, useFloating} from '@floating-ui/react';
-import {typedMemo} from 'shared/lib/typedMemo/typedMemo';
+import {typedMemo} from '@/shared/lib/typedMemo/typedMemo';
 import type {Placement} from '@floating-ui/core/src/types';
 
 export interface SelectOption<T> {
