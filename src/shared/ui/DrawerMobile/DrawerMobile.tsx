@@ -3,7 +3,6 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {Overlay} from '../Overlay/Overlay';
 import {Portal} from '../Portal/Portal';
 import type {ReactNode} from 'react';
-import {useState} from 'react';
 import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/AnimationProvider';
 
 type DrawerMobileChildren =
@@ -13,13 +12,14 @@ type DrawerMobileChildren =
 interface DrawerMobileProps {
 	className?: string;
 	children: DrawerMobileChildren;
-	target: DrawerMobileChildren;
+	isOpened: boolean;
+	onClose: () => void;
 }
 
 const height = window.innerHeight - 100;
 
 const DrawerMobileContent = (props: DrawerMobileProps) => {
-	const {children, target, className} = props;
+	const {children, isOpened, onClose, className} = props;
 	const {
 		Gesture: {
 			useDrag,
@@ -31,13 +31,15 @@ const DrawerMobileContent = (props: DrawerMobileProps) => {
 		},
 	} = useAnimationLibs();
 
-	const [isOpened, setIsDrawerOpen] = useState(false);
-
 	const [{y}, api] = useSpring(() => ({y: height}));
 
 	const open = (hasCanceled?: boolean) => {
 		api.start({y: 0, immediate: false, config: hasCanceled ? config.wobbly : config.stiff});
 	};
+
+	if (isOpened) {
+		open();
+	}
 
 	const close = (velocity = 0) => {
 		api.start({
@@ -45,14 +47,9 @@ const DrawerMobileContent = (props: DrawerMobileProps) => {
 			immediate: false,
 			config: {...config.stiff, velocity},
 			onResolve() {
-				setIsDrawerOpen(false);
+				onClose();
 			},
 		});
-	};
-
-	const handleOpen = () => {
-		setIsDrawerOpen(true);
-		open();
 	};
 
 	const bind = useDrag(
@@ -80,7 +77,6 @@ const DrawerMobileContent = (props: DrawerMobileProps) => {
 
 	return (
 		<>
-			{typeof target === 'function' && target(handleOpen)}
 			{isOpened
 				? (
 					<Portal>

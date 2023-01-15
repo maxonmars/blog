@@ -14,13 +14,7 @@ export default {
 
 const Template: StoryType = args => {
 	return (
-		<DrawerMobile
-			{...args}
-			target={
-				open => (
-					<button onClick={open}>Open</button>
-				)
-			}>
+		<DrawerMobile {...args}>
 			{close => (
 				<div>
 					<button onClick={close}>close</button>

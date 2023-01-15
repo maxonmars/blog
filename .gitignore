@@ -4,6 +4,9 @@
 # WebStorm
 .idea
 
+# VSCode
+.vscode
+
 # Project
 node_modules
 /build

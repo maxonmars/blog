@@ -14,6 +14,15 @@ interface NotificationsButtonProps {
 
 export const NotificationsButton = memo((props: NotificationsButtonProps) => {
 	const {className} = props;
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+	const handleDrawerOpen = () => {
+		setIsDrawerOpen(true);
+	};
+
+	const handleDrawerClose = () => {
+		setIsDrawerOpen(false);
+	};
 
 	return (
 		<>
@@ -31,18 +40,15 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
 			</BrowserView>
 
 			<MobileView>
-				<DrawerMobile
-					target={
-						onClick => (
-							<Button
-								onClick={onClick}
-								variant={ButtonVariant.SUBTLE}
-								size={ButtonSize.SM}
-								inverted
-								square>
-								<IcoThinBell width={20}/>
-							</Button>)
-					}>
+				<Button
+					onClick={handleDrawerOpen}
+					variant={ButtonVariant.SUBTLE}
+					size={ButtonSize.SM}
+					inverted
+					square>
+					<IcoThinBell width={20}/>
+				</Button>
+				<DrawerMobile isOpened={isDrawerOpen} onClose={handleDrawerClose}>
 					<NotificationList
 						className={classNames(
 							[

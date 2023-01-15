@@ -1,0 +1,18 @@
+.starRating {
+	display: flex;
+	grid-column-gap: 0.5em;
+}
+
+.star {
+	cursor: pointer;
+	transition: all 300ms ease-in;
+	fill: var(--bg-color);
+}
+
+.starSelected {
+	fill: var(--primary-color);
+}
+
+.starHovered {
+	fill: var(--secondary-color);
+}
