@@ -7,7 +7,7 @@ import {AnimationProvider, useAnimationLibs} from '@/shared/lib/components/Anima
 
 type DrawerMobileChildren =
 	| ReactNode
-	| ((onClick: () => void) => ReactNode);
+	| ((onClick: (onResolveCallBack: () => void | undefined) => () => void) => ReactNode);
 
 interface DrawerMobileProps {
 	className?: string;
@@ -52,6 +52,19 @@ const DrawerMobileContent = (props: DrawerMobileProps) => {
 		});
 	};
 
+	const handleClose = (onResolveCallBack?: () => void) => {
+		return (velocity = 0) => {
+			api.start({
+				y: height,
+				immediate: false,
+				config: {...config.stiff, velocity},
+				onResolve() {
+					onResolveCallBack?.();
+				},
+			});
+		};
+	};
+
 	const bind = useDrag(
 		({last, velocity: [, vy], direction: [, dy], movement: [, my], cancel, canceled}) => {
 			if (my < -70) {
@@ -81,13 +94,13 @@ const DrawerMobileContent = (props: DrawerMobileProps) => {
 				? (
 					<Portal>
 						<div className={classNames([module.drawerMobile, className])}>
-							<Overlay onClose={close}/>
+							<Overlay {...bind()} onClose={close}/>
 							<a.div
 								className={module.sheet}
 								style={{display, bottom: `calc(-100vh + ${height - 100}px)`, y}}
 								{...bind()}>
 								{typeof children === 'function'
-									? children(close)
+									? children(handleClose)
 									: children
 								}
 							</a.div>

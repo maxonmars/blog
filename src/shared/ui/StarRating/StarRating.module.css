@@ -9,6 +9,10 @@
 	fill: var(--bg-color);
 }
 
+.rateSelected > .star {
+	cursor: default;
+}
+
 .starSelected {
 	fill: var(--primary-color);
 }

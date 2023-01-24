@@ -7,11 +7,15 @@ describe('Sidebar', () => {
 		componentRender(<Sidebar/>);
 		expect(screen.getByTestId('sidebar')).toBeInTheDocument();
 	});
-
-	test('sidebar collapse toggle', () => {
+	test('sidebar collapse class', () => {
+		componentRender(<Sidebar/>);
+		const toggleButton = screen.getByTestId('sidebar-toggle');
+		expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+	});
+	test('sidebar not collapse toggle', () => {
 		componentRender(<Sidebar/>);
 		const toggleButton = screen.getByTestId('sidebar-toggle');
 		fireEvent.click(toggleButton);
-		expect(screen.getByTestId('sidebar')).toHaveClass('collapsed');
+		expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed');
 	});
 });

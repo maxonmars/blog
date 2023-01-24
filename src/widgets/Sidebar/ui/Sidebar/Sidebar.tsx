@@ -15,7 +15,7 @@ interface SidebarProps {
 
 export const Sidebar = ({className}: SidebarProps) => {
 	const sidebarItemList = useSelector(selectSidebarItems);
-	const [isCollapsed, setIsCollapsed] = useState(false);
+	const [isCollapsed, setIsCollapsed] = useState(true);
 
 	const onToggle = () => {
 		setIsCollapsed(prevState => !prevState);

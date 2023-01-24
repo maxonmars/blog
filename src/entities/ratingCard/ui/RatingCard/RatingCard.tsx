@@ -1,7 +1,7 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import module from './Rating.module.css';
-import {memo, useState} from 'react';
+import module from './RatingCard.module.css';
+import {memo, useRef, useState} from 'react';
 import {Card} from '@/shared/ui/Card/Card';
 import {HStack, VStack} from '@/shared/ui/Stack';
 import {Title} from '@/shared/ui/Title/Title';
@@ -18,21 +18,21 @@ interface RatingProps {
 	title?: string;
 	feedbackTitle?: string;
 	hasFeedback?: boolean;
-	onFeedbackSend?: (feedback?: string) => void;
-	onRateSend: (starsCount: number) => void;
-	rate?: number;
+	onRateSend: (starsCount: number, feedback?: string) => void;
+	rate: number;
 }
 
-export const Rating = memo((props: RatingProps) => {
-	const {className, rate = 0, title, feedbackTitle, onRateSend, hasFeedback, onFeedbackSend} = props;
+export const RatingCard = memo((props: RatingProps) => {
+	const {className, rate, title, feedbackTitle, onRateSend, hasFeedback} = props;
 	const {t} = useTranslation();
 
-	const [starsCount, setStarsCount] = useState(rate);
+	const starsRateRef = useRef(0);
+
 	const [isOpenModal, setIsOpenModal] = useState(false);
 	const [feedback, setFeedback] = useState('');
 
 	const handleRatingChange = (starsCount: number) => {
-		setStarsCount(starsCount);
+		starsRateRef.current = starsCount;
 		if (hasFeedback) {
 			setIsOpenModal(true);
 		} else {
@@ -42,44 +42,36 @@ export const Rating = memo((props: RatingProps) => {
 
 	const handleModalClose = () => {
 		setIsOpenModal(false);
-		onRateSend(starsCount);
+		onRateSend(starsRateRef.current);
 	};
 
-	const handleFeedbackSend = () => {
-		onFeedbackSend?.(feedback);
+	const handleSendBtn = () => {
+		setIsOpenModal(false);
+		onRateSend(starsRateRef.current, feedback);
 	};
 
 	return (
-		<Card className={classNames([module.rating, className])}>
+		<Card className={classNames([module.ratingCard, className])}>
 			<VStack>
-				<Title order={4}>{starsCount ? t('Спасибо за оценку!') : title}</Title>
-				<StarRating selectedStars={starsCount} onSelect={handleRatingChange}/>
+				<Title order={4}>{rate ? t('Спасибо за оценку!') : title}</Title>
+				<StarRating selectedStars={rate} onSelect={handleRatingChange}/>
 			</VStack>
 			<BrowserView>
 				<Modal
 					isOpened={isOpenModal}
 					onClose={handleModalClose}
 					title={'Оставьте отзыв'}>
-					{onClose => (
-						<VStack>
-							<Text>{feedbackTitle}</Text>
-							<Input
-								placeholder="Ваш отзыв"
-								value={feedback}
-								onChange={setFeedback}/>
-							<HStack>
-								<Button onClick={onClose}>
-									Закрыть
-								</Button>
-								<Button
-									onClick={() => {
-										onClose();
-										handleFeedbackSend();
-									}}>
-									Отправить
-								</Button>
-							</HStack>
-						</VStack>)}
+					{onClose => <VStack>
+						<Text>{feedbackTitle}</Text>
+						<Input
+							placeholder="Ваш отзыв"
+							value={feedback}
+							onChange={setFeedback}/>
+						<HStack>
+							<Button onClick={onClose()}>Закрыть</Button>
+							<Button onClick={onClose(handleSendBtn)}>Отправить</Button>
+						</HStack>
+					</VStack>}
 				</Modal>
 			</BrowserView>
 			<MobileView>
@@ -90,11 +82,7 @@ export const Rating = memo((props: RatingProps) => {
 							placeholder="Ваш отзыв"
 							value={feedback}
 							onChange={setFeedback}/>
-						<Button onClick={
-							() => {
-								onClose();
-								handleFeedbackSend();
-							}}>
+						<Button onClick={onClose(handleSendBtn)}>
 							Отправить
 						</Button>
 					</VStack>}
@@ -104,4 +92,4 @@ export const Rating = memo((props: RatingProps) => {
 	);
 });
 
-Rating.displayName = 'Rating';
+RatingCard.displayName = 'RatingCard';

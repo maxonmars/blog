@@ -19,7 +19,7 @@ export const LoginModal = ({isOpen, onClose}: LoginModalProps) => {
 			title={t('Пожалуйста, авторизуйтесь.')}>
 			{onClose =>
 				<Suspense fallback={<Loader/>}>
-					<LoginFormAsync onCloseModal={onClose}/>
+					<LoginFormAsync onCloseModal={onClose()}/>
 				</Suspense>
 			}
 		</Modal>

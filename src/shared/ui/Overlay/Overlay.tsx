@@ -6,8 +6,8 @@ interface OverlayProps {
 	onClose: () => void;
 }
 
-export const Overlay = ({className, onClose}: OverlayProps) => {
+export const Overlay = ({className, onClose, ...restProps}: OverlayProps) => {
 	return (
-		<div onClick={onClose} className={classNames([module.overlay, className])}/>
+		<div {...restProps} onClick={onClose} className={classNames([module.overlay, className])}/>
 	);
 };

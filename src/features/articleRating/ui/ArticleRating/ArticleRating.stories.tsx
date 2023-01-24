@@ -1,17 +1,17 @@
 import type {ComponentStory, ComponentMeta} from '@storybook/react';
-import {Rating} from './Rating';
+import ArticleRating from './ArticleRating';
 
 export default {
-	title: 'entities/Rating',
-	component: Rating,
+	title: 'features/ArticleRating',
+	component: ArticleRating,
 	argTypes: {
 		backgroundColor: {control: 'color'},
 	},
-} as ComponentMeta<typeof Rating>;
+} as ComponentMeta<typeof ArticleRating>;
 
-const Template: ComponentStory<typeof Rating> = args => {
+const Template: ComponentStory<typeof ArticleRating> = args => {
 	return (
-		<Rating {...args} />
+		<ArticleRating {...args} />
 	);
 };
 

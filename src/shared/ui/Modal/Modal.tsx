@@ -1,5 +1,6 @@
 import module from './Modal.module.css';
 import type {ReactNode} from 'react';
+import {useRef} from 'react';
 import {useEffect, useState} from 'react';
 import {CSSTransition} from 'react-transition-group';
 import {Portal} from '../Portal/Portal';
@@ -11,7 +12,7 @@ import {Title} from '../Title/Title';
 
 type ModalChildren =
 	| ReactNode
-	| ((onClose: () => void) => ReactNode);
+	| ((onClose: (onExtraClose?: () => void) => () => void) => ReactNode);
 
 interface ModalProps {
 	children: ModalChildren;
@@ -36,6 +37,7 @@ const contentAnimation = {
 const ANIMATION_TIME = 1000;
 
 export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalProps) => {
+	const onExtraCloseRef = useRef<(() => void) | undefined>(undefined);
 	const [isClose, setIsClose] = useState(false);
 
 	useEffect(() => {
@@ -56,12 +58,18 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 		return null;
 	}
 
-	const handleClose = () => {
+	const handleClose = (onExtraClose?: () => void) => () => {
+		onExtraCloseRef.current = onExtraClose;
 		setIsClose(true);
 	};
 
 	const handleExited = () => {
-		onClose();
+		if (onExtraCloseRef.current) {
+			onExtraCloseRef.current?.();
+		} else {
+			onClose();
+		}
+
 		setIsClose(false);
 	};
 
@@ -74,7 +82,7 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 					timeout={ANIMATION_TIME}
 					classNames={overlayAnimation}
 				>
-					<Overlay onClose={handleClose}/>
+					<Overlay onClose={handleClose()}/>
 				</CSSTransition>
 				<CSSTransition
 					appear
@@ -87,7 +95,7 @@ export const Modal = ({isOpened, children, onClose, title, titleOrder}: ModalPro
 						<div className={module.header}>
 							<Title order={titleOrder}>{title}</Title>
 							<Button
-								onClick={handleClose}
+								onClick={handleClose()}
 								variant={ButtonVariant.SUBTLE}
 								size={ButtonSize.SM}
 								square>

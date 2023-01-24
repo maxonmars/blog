@@ -12,17 +12,21 @@ interface StarRatingProps {
 }
 
 export const StarRating = (props: StarRatingProps) => {
-	const {selectedStars = 0, totalStarsCount = 5, onSelect, size = 30, className} = props;
+	const {selectedStars, totalStarsCount = 5, onSelect, size = 30, className} = props;
 
 	const stars = useMemo(() => {
 		return new Array(totalStarsCount).fill(0).map((_, index) => ++index);
 	}, [totalStarsCount]);
 
 	const [hoveredStarCount, setHoveredStarCount] = useState(0);
-	const [selectedStarCount, setSelectedStarCount] = useState(selectedStars);
+
+	const isNotRateSelected = selectedStars === 0;
+	const isRateSelected = selectedStars > 0;
 
 	const handleStarHover = (starNumber: number) => () => {
-		setHoveredStarCount(starNumber);
+		if (isNotRateSelected) {
+			setHoveredStarCount(starNumber);
+		}
 	};
 
 	const handleStarHoverLeave = () => {
@@ -30,12 +34,13 @@ export const StarRating = (props: StarRatingProps) => {
 	};
 
 	const handleStarSelect = () => {
-		setSelectedStarCount(hoveredStarCount);
-		onSelect(hoveredStarCount);
+		if (isNotRateSelected) {
+			onSelect(hoveredStarCount);
+		}
 	};
 
 	return (
-		<div className={classNames([module.starRating, className])}>
+		<div className={classNames([module.starRating, className], {[module.rateSelected]: isRateSelected})}>
 			{stars.map(starNumber => {
 				return (
 					<IcoStar
@@ -47,7 +52,7 @@ export const StarRating = (props: StarRatingProps) => {
 						className={classNames([module.star],
 							{
 								[module.starHovered]: hoveredStarCount >= starNumber,
-								[module.starSelected]: selectedStarCount >= starNumber,
+								[module.starSelected]: selectedStars >= starNumber,
 							})}/>
 				);
 			})}

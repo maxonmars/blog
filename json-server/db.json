@@ -690,5 +690,66 @@
       "username": "ulbi tv",
       "avatar": "https://i.pinimg.com/474x/b1/19/4f/b1194f6671a741f9b2d52c550324c630.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "articleId": "7",
+      "userId": "1",
+      "rate": 3,
+      "id": 1
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 3,
+      "id": 2
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "rate": 4,
+      "id": 3
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "rate": 2,
+      "id": 4
+    },
+    {
+      "articleId": "5",
+      "userId": "2",
+      "rate": 5,
+      "id": 5
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "",
+      "id": 6
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "rate": 5,
+      "id": 7
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "rate": 1,
+      "feedback": "otziv",
+      "id": 8
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Отличный профиль",
+      "userId": "1",
+      "profileId": "1"
+    }
   ]
 }

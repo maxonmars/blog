@@ -7,6 +7,8 @@ import {ArticleDetailsPageHeader} from '../ArticleDetailsPageHeader/ArticleDetai
 import {VStack} from '@/shared/ui/Stack';
 import {ArticleRecommendationsList} from '@/features/articleRecommendationsList';
 import {ArticleDetailsComments} from '../ArticleDetailsComments/ArticleDetailsComments';
+import {ArticleRating} from '@/features/articleRating';
+import {useLayoutEffect} from 'react';
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -19,11 +21,16 @@ const reducers: ReducersList = {
 const ArticleDetailsPage = ({className}: ArticleDetailsPageProps) => {
 	const {id} = useParams<{id: string}>();
 
+	useLayoutEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+
 	return (
 		<DynamicModuleLoader reducers={reducers} isRemoveAfterUnmount>
 			<VStack gap="2" isMax>
 				<ArticleDetailsPageHeader/>
 				<ArticleDetails id={id}/>
+				<ArticleRating articleId={id}/>
 				<ArticleRecommendationsList/>
 				<ArticleDetailsComments articleId={id}/>
 			</VStack>

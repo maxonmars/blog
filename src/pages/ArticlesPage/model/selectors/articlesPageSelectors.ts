@@ -11,7 +11,7 @@ export const selectArticlesPageError = (state: StateScheme) => {
 };
 
 export const selectArticlesPageView = (state: StateScheme) => {
-	return state.articleListPage?.pages?.view ?? ArticleView.GRID;
+	return state.articleListPage?.pages?.view ?? ArticleView.LIST;
 };
 
 export const selectArticlesPageNumber = (state: StateScheme) => {
