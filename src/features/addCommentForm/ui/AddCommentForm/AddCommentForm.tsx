@@ -14,7 +14,6 @@ import {useAppDispatch} from '@/shared/hooks';
 import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {HStack} from '@/shared/ui/Stack';
-
 export interface AddCommentFormProps {
 	className?: string;
 	onCommentSend: (text: string) => void;

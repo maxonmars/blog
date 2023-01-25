@@ -49,7 +49,7 @@ module.exports = {
 		'jsx-quotes': ['error', 'prefer-double'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'error',
-		'fsd-strict/path-checker': 'error',
+		'fsd-strict/path-checker': ['error', {alias: '@'}],
 	},
 	globals: {
 		__IS_DEV__: true,
