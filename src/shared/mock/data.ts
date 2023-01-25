@@ -52,3 +52,12 @@ export const commentsNormalized = {
 		3: {...comment, id: '3'},
 	},
 };
+
+export const articleRatings = [
+	{
+		articleId: '1',
+		userId: '1',
+		rate: 3,
+		id: 1,
+	},
+];
