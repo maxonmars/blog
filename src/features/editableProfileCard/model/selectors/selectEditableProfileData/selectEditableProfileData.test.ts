@@ -1,8 +1,8 @@
 import type {StateScheme} from '@/app/providers/StoreProvider';
-import {selectEditableProfileData} from './selectEditableProfileData';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
 import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
-import {Country} from '@/entities/Country/model/consts/country';
-import {Currency} from '@/entities/Currency/model/consts/currency';
+import {selectEditableProfileData} from './selectEditableProfileData';
 
 describe('selectEditableProfileData', () => {
 	test('should be full editableProfileData', () => {

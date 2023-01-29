@@ -1,13 +1,13 @@
+import {ROUTE_PATH} from '@/app/providers/router';
+import {selectArticleDetailsData} from '@/entities/Article';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
+import {HStack} from '@/shared/ui/Stack';
 import {useCallback} from 'react';
-import {ROUTE_PATH} from '@/app/providers/router';
-import {useNavigate} from 'react-router-dom';
 import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
-import {selectArticleDetailsData} from '@/entities/Article/model/selectors/selectArticleDetails';
+import {useNavigate} from 'react-router-dom';
 import {selectArticleDetailsIsEdit} from '../../model/selectors/article';
-import {HStack} from '@/shared/ui/Stack';
 
 interface ArticleDetailsPageHeaderProps {
 	className?: string;

@@ -1,25 +1,24 @@
+import type {Article} from '@/entities/Article';
+import {ArticleListItem, ArticleListItemSkeleton} from '@/entities/Article';
+import {useAppDispatch} from '@/shared/hooks';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import module from './ArticleVirtualizedList.module.css';
-import type {HTMLAttributeAnchorTarget} from 'react';
-import React, {useCallback} from 'react';
-import {VirtualizedList} from '@/shared/ui/VirtualizedList/VirtualizedList';
-import {ArticleListItemSkeleton} from '@/entities/Article/ui/ArticleItem/ArticleListItemSkeleton';
+import {Button} from '@/shared/ui/Button/Button';
 import {Card} from '@/shared/ui/Card/Card';
 import {Title} from '@/shared/ui/Title/Title';
-import {ArticleListItem} from '@/entities/Article/ui/ArticleItem/ArticleListItem';
-import type {Article} from '@/entities/Article';
+import {VirtualizedList} from '@/shared/ui/VirtualizedList/VirtualizedList';
+import type {HTMLAttributeAnchorTarget} from 'react';
+import {useCallback} from 'react';
 import {useSelector} from 'react-redux';
-import {useAppDispatch} from '@/shared/hooks';
-import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
-import {selectArticleVirtualizedListItemIndex} from '../../model/selectors/selectArticleVirtualizedListItemIndex';
-import {Button} from '@/shared/ui/Button/Button';
-import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
 	selectArticlesPageHasMore,
 	selectArticlesPageIsLoading,
 	selectArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import {selectArticleVirtualizedListItemIndex} from '../../model/selectors/selectArticleVirtualizedListItemIndex';
+import {fetchNextArticlesPage} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {selectArticles} from '../../model/slice/articlesPageSlice';
+import {articleVirtualizedListActions} from '../../model/slice/articleVirtualizedListSlice';
+import module from './ArticleVirtualizedList.module.css';
 
 interface ArticleVirtualizedListProps {
 	className?: string;

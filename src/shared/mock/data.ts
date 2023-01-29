@@ -4,7 +4,7 @@ import {UserRoles} from '@/entities/User';
 import jsPostImg from '@/shared/assets/tests/image/javaScript_logo.png';
 import avatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
 import type {Comment} from '@/entities/Comment';
-import {ArticleBlockType, ArticleType} from '@/entities/Article/model/consts/article';
+import {ArticleBlockType, ArticleType} from '@/entities/Article';
 
 export const user: User = {
 	id: '1',

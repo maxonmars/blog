@@ -1,10 +1,9 @@
+import type {Article} from '@/entities/Article';
+import {ArticleBlockType, ArticleSortField, ArticleType, ArticleView} from '@/entities/Article';
+import {UserRoles} from '@/entities/User';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
-import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
-import type {Article} from '@/entities/Article';
-import {UserRoles} from '@/entities/User';
-import {ArticleSortField, ArticleView} from '@/entities/Article';
-import {ArticleBlockType, ArticleType} from '@/entities/Article/model/consts/article';
 
 type StoryType = ComponentStory<typeof ArticlesPage>;
 

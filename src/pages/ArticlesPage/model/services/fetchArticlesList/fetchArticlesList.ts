@@ -1,6 +1,8 @@
-import {createAsyncThunk} from '@reduxjs/toolkit';
 import type {ThunkConfig} from '@/app/providers/StoreProvider';
 import type {Article} from '@/entities/Article';
+import {ArticleType} from '@/entities/Article';
+import {addQueryParams} from '@/shared/lib/url/addQueryParams/addQueryParams';
+import {createAsyncThunk} from '@reduxjs/toolkit';
 import {
 	selectArticlesPageLimit,
 	selectArticlesPageNumber,
@@ -9,8 +11,6 @@ import {
 	selectArticlesPageSort,
 	selectArticlesPageType,
 } from '../../selectors/articlesPageSelectors';
-import {addQueryParams} from '@/shared/lib/url/addQueryParams/addQueryParams';
-import {ArticleType} from '@/entities/Article/model/consts/article';
 
 const checkData = (data: Article[]) => {
 	if (!data) {

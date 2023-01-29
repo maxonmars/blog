@@ -1,14 +1,13 @@
-import './styles/index.css';
-import React, {Suspense, useEffect} from 'react';
 import {classNames} from '@/shared/lib/classNames/classNames';
+import {Suspense, useEffect} from 'react';
+import './styles/index.css';
 
-import {Navbar} from '@/widgets/Navbar';
 import {AppRouter} from '@/app/providers/router';
-import {Sidebar} from '@/widgets/Sidebar';
+import {selectUserIsInit, userActions} from '@/entities/User';
+import {Navbar} from '@/widgets/Navbar';
 import {PageLoader} from '@/widgets/PageLoader';
+import {Sidebar} from '@/widgets/Sidebar';
 import {useDispatch, useSelector} from 'react-redux';
-import {userActions} from '@/entities/User';
-import {selectUserIsInit} from '@/entities/User/model/selectors/selectUserIsInit';
 
 export const App = () => {
 	const dispatch = useDispatch();

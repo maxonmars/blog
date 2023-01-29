@@ -1,6 +1,6 @@
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Page} from './Page';
-import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 
 type StoryType = ComponentStory<typeof Page>;
 

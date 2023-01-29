@@ -1,12 +1,12 @@
-import type {ComponentMeta, ComponentStory} from '@storybook/react';
-import {EditableProfileCard} from './EditableProfileCard';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
+import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
+import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
 import {themeDecorator} from '@/shared/lib/storybook/ThemeDecorator';
 import {Theme} from '@/shared/lib/theme';
-import {storeDecorator} from '@/shared/lib/storybook/StoreDecorator';
+import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import type {EditableProfileCardSchema} from '../../model/types/editableProfileCardSchema';
-import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
-import {Country} from '@/entities/Country/model/consts/country';
-import {Currency} from '@/entities/Currency/model/consts/currency';
+import {EditableProfileCard} from './EditableProfileCard';
 
 type StoryType = ComponentStory<typeof EditableProfileCard>;
 

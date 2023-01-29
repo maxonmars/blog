@@ -1,13 +1,13 @@
-import {screen} from '@testing-library/react';
-import {EditableProfileCard} from './EditableProfileCard';
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
+import type {Profile} from '@/entities/Profile';
+import {$api} from '@/shared/api/api';
 import type {ComponentRenderOptions} from '@/shared/lib/tests/componentRender/componentRender';
 import {componentRender} from '@/shared/lib/tests/componentRender/componentRender';
-import type {Profile} from '@/entities/Profile';
-import {editableProfileCardReducer} from '../../model/slices/editableProfileCardSlice';
+import {screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {$api} from '@/shared/api/api';
-import {Country} from '@/entities/Country/model/consts/country';
-import {Currency} from '@/entities/Currency/model/consts/currency';
+import {editableProfileCardReducer} from '../../model/slices/editableProfileCardSlice';
+import {EditableProfileCard} from './EditableProfileCard';
 
 const profile: Profile = {
 	age: 22,

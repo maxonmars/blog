@@ -1,9 +1,9 @@
+import {Country} from '@/entities/Country';
+import {Currency} from '@/entities/Currency';
+import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
+import {fetchProfileData} from '../../../../features/editableProfileCard/model/services/fetchProfileData/fetchProfileData';
 import type {EditableProfileCardSchema} from '../types/editableProfileCardSchema';
 import {editableProfileCardActions, editableProfileCardReducer} from './editableProfileCardSlice';
-import {fetchProfileData} from '../../../../features/editableProfileCard/model/services/fetchProfileData/fetchProfileData';
-import AvatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
-import {Country} from '@/entities/Country/model/consts/country';
-import {Currency} from '@/entities/Currency/model/consts/currency';
 
 const profileData = {
 	firstName: 'Max',
