@@ -1,5 +1,5 @@
-import {ROUTE_PATH} from '@/app/providers/router';
 import {selectArticleDetailsData} from '@/entities/Article';
+import {ROUTE_PATH} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
 import {HStack} from '@/shared/ui/Stack';

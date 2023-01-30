@@ -8,22 +8,9 @@ import {ForbiddenPage} from '@/pages/ForbiddenPage';
 import {MainPage} from '@/pages/MainPage';
 import {NotFoundPage} from '@/pages/NotFoundPage';
 import {ProfilePage} from '@/pages/ProfilePage';
+import {ROUTE_PATH} from '@/shared/const/router';
 import {createElement} from 'react';
 import type {RouteObject} from 'react-router-dom';
-
-export const ROUTE_PATH = {
-	MAIN: '/',
-	ABOUT: '/about',
-	PROFILE: '/profile/',
-	ARTICLES: '/articles',
-	ARTICLE_DETAILS: '/articles/',
-	ARTICLE_CREATE: '/articles/new',
-	ARTICLE_EDIT: '/articles/:id/edit',
-	ADMIN: '/admin',
-	FORBIDDEN: '/forbidden',
-	// last
-	NOT_FOUND: '*',
-} as const;
 
 type PathKey = keyof typeof ROUTE_PATH;
 

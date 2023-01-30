@@ -1,16 +1,16 @@
+import {selectUserAuthData} from '@/entities/User';
+import {LoginModal} from '@/features/AuthByUsername';
+import {AvatarDropdown} from '@/features/avatarDropdown';
+import {NotificationsButton} from '@/features/notificationsButton';
+import {ROUTE_PATH} from '@/shared/const/router';
+import {classNames} from '@/shared/lib/classNames/classNames';
+import {AppLink, AppLinkVariant} from '@/shared/ui/AppLink/AppLink';
+import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
 import type React from 'react';
 import {useState} from 'react';
-import module from './Navbar.module.css';
-import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
-import {LoginModal} from '@/features/AuthByUsername';
 import {useSelector} from 'react-redux';
-import {selectUserAuthData} from '@/entities/User';
-import {AppLink, AppLinkVariant} from '@/shared/ui/AppLink/AppLink';
-import {ROUTE_PATH} from '@/app/providers/router';
-import {NotificationsButton} from '@/features/notificationsButton';
-import {AvatarDropdown} from '@/features/avatarDropdown';
+import module from './Navbar.module.css';
 
 const activeStyle = ({isActive}: {isActive: boolean}): React.CSSProperties =>
 	isActive

@@ -1,7 +1,7 @@
-import {createSelector} from '@reduxjs/toolkit';
 import {selectUserAuthData} from '@/entities/User';
-import {ROUTE_PATH} from '@/app/providers/router';
 import {IcoThinAlien, IcoThinFileContract, IcoThinHouse, IcoThinSquareList} from '@/shared/assets/icons';
+import {ROUTE_PATH} from '@/shared/const/router';
+import {createSelector} from '@reduxjs/toolkit';
 import type {SidebarItemType} from '../types/sidebar';
 
 export const selectSidebarItems = createSelector(
