@@ -1,3 +1,3 @@
-import type {StateScheme} from '@/app/providers/StoreProvider/config/StateScheme';
+import type {StateScheme} from '@/app/providers/StoreProvider';
 
 export const selectLoginError = (state: StateScheme) => state?.login?.error;

@@ -1,8 +1,8 @@
+import {PageLoader} from '@/widgets/PageLoader';
 import {Suspense} from 'react';
 import {useRoutes} from 'react-router-dom';
-import {routes} from '@/app/providers/router/config/routeConfig';
-import {PageLoader} from '@/widgets/PageLoader';
-import {RequireAuth} from '@/app/providers/router/ui/RequireAuth';
+import {routes} from '../config/routeConfig';
+import {RequireAuth} from './RequireAuth';
 
 export const AppRouter = () => {
 	const withRequireAuthRoutes = routes.map(route => {

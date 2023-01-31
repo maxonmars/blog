@@ -2,12 +2,12 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {Suspense, useEffect} from 'react';
 import './styles/index.css';
 
-import {AppRouter} from '@/app/providers/router';
 import {selectUserIsInit, userActions} from '@/entities/User';
 import {Navbar} from '@/widgets/Navbar';
 import {PageLoader} from '@/widgets/PageLoader';
 import {Sidebar} from '@/widgets/Sidebar';
 import {useDispatch, useSelector} from 'react-redux';
+import {AppRouter} from './providers/router';
 
 export const App = () => {
 	const dispatch = useDispatch();

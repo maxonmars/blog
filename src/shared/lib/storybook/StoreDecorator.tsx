@@ -1,5 +1,5 @@
+import type {StateScheme} from '@/app/providers/StoreProvider';
 import {StoreProvider} from '@/app/providers/StoreProvider';
-import type {StateScheme} from '@/app/providers/StoreProvider/config/StateScheme';
 import {articleDetailsReducer} from '@/entities/Article/testing';
 import {addCommentFormReducer} from '@/features/addCommentForm/testing';
 import {loginReducer} from '@/features/AuthByUsername/testing';

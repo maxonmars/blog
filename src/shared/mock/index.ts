@@ -1,9 +1,8 @@
 export {
 	article,
 	articles,
-	user,
 	comment,
 	commentsNormalized,
-} from './data';
-
+	user,
+} from './data.mock';
 export {apiHandlers} from './mockServiceWorker';

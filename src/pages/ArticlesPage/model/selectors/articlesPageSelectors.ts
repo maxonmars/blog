@@ -1,4 +1,4 @@
-import type {StateScheme} from '@/app/providers/StoreProvider/config/StateScheme';
+import type {StateScheme} from '@/app/providers/StoreProvider';
 import {ArticleSortField, ArticleType, ArticleView} from '@/entities/Article';
 
 export const selectArticlesPageIsLoading = (state: StateScheme) => {

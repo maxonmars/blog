@@ -1,4 +1,10 @@
-export {StoreProvider} from './ui/StoreProvider';
+export type {
+	ReducerManager,
+	ReduxStoreWithManager,
+	StateScheme,
+	StateSchemeKey,
+	ThunkConfig,
+} from './config/StateScheme';
 export {createReduxStore} from './config/store';
-export type {StateScheme, ReduxStoreWithManager, ThunkConfig} from './config/StateScheme';
 export type {AppDispatch, RootState} from './types';
+export {StoreProvider} from './ui/StoreProvider';

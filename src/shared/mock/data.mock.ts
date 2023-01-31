@@ -1,10 +1,10 @@
-import type {Article} from '@/entities/Article';
-import type {User} from '@/entities/User';
-import {UserRoles} from '@/entities/User';
-import jsPostImg from '@/shared/assets/tests/image/javaScript_logo.png';
+import type {Article} from '@/entities/Article/testing';
+import {ArticleBlockType, ArticleType} from '@/entities/Article/testing';
+import type {Comment} from '@/entities/Comment/testing';
+import type {User} from '@/entities/User/testing';
+import {UserRoles} from '@/entities/User/testing';
 import avatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
-import type {Comment} from '@/entities/Comment';
-import {ArticleBlockType, ArticleType} from '@/entities/Article';
+import jsPostImg from '@/shared/assets/tests/image/javaScript_logo.png';
 
 export const user: User = {
 	id: '1',
