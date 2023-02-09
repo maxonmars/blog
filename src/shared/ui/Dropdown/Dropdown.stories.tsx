@@ -1,6 +1,5 @@
 import type {ComponentMeta, ComponentStory} from '@storybook/react';
 import {Dropdown} from './Dropdown';
-import React from 'react';
 import {Button} from '../Button/Button';
 
 type StoryType = ComponentStory<typeof Dropdown>;

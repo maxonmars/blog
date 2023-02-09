@@ -1,6 +1,5 @@
 import type {FlexProps} from '../Flex/Flex';
 import {Flex} from '../Flex/Flex';
-import React from 'react';
 
 type VStackProps = Omit<FlexProps, 'direction'>;
 

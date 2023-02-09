@@ -45,8 +45,9 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react', 'i18next', 'react-hooks', 'fsd-strict'],
+	plugins: ['react', 'i18next', 'react-hooks', 'fsd-strict', 'unused-imports'],
 	rules: {
+		'unused-imports/no-unused-imports': 'error',
 		'i18next/no-literal-string': 1,
 		'capitalized-comments': 'off',
 		'arrow-body-style': 'off',

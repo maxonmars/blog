@@ -1,5 +1,5 @@
 import type {ReactNode} from 'react';
-import React, {useEffect, useLayoutEffect, useRef} from 'react';
+import {useEffect, useLayoutEffect, useRef} from 'react';
 import {useWindowVirtualizer} from '@tanstack/react-virtual';
 
 interface ItemOption {

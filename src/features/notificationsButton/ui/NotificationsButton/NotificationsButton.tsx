@@ -1,5 +1,5 @@
 import module from './NotificationsButton.module.css';
-import React, {memo, useState} from 'react';
+import {memo, useState} from 'react';
 import {Popover} from '@/shared/ui/Popover';
 import {IcoThinBell} from '@/shared/assets/icons';
 import {NotificationList} from '@/entities/notification';
