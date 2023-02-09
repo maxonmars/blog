@@ -7,9 +7,9 @@ import {
 	selectProfileValidateErrors,
 } from '../../model/selectors';
 import {useTranslation} from 'react-i18next';
-import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
-import {Title} from '@/shared/ui/Title/Title';
-import {Text, TextSize, TextVariant} from '@/shared/ui/Text/Text';
+import {Button, ButtonVariant} from '@/shared/ui/Button';
+import {Title} from '@/shared/ui/Title';
+import {Text, TextSize, TextVariant} from '@/shared/ui/Text';
 import {selectProfileIsReadonly} from '../../model/selectors/selectProfileIsReadonly/selectProfileIsReadonly';
 import {editableProfileCardActions, editableProfileCardReducer} from '../../model/slices/editableProfileCardSlice';
 import {memo, useCallback} from 'react';

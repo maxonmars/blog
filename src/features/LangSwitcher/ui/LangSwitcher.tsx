@@ -1,5 +1,5 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
+import {Button, ButtonVariant} from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
 
 interface LangSwitcherProps {

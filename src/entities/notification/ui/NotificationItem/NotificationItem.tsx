@@ -1,11 +1,11 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
 import module from './NotificationItem.module.css';
 import {memo} from 'react';
-import {Card, CardVariant} from '@/shared/ui/Card/Card';
+import {Card, CardVariant} from '@/shared/ui/Card';
 import type {Notification} from '../../model/types/notification';
-import {Title} from '@/shared/ui/Title/Title';
-import {Text} from '@/shared/ui/Text/Text';
-import {AppLink} from '@/shared/ui/AppLink/AppLink';
+import {Title} from '@/shared/ui/Title';
+import {Text} from '@/shared/ui/Text';
+import {AppLink} from '@/shared/ui/AppLink';
 
 interface NotificationItemProps {
 	className?: string;

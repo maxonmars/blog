@@ -1,8 +1,8 @@
-import {Modal} from '@/shared/ui/Modal/Modal';
+import {Modal} from '@/shared/ui/Modal';
 import {LoginFormAsync} from '../LoginForm/LoginForm.async';
 import {useTranslation} from 'react-i18next';
 import {Suspense} from 'react';
-import {Loader} from '@/shared/ui/Loader/Loader';
+import {Loader} from '@/shared/ui/Loader';
 
 interface LoginModalProps {
 	isOpen: boolean;

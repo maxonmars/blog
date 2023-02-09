@@ -2,7 +2,7 @@ import {LangSwitcher} from '@/features/LangSwitcher';
 import {ThemeSwitcher} from '@/features/ThemeSwitcher';
 import {IcoThinChevronLeft, IcoThinChevronRight} from '@/shared/assets/icons';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
+import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button';
 import {useState} from 'react';
 import {useSelector} from 'react-redux';
 import {selectSidebarItems} from '../../model/selectSidebarItems/selectSidebarItems';

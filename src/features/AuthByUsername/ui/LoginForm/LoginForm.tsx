@@ -1,12 +1,12 @@
 import module from './LoginForm.module.css';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
-import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
-import {Input} from '@/shared/ui/Input/Input';
+import {Button, ButtonVariant} from '@/shared/ui/Button';
+import {Input} from '@/shared/ui/Input';
 import {loginActions, loginReducer} from '../../model/slice/loginSlice';
 import {loginByUsername} from '../../model/services/loginByUsername';
 import {useAppDispatch} from '@/shared/hooks';
-import {Text, TextSize, TextVariant} from '@/shared/ui/Text/Text';
+import {Text, TextSize, TextVariant} from '@/shared/ui/Text';
 import {useSelector} from 'react-redux';
 import {selectLoginUsername} from '../../model/selectors/selectLoginUsername/selectLoginUsername';
 import {selectLoginPassword} from '../../model/selectors/selectLoginPassword/selectLoginPassword';

@@ -11,11 +11,11 @@ import {
 	selectArticleDetailsError,
 	selectArticleDetailsIsLoading,
 } from '../../model/selectors/selectArticleDetails';
-import {Text, TextVariant} from '@/shared/ui/Text/Text';
+import {Text, TextVariant} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
-import {Avatar, AvatarSize} from '@/shared/ui/Avatar/Avatar';
-import {Title} from '@/shared/ui/Title/Title';
+import {Skeleton} from '@/shared/ui/Skeleton';
+import {Avatar, AvatarSize} from '@/shared/ui/Avatar';
+import {Title} from '@/shared/ui/Title';
 import {IcoThinCalendarDays, IcoThinEyeEvil} from '@/shared/assets/icons/index';
 import type {ArticleBlock} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';

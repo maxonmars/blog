@@ -1,7 +1,7 @@
 import {selectArticleDetailsData} from '@/entities/Article';
 import {ROUTE_PATH} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
+import {Button, ButtonVariant} from '@/shared/ui/Button';
 import {HStack} from '@/shared/ui/Stack';
 import {useCallback} from 'react';
 import {useTranslation} from 'react-i18next';

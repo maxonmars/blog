@@ -1,12 +1,12 @@
 import {IcoThinEyeEvil} from '@/shared/assets/icons';
 import {ROUTE_PATH} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {AppLink} from '@/shared/ui/AppLink/AppLink';
-import {Avatar} from '@/shared/ui/Avatar/Avatar';
-import {Button, ButtonVariant} from '@/shared/ui/Button/Button';
-import {Card} from '@/shared/ui/Card/Card';
-import {Text} from '@/shared/ui/Text/Text';
-import {Title} from '@/shared/ui/Title/Title';
+import {AppLink} from '@/shared/ui/AppLink';
+import {Avatar} from '@/shared/ui/Avatar';
+import {Button, ButtonVariant} from '@/shared/ui/Button';
+import {Card} from '@/shared/ui/Card';
+import {Text} from '@/shared/ui/Text';
+import {Title} from '@/shared/ui/Title';
 import type {HTMLAttributeAnchorTarget} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useNavigate} from 'react-router-dom';

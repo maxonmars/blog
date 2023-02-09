@@ -2,16 +2,16 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {useTranslation} from 'react-i18next';
 import module from './RatingCard.module.css';
 import {memo, useRef, useState} from 'react';
-import {Card} from '@/shared/ui/Card/Card';
+import {Card} from '@/shared/ui/Card';
 import {HStack, VStack} from '@/shared/ui/Stack';
-import {Title} from '@/shared/ui/Title/Title';
-import {StarRating} from '@/shared/ui/StarRating/StarRating';
+import {Title} from '@/shared/ui/Title';
+import {StarRating} from '@/shared/ui/StarRating';
 import {BrowserView, MobileView} from 'react-device-detect';
-import {Modal} from '@/shared/ui/Modal/Modal';
-import {Button} from '@/shared/ui/Button/Button';
-import {Text} from '@/shared/ui/Text/Text';
-import {Input} from '@/shared/ui/Input/Input';
-import {DrawerMobile} from '@/shared/ui/DrawerMobile/DrawerMobile';
+import {Modal} from '@/shared/ui/Modal';
+import {Button} from '@/shared/ui/Button';
+import {Text} from '@/shared/ui/Text';
+import {Input} from '@/shared/ui/Input';
+import {DrawerMobile} from '@/shared/ui/DrawerMobile';
 
 interface RatingProps {
 	className?: string;

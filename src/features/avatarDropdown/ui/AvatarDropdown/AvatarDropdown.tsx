@@ -1,8 +1,8 @@
 import {selectUserAuthData, selectUserIsAdmin, selectUserIsManager, userActions} from '@/entities/User';
 import {ROUTE_PATH} from '@/shared/const/router';
-import {Avatar} from '@/shared/ui/Avatar/Avatar';
-import type {DropdownItem} from '@/shared/ui/Dropdown/Dropdown';
-import {Dropdown} from '@/shared/ui/Dropdown/Dropdown';
+import {Avatar} from '@/shared/ui/Avatar';
+import type {DropdownItem} from '@/shared/ui/Dropdown';
+import {Dropdown} from '@/shared/ui/Dropdown';
 import {memo} from 'react';
 import {useTranslation} from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';

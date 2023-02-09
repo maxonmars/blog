@@ -14,8 +14,8 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import {useAppDispatch} from '@/shared/hooks';
 import {useTranslation} from 'react-i18next';
-import {Card} from '@/shared/ui/Card/Card';
-import {Input} from '@/shared/ui/Input/Input';
+import {Card} from '@/shared/ui/Card';
+import {Input} from '@/shared/ui/Input';
 import {ArticleSortSelector} from '@/entities/ArticleSortSelector';
 import type {SortOrder} from '@/shared/types';
 import {fetchArticlesList} from '../../model/services/fetchArticlesList/fetchArticlesList';

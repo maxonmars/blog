@@ -1,8 +1,8 @@
 import module from './ArticleTextBlockComponent.module.css';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ArticleTextBlock} from '../../model/types/article';
-import {Title} from '@/shared/ui/Title/Title';
-import {Text} from '@/shared/ui/Text/Text';
+import {Title} from '@/shared/ui/Title';
+import {Text} from '@/shared/ui/Text';
 
 interface ArticleTextBlockComponentProps {
 	className?: string;

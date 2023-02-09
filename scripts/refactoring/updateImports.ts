@@ -26,4 +26,4 @@ files.forEach(sourceFile => {
 void project.save();
 
 // run script:
-// ts-node ./scripts/updateImports.ts
+// npx ts-node ./scripts/refactoring/updateImports.ts

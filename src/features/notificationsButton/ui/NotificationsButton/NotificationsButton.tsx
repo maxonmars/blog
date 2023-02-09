@@ -1,12 +1,12 @@
 import module from './NotificationsButton.module.css';
 import React, {memo, useState} from 'react';
-import {Popover} from '@/shared/ui/Popover/Popover';
+import {Popover} from '@/shared/ui/Popover';
 import {IcoThinBell} from '@/shared/assets/icons';
 import {NotificationList} from '@/entities/notification';
 import {BrowserView, MobileView} from 'react-device-detect';
-import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button/Button';
+import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button';
 import {classNames} from '@/shared/lib/classNames/classNames';
-import {DrawerMobile} from '@/shared/ui/DrawerMobile/DrawerMobile';
+import {DrawerMobile} from '@/shared/ui/DrawerMobile';
 
 interface NotificationsButtonProps {
 	className?: string;
