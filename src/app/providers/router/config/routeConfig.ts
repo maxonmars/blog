@@ -8,11 +8,19 @@ import {ForbiddenPage} from '@/pages/ForbiddenPage';
 import {MainPage} from '@/pages/MainPage';
 import {NotFoundPage} from '@/pages/NotFoundPage';
 import {ProfilePage} from '@/pages/ProfilePage';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {
+	getRouteAbout,
+	getRouteAdmin,
+	getRouteArticleCreate,
+	getRouteArticleDetails,
+	getRouteArticleEdit,
+	getRouteArticles,
+	getRouteForbidden,
+	getRouteMain,
+	getRouteProfile,
+} from '@/shared/const/router';
 import {createElement} from 'react';
 import type {RouteObject} from 'react-router-dom';
-
-type PathKey = keyof typeof ROUTE_PATH;
 
 interface PathValue extends RouteObject {
 	path: string;
@@ -21,48 +29,48 @@ interface PathValue extends RouteObject {
 	roles?: UserRoles[];
 }
 
-const routeConfig: Record<PathKey, PathValue> = ({
+const routeConfig: Record<string, PathValue> = {
 	MAIN: {
-		path: ROUTE_PATH.MAIN,
+		path: getRouteMain(),
 		element: createElement(MainPage),
 	},
 	ABOUT: {
-		path: ROUTE_PATH.ABOUT,
+		path: getRouteAbout(),
 		element: createElement(AboutPage),
 	},
 	PROFILE: {
-		path: ROUTE_PATH.PROFILE + ':id',
+		path: getRouteProfile(),
 		element: createElement(ProfilePage),
 		authOnly: true,
 	},
 	ARTICLES: {
-		path: ROUTE_PATH.ARTICLES,
+		path: getRouteArticles(),
 		element: createElement(ArticlesPage),
 		authOnly: true,
 	},
 	ARTICLE_DETAILS: {
-		path: ROUTE_PATH.ARTICLE_DETAILS + ':id',
+		path: getRouteArticleDetails(),
 		element: createElement(ArticleDetailsPage),
 		authOnly: true,
 	},
 	ARTICLE_CREATE: {
-		path: ROUTE_PATH.ARTICLE_CREATE,
+		path: getRouteArticleCreate(),
 		element: createElement(ArticleEditPage),
 		authOnly: true,
 	},
 	ARTICLE_EDIT: {
-		path: ROUTE_PATH.ARTICLE_EDIT,
+		path: getRouteArticleEdit(),
 		element: createElement(ArticleEditPage),
 		authOnly: true,
 	},
 	ADMIN: {
-		path: ROUTE_PATH.ADMIN,
+		path: getRouteAdmin(),
 		element: createElement(AdminPage),
 		authOnly: true,
 		roles: [UserRoles.ADMIN, UserRoles.MANAGER],
 	},
 	FORBIDDEN: {
-		path: ROUTE_PATH.FORBIDDEN,
+		path: getRouteForbidden(),
 		element: createElement(ForbiddenPage),
 	},
 	//last
@@ -70,6 +78,6 @@ const routeConfig: Record<PathKey, PathValue> = ({
 		path: '*',
 		element: createElement(NotFoundPage),
 	},
-});
+};
 
 export const routes = Object.values(routeConfig);

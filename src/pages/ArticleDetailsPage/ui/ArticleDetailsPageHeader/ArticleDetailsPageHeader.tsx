@@ -1,5 +1,5 @@
 import {selectArticleDetailsData} from '@/entities/Article';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteArticleEdit, getRouteArticles} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {Button, ButtonVariant} from '@/shared/ui/Button';
 import {HStack} from '@/shared/ui/Stack';
@@ -20,11 +20,11 @@ export const ArticleDetailsPageHeader = ({className}: ArticleDetailsPageHeaderPr
 	const article = useSelector(selectArticleDetailsData);
 
 	const handleArticleListBack = useCallback(() => {
-		navigate(ROUTE_PATH.ARTICLES);
+		navigate(getRouteArticles());
 	}, [navigate]);
 
 	const handleArticleEdit = useCallback(() => {
-		navigate(`${ROUTE_PATH.ARTICLE_DETAILS}${article?.id ?? ''}/edit`);
+		navigate(getRouteArticleEdit(article?.id));
 	}, [navigate, article?.id]);
 
 	return (

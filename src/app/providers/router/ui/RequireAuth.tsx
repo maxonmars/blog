@@ -1,6 +1,6 @@
 import type {UserRoles} from '@/entities/User';
 import {selectUserAuthData, selectUserRoles} from '@/entities/User';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteForbidden, getRouteMain} from '@/shared/const/router';
 import {useMemo} from 'react';
 import {useSelector} from 'react-redux';
 import {Navigate, useLocation} from 'react-router-dom';
@@ -31,11 +31,11 @@ export const RequireAuth = ({children, roles}: RequireAuthProps) => {
 
 	// TODO: необходимо сделать переход на модалку авторизации
 	if (!auth) {
-		return <Navigate to={ROUTE_PATH.MAIN} state={{from: location}} replace />;
+		return <Navigate to={getRouteMain()} state={{from: location}} replace />;
 	}
 
 	if (!isAvailable) {
-		return <Navigate to={ROUTE_PATH.FORBIDDEN} state={{from: location}} replace/>;
+		return <Navigate to={getRouteForbidden()} state={{from: location}} replace/>;
 	}
 
 	return children;

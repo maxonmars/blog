@@ -2,7 +2,7 @@ import {selectUserAuthData} from '@/entities/User';
 import {LoginModal} from '@/features/AuthByUsername';
 import {AvatarDropdown} from '@/features/avatarDropdown';
 import {NotificationsButton} from '@/features/notificationsButton';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteArticleCreate} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {AppLink, AppLinkVariant} from '@/shared/ui/AppLink';
 import {Button, ButtonSize, ButtonVariant} from '@/shared/ui/Button';
@@ -45,7 +45,7 @@ export const Navbar = ({className}: NavbarProps) => {
 						<>
 							<AppLink
 								variant={AppLinkVariant.INVERTED}
-								to={ROUTE_PATH.ARTICLE_CREATE}>
+								to={getRouteArticleCreate()}>
 								{t('Создать статью')}
 							</AppLink>
 							<NotificationsButton/>

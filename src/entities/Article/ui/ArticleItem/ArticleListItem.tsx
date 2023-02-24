@@ -1,5 +1,5 @@
 import {IcoThinEyeEvil} from '@/shared/assets/icons';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteArticleDetails} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {AppLink} from '@/shared/ui/AppLink';
 import {Avatar} from '@/shared/ui/Avatar';
@@ -9,7 +9,6 @@ import {Text} from '@/shared/ui/Text';
 import {Title} from '@/shared/ui/Title';
 import type {HTMLAttributeAnchorTarget} from 'react';
 import {useTranslation} from 'react-i18next';
-import {useNavigate} from 'react-router-dom';
 import {ArticleBlockType, ArticleView} from '../../model/consts/article';
 import type {Article, ArticleTextBlock} from '../../model/types/article';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -25,12 +24,6 @@ interface ArticleListItemProps {
 
 export const ArticleListItem = ({className, article, view, target, setVirtualIndex}: ArticleListItemProps) => {
 	const {t} = useTranslation();
-	const navigate = useNavigate();
-
-	const handleArticleDetailsNavigate = () => {
-		navigate(`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`);
-		setVirtualIndex?.();
-	};
 
 	const handleClickReadMore = () => {
 		setVirtualIndex?.();
@@ -56,7 +49,7 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 				{textBlock
 					&& <ArticleTextBlockComponent block={textBlock} className={module.textBlock}/>
 				}
-				<AppLink className={module.readMoreLink} to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}>
+				<AppLink className={module.readMoreLink} to={getRouteArticleDetails(article.id)}>
 					<Button
 						onClick={handleClickReadMore}
 						variant={ButtonVariant.OUTLINE}
@@ -75,11 +68,11 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 	return (
 		<AppLink
 			target={target}
-			to={`${ROUTE_PATH.ARTICLE_DETAILS}${article.id}`}
+			to={getRouteArticleDetails(article.id)}
 			className={module.appLinkCardWrapper}>
 			<Card
 				className={classNames([module.articleListItem, className, module[view]])}
-				onClick={handleArticleDetailsNavigate}>
+				onClick={handleClickReadMore}>
 				<div className={module.cover}>
 					<img
 						className={module.coverImage}

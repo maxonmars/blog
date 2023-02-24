@@ -670,7 +670,7 @@
   "profiles": [
     {
       "id": "1",
-      "firstName": "jghwer",
+      "firstName": "Admin namezzz",
       "lastName": "asfewr",
       "age": 465,
       "currency": "USD",
@@ -681,13 +681,13 @@
     },
     {
       "id": "2",
-      "firstName": "ulbi tv!!",
+      "firstName": "some user",
       "lastName": "asf",
       "age": 465,
       "currency": "EUR",
       "country": "Russia",
       "city": "Moscow",
-      "username": "ulbi tv",
+      "username": "USER-name",
       "avatar": "https://i.pinimg.com/474x/b1/19/4f/b1194f6671a741f9b2d52c550324c630.jpg"
     }
   ],

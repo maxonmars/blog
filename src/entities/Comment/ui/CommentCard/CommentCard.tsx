@@ -1,4 +1,4 @@
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteProfile} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {AppLink} from '@/shared/ui/AppLink';
 import {Avatar, AvatarSize} from '@/shared/ui/Avatar';
@@ -32,7 +32,7 @@ export const CommentCard = ({className, comment, isLoading}: CommentCardProps) =
 		return null;
 	}
 
-	const profileLink = `${ROUTE_PATH.PROFILE}${comment.user.id}`;
+	const profileLink = getRouteProfile(comment.user.id);
 
 	return (
 		<VStack gap="1" isMax className={classNames([module.commentCard, className])}>

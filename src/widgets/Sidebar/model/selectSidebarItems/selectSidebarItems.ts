@@ -1,6 +1,16 @@
 import {selectUserAuthData} from '@/entities/User';
-import {IcoThinAlien, IcoThinFileContract, IcoThinHouse, IcoThinSquareList} from '@/shared/assets/icons';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {
+	IcoThinAlien,
+	IcoThinFileContract,
+	IcoThinHouse,
+	IcoThinSquareList,
+} from '@/shared/assets/icons';
+import {
+	getRouteAbout,
+	getRouteArticles,
+	getRouteMain,
+	getRouteProfile,
+} from '@/shared/const/router';
 import {createSelector} from '@reduxjs/toolkit';
 import type {SidebarItemType} from '../types/sidebar';
 
@@ -9,12 +19,12 @@ export const selectSidebarItems = createSelector(
 	userData => {
 		const sidebarItems: SidebarItemType[] = [
 			{
-				path: ROUTE_PATH.MAIN,
+				path: getRouteMain(),
 				Icon: IcoThinHouse,
 				text: 'Главная',
 			},
 			{
-				path: ROUTE_PATH.ABOUT,
+				path: getRouteAbout(),
 				Icon: IcoThinSquareList,
 				text: 'О сайте',
 			},
@@ -22,16 +32,16 @@ export const selectSidebarItems = createSelector(
 
 		const authUserSidebarItems = userData
 			? [
-				{
-					path: `${ROUTE_PATH.PROFILE}${userData.id}`,
-					Icon: IcoThinAlien,
-					text: 'Профиль',
-				},
-				{
-					path: ROUTE_PATH.ARTICLES,
-					Icon: IcoThinFileContract,
-					text: 'Статьи',
-				},
+					{
+						path: getRouteProfile(userData.id),
+						Icon: IcoThinAlien,
+						text: 'Профиль',
+					},
+					{
+						path: getRouteArticles(),
+						Icon: IcoThinFileContract,
+						text: 'Статьи',
+					},
 			]
 			: [];
 

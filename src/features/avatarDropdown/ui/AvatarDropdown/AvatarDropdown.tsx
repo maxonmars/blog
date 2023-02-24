@@ -1,5 +1,5 @@
 import {selectUserAuthData, selectUserIsAdmin, selectUserIsManager, userActions} from '@/entities/User';
-import {ROUTE_PATH} from '@/shared/const/router';
+import {getRouteAdmin, getRouteProfile} from '@/shared/const/router';
 import {Avatar} from '@/shared/ui/Avatar';
 import type {DropdownItem} from '@/shared/ui/Dropdown';
 import {Dropdown} from '@/shared/ui/Dropdown';
@@ -26,11 +26,11 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
 
 	const dropdownUserItems: DropdownItem[] = [
 		{content: t('Выйти'), onClick: handleLogout},
-		{content: t('Профиль'), href: `${ROUTE_PATH.PROFILE}${authData?.id ?? ''}`},
+		{content: t('Профиль'), href: getRouteProfile(authData?.id)},
 	];
 
 	const dropdownAdminItems: DropdownItem[] = [
-		{content: t('Админка'), href: ROUTE_PATH.ADMIN},
+		{content: t('Админка'), href: getRouteAdmin()},
 		...dropdownUserItems,
 	];
 
