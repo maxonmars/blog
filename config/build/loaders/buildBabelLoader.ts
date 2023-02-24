@@ -8,6 +8,7 @@ export const buildBabelLoader = (options: BuildOptions) => {
 		use: {
 			loader: 'babel-loader',
 			options: {
+				cacheDirectory: true,
 				presets: [
 					'@babel/preset-env',
 					[
@@ -18,11 +19,11 @@ export const buildBabelLoader = (options: BuildOptions) => {
 				],
 				plugins: [
 					'@babel/plugin-transform-runtime',
-					[
+					!options.isDev && [
 						babelRemovePropsPlugin,
 						{forbiddenNodeNames: ['data-testid']},
 					],
-				],
+				].filter(Boolean),
 			},
 		},
 	};

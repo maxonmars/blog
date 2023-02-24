@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export const buildCssLoader = (options: BuildOptions) => {
 	return {
 		test: /\.css$/i,
+		exclude: /node_modules/,
 		use: [
 			options.isDev
 				? 'style-loader'

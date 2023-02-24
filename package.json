@@ -27,7 +27,8 @@
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:ui:up": "npx loki update --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127",
-    "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static"
+    "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static",
+    "postinstall": "rm -rf node_modules/.cache"
   },
   "keywords": [],
   "author": "",
@@ -72,9 +73,9 @@
     "eslint": "^8.24.0",
     "eslint-config-xo": "^0.42.0",
     "eslint-config-xo-typescript": "^0.53.0",
-    "eslint-plugin-fsd-strict": "^0.0.6",
+    "eslint-plugin-fsd-strict": "^0.0.8",
     "eslint-plugin-i18next": "^6.0.0-2",
-    "eslint-plugin-react": "^7.31.8",
+    "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-storybook": "^0.6.4",
     "eslint-plugin-unused-imports": "^2.0.0",
