@@ -1,4 +1,5 @@
-body[data-theme="light"] {
+body[data-theme="light"],
+body.storybook-addon-themes.storybook-addon-themes-light {
 	--bg-color: #f4f4fb;
 	--bg-color-inverted: #5e69ee;
 	--primary-color: #5e69ee;

@@ -1,4 +1,5 @@
-body[data-theme="dark"] {
+body[data-theme="dark"],
+body.storybook-addon-themes.storybook-addon-themes-dark {
 	--bg-color: #5e69ee;
 	--bg-color-inverted: #f4f4fb;
 	--primary-color: #f4f4fb;

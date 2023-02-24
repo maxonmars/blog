@@ -1,4 +1,5 @@
-body[data-theme="bacterium"] {
+body[data-theme="bacterium"],
+body.storybook-addon-themes.storybook-addon-themes-bacterium {
 	--bg-color: #ccda57;
 	--bg-color-inverted: #fafbf4;
 	--primary-color: #fafbf4;
