@@ -14,7 +14,6 @@ module.exports = {
 			extends: ['xo-typescript'],
 			files: ['*.ts', '*.tsx'],
 			rules: {
-				'@typescript-eslint/indent': 'off',
 				'@typescript-eslint/parameter-properties': 'off',
 				'@typescript-eslint/consistent-type-assertions': 'off',
 				'@typescript-eslint/ban-ts-comment': 'off',

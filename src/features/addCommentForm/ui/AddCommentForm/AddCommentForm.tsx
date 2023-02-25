@@ -3,17 +3,13 @@ import {classNames} from '@/shared/lib/classNames/classNames';
 import {Input} from '@/shared/ui/Input';
 import {Button} from '@/shared/ui/Button';
 import {useTranslation} from 'react-i18next';
-import {useSelector} from 'react-redux';
-import {
-	selectCommentFormError,
-	selectCommentFormText,
-} from '../../model/selectors/addCommentFormSelectors';
+import {useCommentFormError, useCommentFormText} from '../../model/selectors/addCommentFormSelectors';
 import {useCallback} from 'react';
-import {addCommentFormActions, addCommentFormReducer} from '../../model/slice/addCommentFormSlice';
-import {useAppDispatch} from '@/shared/hooks';
+import {addCommentFormReducer, useCommentAction} from '../../model/slice/addCommentFormSlice';
 import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {HStack} from '@/shared/ui/Stack';
+
 export interface AddCommentFormProps {
 	className?: string;
 	onCommentSend: (text: string) => void;
@@ -25,17 +21,17 @@ const reducers: ReducersList = {
 
 const AddCommentForm = ({className, onCommentSend}: AddCommentFormProps) => {
 	const {t} = useTranslation();
-	const text = useSelector(selectCommentFormText);
-	const error = useSelector(selectCommentFormError);
-	const dispatch = useAppDispatch();
+	const text = useCommentFormText();
+	const error = useCommentFormError();
+	const {setText} = useCommentAction();
 
 	const handleCommentChange = useCallback((value: string) => {
-		dispatch(addCommentFormActions.setText(value));
-	}, [dispatch]);
+		setText(value);
+	}, [setText]);
 
 	const handleCommentSend = () => {
 		onCommentSend(text ?? '');
-		dispatch(addCommentFormActions.setText(''));
+		setText('');
 	};
 
 	return (

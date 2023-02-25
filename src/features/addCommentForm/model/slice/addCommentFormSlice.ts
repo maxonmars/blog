@@ -1,16 +1,19 @@
 import type {PayloadAction} from '@reduxjs/toolkit';
-import {createSlice} from '@reduxjs/toolkit';
 import type {AddCommentFormScheme} from '../types/addCommentForm';
+import {buildSlice} from '@/shared/lib/store';
 
 const initialState: AddCommentFormScheme = {
 	text: '',
 };
 
-const addCommentFormSlice = createSlice({
+const addCommentFormSlice = buildSlice({
 	name: 'addCommentForm',
 	initialState,
 	reducers: {
 		setText(state, action: PayloadAction<string>) {
+			state.text = action.payload;
+		},
+		getDay(state, action: PayloadAction<string>) {
 			state.text = action.payload;
 		},
 	},
@@ -19,4 +22,5 @@ const addCommentFormSlice = createSlice({
 export const {
 	actions: addCommentFormActions,
 	reducer: addCommentFormReducer,
+	useActions: useCommentAction,
 } = addCommentFormSlice;

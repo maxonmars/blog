@@ -16,7 +16,7 @@ export default {
 const Template: StoryType = args => {
 	const [isOpenModal, setIsOpenModal] = useState(true);
 
-		const handleModalClose = () => {
+	const handleModalClose = () => {
 		setIsOpenModal(false);
 	};
 

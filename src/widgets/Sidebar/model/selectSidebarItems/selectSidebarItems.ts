@@ -32,16 +32,16 @@ export const selectSidebarItems = createSelector(
 
 		const authUserSidebarItems = userData
 			? [
-					{
-						path: getRouteProfile(userData.id),
-						Icon: IcoThinAlien,
-						text: 'Профиль',
-					},
-					{
-						path: getRouteArticles(),
-						Icon: IcoThinFileContract,
-						text: 'Статьи',
-					},
+				{
+					path: getRouteProfile(userData.id),
+					Icon: IcoThinAlien,
+					text: 'Профиль',
+				},
+				{
+					path: getRouteArticles(),
+					Icon: IcoThinFileContract,
+					text: 'Статьи',
+				},
 			]
 			: [];
 
