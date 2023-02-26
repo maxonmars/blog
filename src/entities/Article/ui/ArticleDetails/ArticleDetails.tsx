@@ -14,15 +14,16 @@ import {
 import {Text, TextVariant} from '@/shared/ui/Text';
 import {useTranslation} from 'react-i18next';
 import {Skeleton} from '@/shared/ui/Skeleton';
-import {Avatar, AvatarSize} from '@/shared/ui/Avatar';
 import {Title} from '@/shared/ui/Title';
-import {IcoThinCalendarDays, IcoThinEyeEvil} from '@/shared/assets/icons/index';
+import {IcoThinCalendarDays, IcoThinEyeEvil, IcoThinImageSlash} from '@/shared/assets/icons/index';
 import type {ArticleBlock} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {HStack, VStack} from '@/shared/ui/Stack';
 import {ArticleBlockType} from '../../model/consts/article';
+import {AppImage} from '@/shared/ui/AppImage';
+import module from './ArticleDetails.module.css';
 
 interface ArticleDetailsProps {
 	className?: string;
@@ -52,6 +53,10 @@ const renderBlock = (block: ArticleBlock) => {
 		}
 	}
 };
+
+const errorFallback = <IcoThinImageSlash width={200}/>;
+
+const fallback = <Skeleton height={200} width={200} borderRadius="50%" className={module.coverImage}/>;
 
 export const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
 	const {t} = useTranslation();
@@ -84,7 +89,13 @@ export const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
 		content = (
 			<>
 				<HStack justify="center" isMax>
-					<Avatar src={article?.img} size={AvatarSize.LG}/>
+					<AppImage
+						className={module.articleDetailsCover}
+						src={article?.img}
+						width={200}
+						height={200}
+						errorFallback={errorFallback}
+						fallback={fallback}/>
 				</HStack>
 				<Title order={1}>{article?.title}</Title>
 				<Title order={2}>{article?.subtitle}</Title>

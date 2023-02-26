@@ -641,6 +641,12 @@
       "userId": "1",
       "text": "new comment",
       "id": "Ybk-xoR"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "test comment",
+      "id": "cpt2Vip"
     }
   ],
   "users": [
@@ -747,6 +753,13 @@
       "rate": 1,
       "feedback": "otziv",
       "id": 8
+    },
+    {
+      "articleId": "16",
+      "userId": "1",
+      "rate": 1,
+      "feedback": "",
+      "id": 9
     }
   ],
   "profile-ratings": [

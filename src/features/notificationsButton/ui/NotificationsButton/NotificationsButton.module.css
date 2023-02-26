@@ -1,3 +1,7 @@
+.popoverNotificationButton {
+	color: var(--primary-color-inverted);
+}
+
 .notificationList {
 	max-height: 300px;
 	overflow: auto;

@@ -1,4 +1,4 @@
-import {IcoThinEyeEvil} from '@/shared/assets/icons';
+import {IcoThinEyeEvil, IcoThinImageSlash} from '@/shared/assets/icons';
 import {getRouteArticleDetails} from '@/shared/const/router';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import {AppLink} from '@/shared/ui/AppLink';
@@ -13,6 +13,8 @@ import {ArticleBlockType, ArticleView} from '../../model/consts/article';
 import type {Article, ArticleTextBlock} from '../../model/types/article';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import module from './ArticleListItem.module.css';
+import {AppImage} from '@/shared/ui/AppImage';
+import {Skeleton} from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
 	className?: string;
@@ -22,9 +24,19 @@ interface ArticleListItemProps {
 	setVirtualIndex?: () => void;
 }
 
+interface ErrorFallbackProps {
+	width?: string | number;
+	height?: string | number;
+}
+
+const errorFallback = <IcoThinImageSlash width={80}/>;
+
+const Fallback = ({width, height}: ErrorFallbackProps) => {
+	return <Skeleton height={height} width={width} className={module.coverImage}/>;
+};
+
 export const ArticleListItem = ({className, article, view, target, setVirtualIndex}: ArticleListItemProps) => {
 	const {t} = useTranslation();
-
 	const handleClickReadMore = () => {
 		setVirtualIndex?.();
 	};
@@ -41,11 +53,14 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 				<Text className={module.coverDate}>{article.createdAt}</Text>
 				<Title order={2} className={module.articleTitle}>{article.title}</Title>
 				<Text className={module.articleTypes}>{article.type.join(', ')}</Text>
-				<img
+				<AppImage
 					className={module.coverImage}
-					height={250}
 					src={article.img}
-					alt={article.title}/>
+					alt={article.title}
+					height={250}
+					width="100%"
+					fallback={<Fallback width={'100%'} height={250}/>}
+					errorFallback={errorFallback}/>
 				{textBlock
 					&& <ArticleTextBlockComponent block={textBlock} className={module.textBlock}/>
 				}
@@ -74,12 +89,14 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 				className={classNames([module.articleListItem, className, module[view]])}
 				onClick={handleClickReadMore}>
 				<div className={module.cover}>
-					<img
+					<AppImage
 						className={module.coverImage}
 						src={article.img}
+						alt={article.title}
 						width={200}
 						height={200}
-						alt={article.title}/>
+						fallback={<Fallback width={200} height={200}/>}
+						errorFallback={errorFallback}/>
 					<Text className={module.coverDate}>{article.createdAt}</Text>
 				</div>
 				<Text className={module.articleTypes}>{article.type.join(', ')}</Text>

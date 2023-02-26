@@ -28,7 +28,7 @@ export const NotificationsButton = memo((props: NotificationsButtonProps) => {
 		<>
 			<BrowserView>
 				<Popover
-					className={className}
+					className={module.popoverNotificationButton}
 					trigger={<IcoThinBell width={20}/>}>
 					<NotificationList
 						className={classNames(

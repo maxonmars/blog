@@ -49,7 +49,7 @@ export const Navbar = ({className}: NavbarProps) => {
 								{t('Создать статью')}
 							</AppLink>
 							<NotificationsButton/>
-							<AvatarDropdown/>
+							<AvatarDropdown className={module.avatarDropdown}/>
 						</>
 					)
 					: (

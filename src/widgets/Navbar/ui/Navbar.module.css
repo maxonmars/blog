@@ -20,3 +20,7 @@
 	justify-content: flex-end;
 	align-items: center;
 }
+
+.avatarDropdown {
+	color: var(--primary-color-inverted);
+}
