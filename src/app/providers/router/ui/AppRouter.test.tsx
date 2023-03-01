@@ -55,7 +55,7 @@ describe('app/router/AppRouter', () => {
 		componentRender(<AppRouter/>, {
 			route: getRouteAdmin(),
 			initialState: {
-				user: {authData: {id: '1', roles: [UserRoles.ADMIN]}, isInit: true},
+				user: {authData: {id: '1', roles: [UserRoles.ADMIN], username: 'admin'}, isInit: true},
 			},
 		});
 
