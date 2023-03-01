@@ -7,7 +7,7 @@ const ProfilePage = () => {
 	const {id} = useParams<{id: string}>();
 
 	return (
-		<div className={classNames([module.profilePage])}>
+		<div data-testid="ProfilePage" className={classNames([module.profilePage])}>
 			<EditableProfileCard idProfile={id}/>
 		</div>
 	);

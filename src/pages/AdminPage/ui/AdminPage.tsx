@@ -1,6 +1,6 @@
 const AdminPage = () => {
 	return (
-		<div>
+		<div data-testid="AdminPage">
 			AdminPage
 		</div>
 	);

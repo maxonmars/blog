@@ -5,6 +5,8 @@ export const ForbiddenPage = () => {
 	const {t} = useTranslation();
 
 	return (
-		<Title>{t('Нет доступа')}</Title>
+		<div data-testid="ForbiddenPage">
+			<Title>{t('Нет доступа')}</Title>
+		</div>
 	);
 };
