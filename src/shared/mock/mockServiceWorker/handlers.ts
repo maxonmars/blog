@@ -1,3 +1,3 @@
-import {mockedArticleRatingsFetch, mockedArticlesFetch} from './mockedArticles';
+import {mockedArticleRatingsFetch, mockedArticlesFetch, mockedNotificationList} from './mockedArticles';
 
-export const apiHandlers = [mockedArticlesFetch, mockedArticleRatingsFetch];
+export const apiHandlers = [mockedArticlesFetch, mockedArticleRatingsFetch, mockedNotificationList];

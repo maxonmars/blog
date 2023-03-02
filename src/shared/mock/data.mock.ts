@@ -5,6 +5,7 @@ import type {User} from '@/entities/User/testing';
 import {UserRoles} from '@/entities/User/testing';
 import avatarImg from '@/shared/assets/tests/image/avatar-stories.jpeg';
 import jsPostImg from '@/shared/assets/tests/image/javaScript_logo.png';
+import type {Notification} from '@/entities/notification/testing';
 
 export const user: User = {
 	id: '1',
@@ -59,5 +60,26 @@ export const articleRatings = [
 		userId: '1',
 		rate: 3,
 		id: 1,
+	},
+];
+
+export const notificationList: Notification[] = [
+	{
+		userId: '1',
+		title: 'Test notification 1',
+		id: '1',
+		description: 'Some testing description 1',
+	},
+	{
+		userId: '1',
+		title: 'Test notification 2',
+		id: '2',
+		description: 'Some testing description 2',
+	},
+	{
+		userId: '1',
+		title: 'Test notification 3',
+		id: '3',
+		description: 'Some testing description 3',
 	},
 ];

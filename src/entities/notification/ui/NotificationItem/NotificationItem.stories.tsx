@@ -16,5 +16,7 @@ const Template: ComponentStory<typeof NotificationItem> = args => {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+	notification: {title: 'Test title', id: '1', description: 'Test description', userId: '1'},
+};
 Default.decorators = [];
