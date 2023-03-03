@@ -28,4 +28,4 @@ node_modules
 /.github
 
 # Test reports
-/reports
+/reports/unit
