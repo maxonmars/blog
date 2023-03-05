@@ -139,6 +139,7 @@
     "react-transition-group": "^4.4.5"
   },
   "loki": {
+    "chromeSelector": ".wrapper > *, #root > *, .story-decorator > *",
     "configurations": {
       "chrome.laptop": {
         "target": "chrome.docker",

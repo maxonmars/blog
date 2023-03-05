@@ -21,8 +21,7 @@
         "compilerOptions": {
             "module": "CommonJS"
         }
-    },
-    "exclude": ["node_modules"]
+    }
 }
 //{
 //    "compilerOptions": {
