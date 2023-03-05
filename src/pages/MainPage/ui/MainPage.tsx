@@ -5,7 +5,7 @@ const MainPage = () => {
 
 	return (
 		<div data-testid="MainPage">
-			{t('mainPage:Главная')}
+			{t('Главная')}
 		</div>
 	);
 };
