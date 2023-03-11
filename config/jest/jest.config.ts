@@ -1,4 +1,5 @@
 import type {JestConfigWithTsJest} from 'ts-jest';
+// import 'whatwg-fetch';
 
 const jestConfig: JestConfigWithTsJest = {
 	// A set of global variables that need to be available in all test environments
@@ -67,6 +68,7 @@ const jestConfig: JestConfigWithTsJest = {
 
 	// A list of paths to modules that run some code to configure or set up the testing framework before each test
 	setupFilesAfterEnv: [
+		// '@testing-library/jest-dom',
 		'<rootDir>config/jest/jest-setup.ts',
 	],
 
