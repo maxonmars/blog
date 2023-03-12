@@ -14,6 +14,8 @@ module.exports = {
 			extends: ['xo-typescript'],
 			files: ['*.ts', '*.tsx'],
 			rules: {
+				'@typescript-eslint/no-unsafe-call': 'off',
+				'@typescript-eslint/no-namespace': 'off',
 				'@typescript-eslint/parameter-properties': 'off',
 				'@typescript-eslint/consistent-type-assertions': 'off',
 				'@typescript-eslint/ban-ts-comment': 'off',
