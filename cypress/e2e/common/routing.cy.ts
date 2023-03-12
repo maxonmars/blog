@@ -1,5 +1,6 @@
-describe('template spec', () => {
-	it('passes', () => {
-		cy.visit('https://example.cypress.io');
+describe('Routing', () => {
+	it('go to Main page', () => {
+		cy.visit('/');
+		cy.get('[data-testid=MainPage]').should('exist');
 	});
 });

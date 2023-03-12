@@ -48,6 +48,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react', 'i18next', 'react-hooks', 'fsd-strict', 'unused-imports'],
+	ignorePatterns: ['cypress.config.ts'],
 	rules: {
 		'unused-imports/no-unused-imports': 'error',
 		'i18next/no-literal-string': 1,
