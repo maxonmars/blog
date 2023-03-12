@@ -1,5 +1,4 @@
 import type {JestConfigWithTsJest} from 'ts-jest';
-// import 'whatwg-fetch';
 
 const jestConfig: JestConfigWithTsJest = {
 	// A set of global variables that need to be available in all test environments
