@@ -13,6 +13,7 @@ declare module '*.svg' {
 declare module '*.png';
 declare module '*.gif';
 declare module '*.jpeg';
+declare module '*.module.css';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 declare const __IS_DEV__: boolean;
