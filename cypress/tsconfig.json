@@ -1,10 +1,20 @@
+//{
+//    "compilerOptions": {
+//        "target": "es5",
+//        "lib": ["es5", "dom"],
+//        "types": ["cypress", "node"],
+//        "isolatedModules": false
+//    },
+//    "extends": "../tsconfig.json",
+//    "include": ["**/*.ts", "**/*.tsx"],
+//}
 {
+    "extends": "../tsconfig.json",
     "compilerOptions": {
-        "target": "es5",
-        "lib": ["es5", "dom"],
-        "types": ["cypress", "node"],
+        "target": "es2021",
+        "types": ["cypress"],
         "isolatedModules": false
     },
-    "extends": "../tsconfig.json",
-    "include": ["**/*.ts", "**/*.tsx"]
+    "include": ["../node_modules/cypress", "./**/*.ts"],
+    "exclude": ["node_modules"]
 }
