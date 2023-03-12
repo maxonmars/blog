@@ -677,6 +677,13 @@
         "MANAGER"
       ],
       "avatar": "https://yt3.ggpht.com/a/AATXAJxcm5EfAgrVc2qepIPBeaqAw1Zq53M5Mbc0IpukHg=s900-c-k-c0xffffffff-no-rj-mo"
+    },
+    {
+      "id": "4",
+      "username": "testUser",
+      "password": "123",
+      "roles": ["ADMIN"],
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "profiles": [
@@ -701,6 +708,17 @@
       "city": "Moscow",
       "username": "USER-name",
       "avatar": "https://i.pinimg.com/474x/b1/19/4f/b1194f6671a741f9b2d52c550324c630.jpg"
+    },
+    {
+      "id": "4",
+      "firstName": "test",
+      "lastName": "user",
+      "age": 99,
+      "currency": "EUR",
+      "country": "Ukraine",
+      "city": "Kharkov",
+      "username": "testuser",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
   "article-ratings": [

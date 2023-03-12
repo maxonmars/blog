@@ -1,19 +1,31 @@
+import {selectByTestId} from '../../helpers/selectByTestId';
+
 describe('Routing', () => {
-	describe('Auth user', () => {
-		it('go to Main page', () => {
+	describe('No auth user', () => {
+		it('go to MainPage', () => {
 			cy.visit('/');
-			cy.get('[data-testid=MainPage]').should('exist');
+			cy.get(selectByTestId('MainPage')).should('exist');
 		});
-		it('go to Main page', () => {
+		it('go to redirect MainPage', () => {
 			cy.visit('/profile/1');
-			cy.get('[data-testid=ProfilePage]').should('exist');
+			cy.get(selectByTestId('MainPage')).should('exist');
 		});
-		it('Not found page', () => {
+		it('go to redirect NotFoundPage', () => {
 			cy.visit('/fasd');
-			cy.get('[data-testid=NotFoundPage]').should('exist');
+			cy.get(selectByTestId('NotFoundPage')).should('exist');
 		});
 	});
-	// describe('No auth user', () => {
-	//
-	// });
+	describe('Auth user', () => {
+		beforeEach(() => {
+			cy.login();
+		});
+		it('go to ProfilePage', () => {
+			cy.visit('/profile/1');
+			cy.get(selectByTestId('ProfilePage')).should('exist');
+		});
+		it('go to ArticlesPage', () => {
+			cy.visit('/articles');
+			cy.get(selectByTestId('ArticlesPage')).should('exist');
+		});
+	});
 });

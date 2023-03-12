@@ -9,6 +9,9 @@ import CircularDependencyPlugin from 'circular-dependency-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 export function buildPlugins({path, isDev, isHotRefresh, apiUrl, project}: BuildOptions): webpack.WebpackPluginInstance[] {
+	const defaultMemoryLimit = 2048;
+	const availableMemoryLimit = defaultMemoryLimit * 3;
+
 	return [
 		new HtmlWebpackPlugin({
 			template: path.html,
@@ -30,6 +33,7 @@ export function buildPlugins({path, isDev, isHotRefresh, apiUrl, project}: Build
 					syntactic: true,
 				},
 				mode: 'write-references',
+				memoryLimit: availableMemoryLimit,
 			},
 		}),
 		!isDev && new MiniCssExtractPlugin({

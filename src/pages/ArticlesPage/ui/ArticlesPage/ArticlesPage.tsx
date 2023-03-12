@@ -29,7 +29,7 @@ const ArticlesPage = ({className}: ArticlesPageProps) => {
 
 	return (
 		<DynamicModuleLoader reducers={reducers}>
-			<div className={classNames([module.articlesPage, className])}>
+			<div data-testid="ArticlesPage" className={classNames([module.articlesPage, className])}>
 				<ArticlesPageFilters/>
 				<ArticleVirtualizedList/>
 			</div>
