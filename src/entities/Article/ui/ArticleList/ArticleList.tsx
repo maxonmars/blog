@@ -37,7 +37,9 @@ export const ArticleList = ({className, target, articles, isLoading, view = Arti
 	}
 
 	return (
-		<div className={classNames([module.articleList, className, module[view]])}>
+		<div
+			data-testid="ArticleList"
+			className={classNames([module.articleList, className, module[view]])}>
 			{articles.length > 0
 				? articles.map(renderArticle)
 				: null}

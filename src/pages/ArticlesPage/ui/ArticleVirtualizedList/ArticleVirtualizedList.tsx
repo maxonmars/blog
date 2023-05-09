@@ -50,7 +50,9 @@ export const ArticleVirtualizedList = (props: ArticleVirtualizedListProps) => {
 	}, [dispatch]);
 
 	return (
-		<div className={classNames([className])}>
+		<div
+			data-testid="ArticleVirtualizedList"
+			className={classNames([className])}>
 			<VirtualizedList<Article>
 				dataList={articles}
 				isLoading={isLoading}

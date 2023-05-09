@@ -45,7 +45,9 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 		const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
 
 		return (
-			<Card className={classNames([module.articleListItem, className, module[view]])}>
+			<Card
+				data-testid="ArticleListItem"
+				className={classNames([module.articleListItem, className, module[view]])}>
 				<div className={module.userInfo}>
 					<Avatar src={article.user.avatar}/>
 					<Text>{article.user.username}</Text>
@@ -82,6 +84,7 @@ export const ArticleListItem = ({className, article, view, target, setVirtualInd
 
 	return (
 		<AppLink
+			data-testid="ArticleListItem"
 			target={target}
 			to={getRouteArticleDetails(article.id)}
 			className={module.appLinkCardWrapper}>
