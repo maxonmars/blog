@@ -1,14 +1,13 @@
-import module from './Modal.module.css';
-import type {ReactNode} from 'react';
-import {useRef} from 'react';
-import {useEffect, useState} from 'react';
-import {CSSTransition} from 'react-transition-group';
-import {Portal} from '../Portal/Portal';
-import {Overlay} from '../Overlay/Overlay';
-import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
 import {IcoThinXmark} from '@/shared/assets/icons';
+import type {ReactNode} from 'react';
+import {useEffect, useRef, useState} from 'react';
+import {CSSTransition} from 'react-transition-group';
+import {Button, ButtonSize, ButtonVariant} from '../Button/Button';
+import {Overlay} from '../Overlay/Overlay';
+import {Portal} from '../Portal/Portal';
 import type {TitleOrder} from '../Title/Title';
 import {Title} from '../Title/Title';
+import module from './Modal.module.css';
 
 type ModalChildren =
 	| ReactNode

@@ -1,7 +1,7 @@
-import module from './Flex.module.css';
 import type {ClassNamesMods} from '@/shared/lib/classNames/classNames';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import type {DetailedHTMLProps, HTMLAttributes, ReactNode} from 'react';
+import module from './Flex.module.css';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
@@ -55,6 +55,7 @@ export const Flex = (props: FlexProps) => {
 		direction = 'row',
 		gap,
 		isMax,
+		...restProps
 	} = props;
 
 	const classes = [
@@ -70,7 +71,7 @@ export const Flex = (props: FlexProps) => {
 	};
 
 	return (
-		<div className={classNames([module.flex, ...classes], mods)}>
+		<div {...restProps} className={classNames([module.flex, ...classes], mods)}>
 			{children}
 		</div>
 	);

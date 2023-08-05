@@ -1,17 +1,17 @@
 import {classNames} from '@/shared/lib/classNames/classNames';
+import {Button} from '@/shared/ui/Button';
+import {Card} from '@/shared/ui/Card';
+import {DrawerMobile} from '@/shared/ui/DrawerMobile';
+import {Input} from '@/shared/ui/Input';
+import {Modal} from '@/shared/ui/Modal';
+import {HStack, VStack} from '@/shared/ui/Stack';
+import {StarRating} from '@/shared/ui/StarRating';
+import {Text} from '@/shared/ui/Text';
+import {Title} from '@/shared/ui/Title';
+import {memo, useRef, useState} from 'react';
+import {BrowserView, MobileView} from 'react-device-detect';
 import {useTranslation} from 'react-i18next';
 import module from './RatingCard.module.css';
-import {memo, useRef, useState} from 'react';
-import {Card} from '@/shared/ui/Card';
-import {HStack, VStack} from '@/shared/ui/Stack';
-import {Title} from '@/shared/ui/Title';
-import {StarRating} from '@/shared/ui/StarRating';
-import {BrowserView, MobileView} from 'react-device-detect';
-import {Modal} from '@/shared/ui/Modal';
-import {Button} from '@/shared/ui/Button';
-import {Text} from '@/shared/ui/Text';
-import {Input} from '@/shared/ui/Input';
-import {DrawerMobile} from '@/shared/ui/DrawerMobile';
 
 interface RatingProps {
 	className?: string;
@@ -51,7 +51,7 @@ export const RatingCard = memo((props: RatingProps) => {
 	};
 
 	return (
-		<Card className={classNames([module.ratingCard, className])}>
+		<Card data-testid="RatingCard" className={classNames([module.ratingCard, className])}>
 			<VStack>
 				<Title order={4}>{rate ? t('Спасибо за оценку!') : title}</Title>
 				<StarRating selectedStars={rate} onSelect={handleRatingChange}/>
@@ -64,12 +64,13 @@ export const RatingCard = memo((props: RatingProps) => {
 					{onClose => <VStack>
 						<Text>{feedbackTitle}</Text>
 						<Input
+							data-testid="RatingCard.Input"
 							placeholder="Ваш отзыв"
 							value={feedback}
 							onChange={setFeedback}/>
 						<HStack>
-							<Button onClick={onClose()}>Закрыть</Button>
-							<Button onClick={onClose(handleSendBtn)}>Отправить</Button>
+							<Button data-testid="RatingCard.Close" onClick={onClose()}>Закрыть</Button>
+							<Button data-testid="RatingCard.Send" onClick={onClose(handleSendBtn)}>Отправить</Button>
 						</HStack>
 					</VStack>}
 				</Modal>

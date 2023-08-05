@@ -1,28 +1,28 @@
+import {IcoThinCalendarDays, IcoThinEyeEvil, IcoThinImageSlash} from '@/shared/assets/icons/index';
+import {useAppDispatch} from '@/shared/hooks';
 import {classNames} from '@/shared/lib/classNames/classNames';
 import type {ReducersList} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {DynamicModuleLoader} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
-import {useAppDispatch} from '@/shared/hooks';
+import {AppImage} from '@/shared/ui/AppImage';
+import {Skeleton} from '@/shared/ui/Skeleton';
+import {HStack, VStack} from '@/shared/ui/Stack';
+import {Text, TextVariant} from '@/shared/ui/Text';
+import {Title} from '@/shared/ui/Title';
 import {useEffect} from 'react';
-import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
+import {useTranslation} from 'react-i18next';
 import {useSelector} from 'react-redux';
+import {ArticleBlockType} from '../../model/consts/article';
 import {
 	selectArticleDetailsData,
 	selectArticleDetailsError,
 	selectArticleDetailsIsLoading,
 } from '../../model/selectors/selectArticleDetails';
-import {Text, TextVariant} from '@/shared/ui/Text';
-import {useTranslation} from 'react-i18next';
-import {Skeleton} from '@/shared/ui/Skeleton';
-import {Title} from '@/shared/ui/Title';
-import {IcoThinCalendarDays, IcoThinEyeEvil, IcoThinImageSlash} from '@/shared/assets/icons/index';
+import {fetchArticleById} from '../../model/services/fetchArticleById/fetchArticleById';
+import {articleDetailsReducer} from '../../model/slice/articleDetailsSlice';
 import type {ArticleBlock} from '../../model/types/article';
 import {ArticleCodeBlockComponent} from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {ArticleImageBlockComponent} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import {ArticleTextBlockComponent} from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {HStack, VStack} from '@/shared/ui/Stack';
-import {ArticleBlockType} from '../../model/consts/article';
-import {AppImage} from '@/shared/ui/AppImage';
 import module from './ArticleDetails.module.css';
 
 interface ArticleDetailsProps {
@@ -99,7 +99,7 @@ export const ArticleDetails = ({className, id}: ArticleDetailsProps) => {
 				</HStack>
 				<Title order={1}>{article?.title}</Title>
 				<Title order={2}>{article?.subtitle}</Title>
-				<VStack gap="0.5">
+				<VStack gap="0.5" data-testid="ArticleDetails.Info">
 					<HStack gap="1">
 						<IcoThinEyeEvil width="20"/>
 						<Text>{article?.views}</Text>

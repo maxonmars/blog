@@ -31,10 +31,10 @@
     "test:ui:ci": "loki --chromeDockerImage=yukinying/chrome-headless-browser-stable:100.0.4896.127 --requireReference --reactUri file:./storybook-static",
     "postinstall": "rm -rf node_modules/.cache"
   },
-  "lint-staged": {
-    "**/*.{ts,tsx}": "eslint",
-    "**/*.css": "stylelint"
-  },
+  "lint-staged": [
+    "npm run lint:ts",
+    "npm run lint:css"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",

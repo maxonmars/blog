@@ -1,7 +1,7 @@
-import module from './StarRating.module.css';
-import {classNames} from '@/shared/lib/classNames/classNames';
 import {IcoStar} from '@/shared/assets/icons';
+import {classNames} from '@/shared/lib/classNames/classNames';
 import {useMemo, useState} from 'react';
+import module from './StarRating.module.css';
 
 interface StarRatingProps {
 	className?: string;
@@ -33,9 +33,9 @@ export const StarRating = (props: StarRatingProps) => {
 		setHoveredStarCount(0);
 	};
 
-	const handleStarSelect = () => {
+	const handleStarSelect = (starNumber: number) => () => {
 		if (isNotRateSelected) {
-			onSelect(hoveredStarCount);
+			onSelect(starNumber);
 		}
 	};
 
@@ -44,8 +44,10 @@ export const StarRating = (props: StarRatingProps) => {
 			{stars.map(starNumber => {
 				return (
 					<IcoStar
+						data-testid={`StarRating.${starNumber}`}
+						data-selected={selectedStars >= starNumber}
 						width={size}
-						onClick={handleStarSelect}
+						onClick={handleStarSelect(starNumber)}
 						onMouseLeave={handleStarHoverLeave}
 						onMouseEnter={handleStarHover(starNumber)}
 						key={starNumber}
