@@ -29,4 +29,5 @@ describe('User visited profile page', () => {
 	});
 });
 
-export {};
+export { };
+

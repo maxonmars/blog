@@ -1,13 +1,13 @@
-{
-   "compilerOptions": {
-       "target": "es5",
-       "lib": ["es5", "dom"],
-       "types": ["cypress", "node"],
-       "isolatedModules": false
-   },
-   "extends": "../tsconfig.json",
-   "include": ["**/*.ts", "**/*.tsx"],
-}
+// {
+//    "compilerOptions": {
+//        "target": "es5",
+//        "lib": ["es5", "dom"],
+//        "types": ["cypress", "node"],
+//        "isolatedModules": false
+//    },
+//    "extends": "../tsconfig.json",
+//    "include": ["**/*.ts", "**/*.tsx"],
+// }
 // {
 //     "extends": "../tsconfig.json",
 //     "compilerOptions": {
@@ -18,3 +18,15 @@
 //     "include": ["../node_modules/cypress", "./**/*.ts", "../cypress.config.ts"],
 //     "exclude": ["node_modules"]
 // }
+{
+    "compilerOptions": {
+        "target": "es5",
+        "lib": ["es5", "dom"],
+        "types": ["cypress", "node"],
+        "allowJs": true,
+        "isolatedModules": false
+    },
+    "extends": "../tsconfig.json",
+    "include": ["**/*.ts", "**/*.tsx"],
+    "exclude": ["blog/src"]
+}

@@ -1,7 +1,7 @@
-import type {Article} from '../../../src/entities/Article';
+import type { Article } from '../../../src/entities/Article';
 
 const defaultArticle = {
-	title: 'Testing article',
+	title: 'Testing Article',
 	subtitle: 'other testing article',
 	img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
 	views: 1022,
