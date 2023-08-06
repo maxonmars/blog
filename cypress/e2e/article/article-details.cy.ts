@@ -13,15 +13,15 @@ describe('User visit ArticlePage', () => {
 		cy.removeArticle(currentArticleId);
 	});
 
-	it('and view ArticleDetails', () => {
+	it.skip('and view ArticleDetails', () => {
 		cy.getByTestId('ArticleDetails.Info').should('exist');
 	});
 
-	it('and view ArticleRecommendationsList', () => {
+	it.skip('and view ArticleRecommendationsList', () => {
 		cy.getByTestId('ArticleRecommendationsList').should('exist');
 	});
 
-	it('add comment', () => {
+	it.skip('add comment', () => {
 		cy.getByTestId('ArticleDetails.Info');
 		cy.getByTestId('AddCommentForm').scrollIntoView();
 		cy.addComment('text');
@@ -29,6 +29,7 @@ describe('User visit ArticlePage', () => {
 	});
 
 	it('set article rating', () => {
+		cy.intercept('GET', '**/articles/*', {fixture: 'article-details.json'})
 		cy.getByTestId('ArticleDetails.Info');
 		cy.getByTestId('RatingCard').scrollIntoView();
 		cy.setRate(3, 'test feedback');

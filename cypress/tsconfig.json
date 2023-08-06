@@ -28,5 +28,4 @@
     },
     "extends": "../tsconfig.json",
     "include": ["**/*.ts", "**/*.tsx"],
-    "exclude": ["blog/src"]
 }
